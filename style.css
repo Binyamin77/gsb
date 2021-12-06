@@ -45,5 +45,19 @@ body {
 .blocs-menu span a {
     text-decoration: none;
     color: #f1f1f1;
+}
 
+.blocs-menu span::after {
+    content: '';
+    display: block;
+    width: 0px;
+    margin: 5px auto 0 auto;
+    height: 2px;
+    border-radius: 2px;
+    background: #aaa;
+    transition: all 0.2s ease-out;
+}
+
+.blocs-menu span:hover:after {
+    width: 100%;
 }
