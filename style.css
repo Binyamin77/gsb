@@ -13,6 +13,8 @@ body {
     background: #f1f1f1;
 }
 
+/* ----------Navigation---------- */
+
 .nav-gauche {
     width: 300px;
     height: 100vh;
@@ -61,3 +63,122 @@ body {
 .blocs-menu span:hover:after {
     width: 100%;
 }
+
+/* Portrait */
+
+.blocs-menu:nth-child(1) {
+    width: 100%;
+    height: 25%;
+    background: #333;
+}
+.cercle-portrait {
+    margin: 20px 0;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 26px 26px 53px #292929,
+    -26px -26px 53px #3d3d3d;
+}
+
+.cercle-portrait img {
+    width: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.logo-cercle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 40px;
+    cursor: pointer;
+}
+.logo-cercle img {
+    width: 70px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,50%);
+}
+
+@media screen and (max-width: 1300px) {  /*Si l'écran fais moins de 1300px alors : */
+
+    .nav-gauche {
+        display: none; /* On fait disparaitre le boutton */
+    }
+
+    .btn-rond-menu {
+        width: 70px;
+        height: 70px;
+        border: 1px solid #f1f1f1;
+        border-radius: 50%;
+        background: #333;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 10;
+    }
+
+    .cont-ligne {
+        width: 36px;
+        height: 36px;
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .ligne-unique {
+        width: 100%;
+        height: 4px;
+        border-radius: 5px;
+        background: #f1f1f1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,50%);
+    }
+
+    .ligne-unique::before {
+        content: '';
+        position: absolute;
+        bottom: 10px;  /* On la décalle de 10px de la ligne du milieu */
+        background: #f1f1f1;
+        width: 100%;
+        height: 4px;
+        border-radius: 5px;
+    }
+
+    .ligne-unique::after {
+        content: '';
+        position: absolute;
+        top: 10px;  /* On la décalle de 10px de la ligne du bas */
+        background: #f1f1f1;
+        width: 100%;
+        height: 4px;
+        border-radius: 5px;
+    }
+
+    .cont-ligne.active .ligne-unique::after /* Lorsque cont-ligne a aussi la classe active / ensemble sur un élément */ {
+        top: 0;
+        transform: rotate(45deg); /* On tourne a 45 degrés */
+        transition: top 300ms ease, transform 300ms 300ms ease;  /*Ca remonte et ca tourne */
+    }
+
+    .cont-ligne.active .ligne-unique {
+        background: transparent;
+    }
+
+    .cont-ligne.active .ligne-unique::before /* Lorsque cont-ligne a aussi la classe active / ensemble sur un élément */ {
+        bottom: 0;
+        transform: rotate(-45deg); /* On tourne a 45 degrés */
+        transition: bottom 300ms ease, transform 300ms 300ms ease;  /*Ca remonte et ca tourne */
+    }
+}
+
+
