@@ -25,6 +25,7 @@ body {
     left: 0;
     border-right: 1px dashed #f1f1f1 ;
     z-index: 5;
+    transition: all 0.4s ease-in-out; /*Ouverture du menu en 0.4 sec */
 }
 
 .blocs-menu {
@@ -108,8 +109,30 @@ body {
 @media screen and (max-width: 1300px) {  /*Si l'écran fais moins de 1300px alors : */
 
     .nav-gauche {
-        display: none; /* On fait disparaitre le boutton */
+       left: -300px!important; /* On fait disparaitre le boutton */
+
+        width: 250px;
+        min-height: 300px;
+
+        display: flex;
+        justify-content: center;  /*centrer parfaitement */
+        align-items: center;
+        flex-direction: column; /*On declare que c'est une colonne */
     }
+
+    .menu-visible {
+        left: 0px!important;
+    }
+
+    .blocs-menu:nth-child(1) {
+        display: none;
+    }
+
+    .blocs-menu:nth-child(7) {
+        display: none;
+    }
+
+
 
     .btn-rond-menu {
         width: 70px;
@@ -121,6 +144,7 @@ body {
         top: 10px;
         left: 10px;
         z-index: 10;
+
     }
 
     .cont-ligne {
@@ -179,6 +203,8 @@ body {
         transform: rotate(-45deg); /* On tourne a 45 degrés */
         transition: bottom 300ms ease, transform 300ms 300ms ease;  /*Ca remonte et ca tourne */
     }
+
+
 }
 
 
