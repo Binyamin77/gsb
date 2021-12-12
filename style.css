@@ -13,7 +13,7 @@ body {
     background: #f1f1f1;
 }
 
-/* ----------Navigation---------- */
+/* ---------------------Navigation---------------------- */
 
 .nav-gauche {
     width: 300px;
@@ -203,8 +203,28 @@ body {
         transform: rotate(-45deg); /* On tourne a 45 degrés */
         transition: bottom 300ms ease, transform 300ms 300ms ease;  /*Ca remonte et ca tourne */
     }
-
-
 }
+
+/* ---------------------Accueil---------------------- */
+
+ .accueil {
+     background: url("ressources/accueil.jpg");
+     background-repeat: no-repeat; /* On ne veut pas qu'il se répète */
+     background-size: cover; /* Pour qu'il couvre bien toute la page */
+     background-position: right; /* */
+     height: 100vh; /* On peut réduire de 100vh et 900px */
+     min-height: 900px;
+     width: calc(100% - 300px); /* On decalle le tout de 300px pour ne pas que ca soit caché sous le menu */
+     margin-left: auto;
+     position: relative; /* On va venir pousser le texte qui est caché derriere le menu */
+ }
+
+ h1 {
+     font-size: 90px;
+     font-family: 'Abril Fatface', sans-serif;
+     margin: 0 60px; /* 0 en haut et en bas et 60px a gauche et a droite */
+
+ }
+
 
 
