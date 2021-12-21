@@ -364,7 +364,7 @@ body {
     }
 }
 
-@media screen and (max-width: 35px){
+@media screen and (max-width: 500px){
     h1 {
         font-size: 35px;
     }
@@ -391,10 +391,18 @@ body {
 
 @media screen and (max-width:450px)  {
     .btn-rond-menu {
+        width: 50px;
+        height: 50px;
+    }
+    .cont-ligne{
         width: 20px;
         height: 38px;
     }
     .ligne-unique {
+        height: 3px;
+    }
+    .ligne-unique::before{
+        bottom: 8px;
         height: 3px;
     }
     .ligne-unique::after{
