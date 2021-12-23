@@ -73,7 +73,7 @@ public class frmLabo extends javax.swing.JFrame {
         mdlLabo = new ModelLabo();
         mdlLabo.LoadDatasLabo(fm.getAllLabo());
         
-        tblLabo.setModel((TableModel) mdlLabo);
+        tblLabo.setModel(mdlLabo);
          
   }
     /**
