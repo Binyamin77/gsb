@@ -15,7 +15,8 @@ import model.ModelLabo;
 public class frmLabo extends javax.swing.JFrame {
 
     /**
-     * Creates new form frmLabo
+     * Creates new form frmLabo  
+     * 
      */
     FonctionsMetier fm;
     ModelLabo mdlLabo;
