@@ -62,7 +62,7 @@ public class FonctionsMetier implements IMetier
         return desTickets;
     }
 
-    @Override
+   /* @Override
     public Utilisateur VerifierIdentifiants(String login, String mdp) {
         Utilisateur u = null;
         try {
@@ -84,7 +84,7 @@ public class FonctionsMetier implements IMetier
             Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
         }
         return u;
-    }
+    } */
 
 
     @Override
@@ -114,12 +114,12 @@ public class FonctionsMetier implements IMetier
         try {
             maCnx=ConnexionBdd.getCnx();
             //on ecrit dans le ps la requete
-            ps= maCnx.prepareStatement("select * from labo");
+            ps= maCnx.prepareStatement("select labo.chefvente_labo,id_labo,nom_labo from labo");
             
             rs=ps.executeQuery();
             while(rs.next())
             {
-                labo l = new labo((rs.getInt(1)),rs.getString(2),rs.getString(3));
+                labo l = new labo(rs.getString(1),rs.getInt(2),rs.getString(3));
                 mesLabos.add(l);
             }
            
@@ -179,13 +179,13 @@ public class FonctionsMetier implements IMetier
         try {
             maCnx=ConnexionBdd.getCnx();
             //on ecrit dans le ps la requete
-            ps= maCnx.prepareStatement("select * from visiteur");
+            ps= maCnx.prepareStatement("select adresse_visiteur,cp_visiteur,dateembauche_visiteur,id_labo,id_secteur,id_visiteur,nom_visiteur,prenom_visiteur,ville_visiteur from visiteur");
             
             rs=ps.executeQuery();
             while(rs.next())
             {
                 visiteur v;
-                v = new visiteur((rs.getInt(1)),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getString(6),rs.getInt(7),rs.getInt(8),rs.getDate(9));
+                v = new visiteur((rs.getString(1)),rs.getInt(2),rs.getDate(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getString(7),rs.getString(8),rs.getString(9));
                 mesVisiteurs.add(v);
             }
            
@@ -193,5 +193,10 @@ public class FonctionsMetier implements IMetier
             Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
         }
         return mesVisiteurs;
+    }
+
+    @Override
+    public Utilisateur VerifierIdentifiants(String login, String mdp) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
