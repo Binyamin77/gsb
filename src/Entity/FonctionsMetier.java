@@ -93,12 +93,12 @@ public class FonctionsMetier implements IMetier
         try {
             maCnx=ConnexionBdd.getCnx();
             //on ecrit dans le ps la requete
-            ps= maCnx.prepareStatement("select * from region");
+            ps= maCnx.prepareStatement("SELECT id_region,nom_region,nom_secteur FROM region, secteur WHERE region.id_secteur = secteur.id_secteur ORDER BY nom_secteur ASC");
             
             rs=ps.executeQuery();
             while(rs.next())
             {
-                region r = new region((rs.getInt(1)),rs.getInt(2),rs.getString(3));
+                region r = new region((rs.getInt(1)),rs.getString(2),rs.getString(3));
                 mesRegions.add(r);
             }
            
@@ -114,7 +114,7 @@ public class FonctionsMetier implements IMetier
         try {
             maCnx=ConnexionBdd.getCnx();
             //on ecrit dans le ps la requete
-            ps= maCnx.prepareStatement("select labo.chefvente_labo,id_labo,nom_labo from labo");
+            ps= maCnx.prepareStatement("select labo.chefvente_labo,id_labo,nom_labo from labo ORDER BY `chefvente_labo` ASC");
             
             rs=ps.executeQuery();
             while(rs.next())
@@ -157,13 +157,13 @@ public class FonctionsMetier implements IMetier
         try {
             maCnx=ConnexionBdd.getCnx();
             //on ecrit dans le ps la requete
-            ps= maCnx.prepareStatement("select * from travailler");
+            ps= maCnx.prepareStatement("SELECT nom_visiteur,nom_region,jjmmaa_travailler,role_travailler FROM travailler,region, visiteur WHERE travailler.`id_region` = region.`id_region` and travailler.id_visiteur=visiteur.id_visiteur ORDER BY `nom_visiteur` ASC");
             
             rs=ps.executeQuery();
             while(rs.next())
             {
                 travailler t;
-                t = new travailler((rs.getInt(1)),rs.getInt(2),rs.getDate(3),rs.getString(4));
+                t = new travailler((rs.getString(1)),rs.getString(2),rs.getDate(3),rs.getString(4));
                 mesTravailler.add(t);
             }
            
@@ -179,13 +179,13 @@ public class FonctionsMetier implements IMetier
         try {
             maCnx=ConnexionBdd.getCnx();
             //on ecrit dans le ps la requete
-            ps= maCnx.prepareStatement("select adresse_visiteur,cp_visiteur,dateembauche_visiteur,id_labo,id_secteur,id_visiteur,nom_visiteur,prenom_visiteur,ville_visiteur from visiteur");
+            ps= maCnx.prepareStatement("SELECT adresse_visiteur,cp_visiteur,dateembauche_visiteur,nom_labo,nom_secteur,id_visiteur,nom_visiteur,prenom_visiteur,ville_visiteur FROM `visiteur`,`secteur`,`labo` WHERE visiteur.`id_secteur` = secteur.`id_secteur` AND visiteur.id_labo = labo.id_labo ORDER BY `id_visiteur` ASC");
             
             rs=ps.executeQuery();
             while(rs.next())
             {
                 visiteur v;
-                v = new visiteur((rs.getString(1)),rs.getString(2),rs.getDate(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getString(7),rs.getString(8),rs.getString(9));
+                v = new visiteur((rs.getString(1)),rs.getString(2),rs.getDate(3),rs.getString(4),rs.getString(5),rs.getInt(6),rs.getString(7),rs.getString(8),rs.getString(9));
                 mesVisiteurs.add(v);
             }
            

@@ -19,11 +19,11 @@ public class visiteur {
     private String adresse_visiteur;
     private String cp_visiteur;
     private String ville_visiteur;
-    private int id_secteur;
-    private int id_labo;
+    private String id_secteur;
+    private String id_labo;
     private Date dateembauche_visiteur;
     
-    public visiteur(String unAdresse,String unCp,Date unDateEmbauche,int unIdLabo, int unIdSecteur, int unId, String unNom, String unPrenom, String unVille){
+    public visiteur(String unAdresse,String unCp,Date unDateEmbauche,String unIdLabo, String unIdSecteur, int unId, String unNom, String unPrenom, String unVille){
         adresse_visiteur = unAdresse;
         cp_visiteur = unCp;
         dateembauche_visiteur = unDateEmbauche;
@@ -80,14 +80,14 @@ public class visiteur {
     /**
      * @return the getIdSecteur
      */
-    public int getIdSecteur() {
+    public String getIdSecteur() {
         return id_secteur;
     }
 
     /**
      * @return the getIdLabo
      */
-    public int getIdLabo() {
+    public String getIdLabo() {
         return id_labo;
     }
     

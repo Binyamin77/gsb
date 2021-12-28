@@ -13,15 +13,15 @@ import java.util.Date;
  */
 public class travailler {
     
-    private int id_visiteur;
-    private int id_region;
+    private String id_visiteur;
+    private String id_region;
     private Date jjmmaa_travailler;
     private String role_travailler;
 
   
     
     
-    public travailler(int unId, int unIdRegion,Date unDateEmbauche, String unRole){
+    public travailler(String unId, String unIdRegion,Date unDateEmbauche, String unRole){
         id_visiteur = unId;
         id_region = unIdRegion;
         jjmmaa_travailler = unDateEmbauche;
@@ -31,14 +31,14 @@ public class travailler {
     /**
      * @return the getIdVisiteur
      */
-    public int getIdVisiteur() {
+    public String getIdVisiteur() {
         return id_visiteur;
     }
 
     /**
      * @return the getIdRegion
      */
-    public int getIdRegion() {
+    public String getIdRegion() {
         return id_region;
     }
 

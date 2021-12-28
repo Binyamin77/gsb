@@ -40,11 +40,11 @@ public class ModelTravailler extends AbstractTableModel{
     }
     
      public void LoadDatasTravailler(ArrayList<travailler>desTravailler){
-        nomsColonnes = new String[]{"Visiteur","Region","Date de Travaille","Rôle"};
+        nomsColonnes = new String[]{"Nom","Regions","Date de Travaille","Rôle"};
         rows = new Vector<String[]>();
         
         for (travailler a  : desTravailler){
-             rows.add(new String[] {String.valueOf(a.getIdVisiteur()),String.valueOf(a.getIdRegion()),String.valueOf(a.getDateTravaille()),a.getRoleTravailler()});
+             rows.add(new String[] {a.getIdVisiteur(),a.getIdRegion(),String.valueOf(a.getDateTravaille()),a.getRoleTravailler()});
         }
         fireTableDataChanged();
 }

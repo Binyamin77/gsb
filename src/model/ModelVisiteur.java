@@ -40,11 +40,11 @@ public class ModelVisiteur extends AbstractTableModel{
     }
     
      public void LoadDatasVisiteur(ArrayList<visiteur>desVisiteurs){
-        nomsColonnes = new String[]{"Id","Nom","Prenom","Ville","Cp","Adresse","Secteur","Labo","Date Embauche"};
+        nomsColonnes = new String[]{"Num","Nom","Prenom","Ville","Cp","Adresse","Secteur","Labo","Date Embauche"};
         rows = new Vector<String[]>();
         
         for (visiteur a  : desVisiteurs){
-             rows.add(new String[] {String.valueOf(a.getIdVisiteur()),a.getNomVisiteur(),a.getPrenomVisiteur(),a.getVilleVisiteur(),a.getCpVisiteur() ,a.getAdresseVisiteur() ,String.valueOf(a.getIdSecteur()),String.valueOf(a.getIdLabo()),String.valueOf(a.getDateEmbauche())});
+             rows.add(new String[] {String.valueOf(a.getIdVisiteur()),a.getNomVisiteur(),a.getPrenomVisiteur(),a.getVilleVisiteur(),a.getCpVisiteur() ,a.getAdresseVisiteur() ,a.getIdSecteur(),a.getIdLabo(),String.valueOf(a.getDateEmbauche())});
         }
         fireTableDataChanged();
 }

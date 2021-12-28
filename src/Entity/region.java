@@ -11,9 +11,9 @@ package Entity;
 public class region {
      private int id_region;
     private String nom_region;
-    private int id_secteur;
+    private String id_secteur;
     
-    public region(int unId,int unIdSecteur, String unNom )
+    public region(int unId,String unIdSecteur, String unNom )
     {
         id_region = unId;
         id_secteur = unIdSecteur;
@@ -42,7 +42,7 @@ public class region {
         /**
      * @return the dateTicket
      */
-    public int getIdSecteur() {
+    public String getIdSecteur() {
         return id_secteur;
     }
     }
