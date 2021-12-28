@@ -4,6 +4,7 @@
  */
 package vues;
 
+import Entity.ConnexionBdd;
 import Entity.FonctionsMetier;
 import model.ModelSecteur;
 
@@ -31,11 +32,16 @@ public class frmSecteur extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblSecteur = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblSecteur.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -43,7 +49,7 @@ public class frmSecteur extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblSecteur);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -58,6 +64,20 @@ public class frmSecteur extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        ConnexionBdd cnx = new ConnexionBdd();
+        fm = new FonctionsMetier();
+        mdlSecteur = new ModelSecteur();
+        
+        mdlSecteur.LoadDatasSecteur(fm.getAllSecteur());
+        
+        tblSecteur.setModel(mdlSecteur);
+        
+        
+        
+    }//GEN-LAST:event_formWindowOpened
 
     /**
      * @param args the command line arguments
@@ -96,6 +116,6 @@ public class frmSecteur extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblSecteur;
     // End of variables declaration//GEN-END:variables
 }
