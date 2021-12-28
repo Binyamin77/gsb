@@ -13,11 +13,12 @@ public class region {
     private String nom_region;
     private int id_secteur;
     
-    public region(int unId, String unNom, int unIdSecteur)
+    public region(int unId,int unIdSecteur, String unNom )
     {
         id_region = unId;
-        nom_region = unNom;
         id_secteur = unIdSecteur;
+        nom_region = unNom;
+        
     }
 
     region(int i, String string) {

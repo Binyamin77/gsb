@@ -23,16 +23,16 @@ public class visiteur {
     private int id_labo;
     private Date dateembauche_visiteur;
     
-    public visiteur(int unId, String unNom, String unPrenom, String unAdresse, String unCp, String unVille, int unIdSecteur, int unIdLabo, Date unDateEmbauche){
+    public visiteur(String unAdresse,String unCp,Date unDateEmbauche,int unIdLabo, int unIdSecteur, int unId, String unNom, String unPrenom, String unVille){
+        adresse_visiteur = unAdresse;
+        cp_visiteur = unCp;
+        dateembauche_visiteur = unDateEmbauche;
+        id_labo = unIdLabo;
+        id_secteur = unIdSecteur;
         id_visiteur = unId;
         nom_visiteur = unNom;
         prenom_visiteur = unPrenom;
-        adresse_visiteur = unAdresse;
-        cp_visiteur = unCp;
         ville_visiteur = unVille;
-        id_secteur = unIdSecteur;
-        id_labo = unIdLabo;
-        dateembauche_visiteur = unDateEmbauche;
     }
 
     /**

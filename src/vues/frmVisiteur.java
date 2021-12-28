@@ -4,6 +4,10 @@
  */
 package vues;
 
+import Entity.ConnexionBdd;
+import Entity.FonctionsMetier;
+import model.ModelVisiteur;
+
 /**
  *
  * @author IBGUI
@@ -12,7 +16,9 @@ public class frmVisiteur extends javax.swing.JFrame {
 
     /**
      * Creates new form frmVisiteur1
-     */
+     */ FonctionsMetier fm;
+        ModelVisiteur mdlVisiteur;
+        
     public frmVisiteur() {
         initComponents();
     }
@@ -26,22 +32,59 @@ public class frmVisiteur extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblVisiteur = new javax.swing.JTable();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
+
+        tblVisiteur.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(tblVisiteur);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 25, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 25, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
+        // TODO add your handling code here:
+        
+         ConnexionBdd cnx = new ConnexionBdd();
+        fm = new FonctionsMetier();
+        mdlVisiteur = new ModelVisiteur();
+        
+        mdlVisiteur.LoadDatasVisiteur(fm.getAllVisiteur());
+        
+        tblVisiteur.setModel(mdlVisiteur);
+         
+    }                                 
+    /**
+    }//GEN-LAST:event_formWindowOpened
+                             
     /**
      * @param args the command line arguments
      */
@@ -79,5 +122,7 @@ public class frmVisiteur extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tblVisiteur;
     // End of variables declaration//GEN-END:variables
 }

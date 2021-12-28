@@ -44,7 +44,7 @@ public class ModelVisiteur extends AbstractTableModel{
         rows = new Vector<String[]>();
         
         for (visiteur a  : desVisiteurs){
-             rows.add(new String[] {String.valueOf(a.getIdVisiteur()),a.getNomVisiteur(),a.getPrenomVisiteur(),a.getVilleVisiteur(),String.valueOf(a.getCpVisiteur()) ,a.getAdresseVisiteur() ,String.valueOf(a.getIdSecteur()),String.valueOf(a.getIdLabo()),String.valueOf(a.getDateEmbauche())});
+             rows.add(new String[] {String.valueOf(a.getIdVisiteur()),a.getNomVisiteur(),a.getPrenomVisiteur(),a.getVilleVisiteur(),a.getCpVisiteur() ,a.getAdresseVisiteur() ,String.valueOf(a.getIdSecteur()),String.valueOf(a.getIdLabo()),String.valueOf(a.getDateEmbauche())});
         }
         fireTableDataChanged();
 }

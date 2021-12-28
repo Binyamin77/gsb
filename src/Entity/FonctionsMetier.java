@@ -98,7 +98,7 @@ public class FonctionsMetier implements IMetier
             rs=ps.executeQuery();
             while(rs.next())
             {
-                region r = new region((rs.getInt(1)),rs.getString(2),rs.getInt(3));
+                region r = new region((rs.getInt(1)),rs.getInt(2),rs.getString(3));
                 mesRegions.add(r);
             }
            
@@ -185,7 +185,7 @@ public class FonctionsMetier implements IMetier
             while(rs.next())
             {
                 visiteur v;
-                v = new visiteur((rs.getString(1)),rs.getInt(2),rs.getDate(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getString(7),rs.getString(8),rs.getString(9));
+                v = new visiteur((rs.getString(1)),rs.getString(2),rs.getDate(3),rs.getInt(4),rs.getInt(5),rs.getInt(6),rs.getString(7),rs.getString(8),rs.getString(9));
                 mesVisiteurs.add(v);
             }
            

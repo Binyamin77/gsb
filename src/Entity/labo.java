@@ -9,15 +9,17 @@ package Entity;
  * @author IBGUI
  */
 public class labo {
-     private int id_labo;
+    private int id_labo;
     private String nom_labo;
     private String chefvente_labo;
     
-    public labo(int unId, String unNom, String unChefVente)
+    public labo(String unChefVente, int unId, String unNom)
     {
+        chefvente_labo = unChefVente;
         id_labo = unId;
         nom_labo = unNom;
-        chefvente_labo = unChefVente;
+       
+        
     }
     
         /**
