@@ -129,6 +129,26 @@ public class FonctionsMetier implements IMetier
         return mesLabos; 
     }
     
+      @Override
+  public void AddLabo(String nomChef, String nomLabo) 
+  {
+        try {
+            maCnx=ConnexionBdd.getCnx();
+            
+            //on ecrit dans le ps la requete
+            ps= maCnx.prepareStatement("INSERT INTO labo (chefvente_labo, id_labo, nom_labo) VALUES ('"+nomChef+"', NULL, '"+nomLabo+"')");
+            
+            //on met pr le add et le modifier
+            ps.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
+        }
+  }
+
+  
+
+    
 
     @Override
     public ArrayList<secteur> getAllSecteur() {
@@ -197,6 +217,6 @@ public class FonctionsMetier implements IMetier
 
     @Override
     public Utilisateur VerifierIdentifiants(String login, String mdp) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

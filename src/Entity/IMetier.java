@@ -20,6 +20,8 @@ public interface IMetier
     
     public ArrayList<labo>getAllLabo();
     
+    public void AddLabo(String nomChef, String nomLabo);
+    
     public ArrayList<secteur>getAllSecteur();
     
     public ArrayList<travailler>getAllTravailler();
