@@ -6,6 +6,8 @@
 package Entity;
 
 import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.ListModel;
 
 public interface IMetier 
 {
@@ -18,13 +20,20 @@ public interface IMetier
     
     public ArrayList<region>getAllRegion();
     
+    public void AddRegion(int idSecteur, String nomRegion);
+
     public ArrayList<labo>getAllLabo();
     
     public void AddLabo(String nomChef, String nomLabo);
     
     public ArrayList<secteur>getAllSecteur();
     
+    public void AddSecteur(String nomSecteur);
+    
     public ArrayList<travailler>getAllTravailler();
     
     public ArrayList<visiteur>getAllVisiteur();
+    
+    public void AddVisiteur(String adresseVisiteur,String cpVisiteur, Date dateEmbauche, int idLabo, int idSecteur, String nomVisiteur, String prenomVisiteur, String villeVisiteur);
+
 }

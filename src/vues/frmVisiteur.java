@@ -34,6 +34,7 @@ public class frmVisiteur extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblVisiteur = new javax.swing.JTable();
+        btnVisiteur = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -52,15 +53,37 @@ public class frmVisiteur extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblVisiteur);
 
+        btnVisiteur.setText("Ajouter");
+        btnVisiteur.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                btnVisiteurMousePressed(evt);
+            }
+        });
+        btnVisiteur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVisiteurActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 746, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 652, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 94, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 554, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 146, Short.MAX_VALUE)
+                .addComponent(btnVisiteur)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -80,6 +103,18 @@ public class frmVisiteur extends javax.swing.JFrame {
     }                                 
     /**
     }//GEN-LAST:event_formWindowOpened
+**/
+    private void btnVisiteurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVisiteurActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVisiteurActionPerformed
+
+    private void btnVisiteurMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnVisiteurMousePressed
+        // TODO add your handling code here:
+
+        this.setVisible(false);
+        frmAjouterVisiteur frmAjout = new frmAjouterVisiteur();
+        frmAjout.setVisible(true);
+    }//GEN-LAST:event_btnVisiteurMousePressed
                              
     /**
      * @param args the command line arguments
@@ -118,6 +153,7 @@ public class frmVisiteur extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnVisiteur;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblVisiteur;
     // End of variables declaration//GEN-END:variables

@@ -48,4 +48,14 @@ public class ModelRegion extends AbstractTableModel{
         }
         fireTableDataChanged();
 }
+     
+          public void LoadDatasRegionLISTSECTEUR(ArrayList<region>desRegions){
+        nomsColonnes = new String[]{"Secteurs"};
+        rows = new Vector<String[]>();
+        
+        for (region a  : desRegions){
+             rows.add(new String[] {a.getIdSecteur()});
+        }
+        fireTableDataChanged();
+}
 }

@@ -34,6 +34,7 @@ public class frmRegion extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblRegion = new javax.swing.JTable();
+        btnRegion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -52,15 +53,39 @@ public class frmRegion extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblRegion);
 
+        btnRegion.setText("Ajouter");
+        btnRegion.setDefaultCapable(false);
+        btnRegion.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/button-304224_960_720 (1).png"))); // NOI18N
+        btnRegion.setDisabledSelectedIcon(null);
+        btnRegion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnRegionMouseClicked(evt);
+            }
+        });
+        btnRegion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegionActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 685, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 38, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 487, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(67, Short.MAX_VALUE)
+                .addComponent(btnRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -76,6 +101,17 @@ public class frmRegion extends javax.swing.JFrame {
         
         tblRegion.setModel(mdlRegion);
     }//GEN-LAST:event_formWindowOpened
+
+    private void btnRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRegionActionPerformed
+
+    private void btnRegionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegionMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        frmAjouterRegion frmAjout = new frmAjouterRegion();
+        frmAjout.setVisible(true);
+    }//GEN-LAST:event_btnRegionMouseClicked
 
     /**
      * @param args the command line arguments
@@ -113,6 +149,7 @@ public class frmRegion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnRegion;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblRegion;
     // End of variables declaration//GEN-END:variables

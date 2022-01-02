@@ -10,8 +10,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ListModel;
 import static javax.swing.UIManager.getString;
 
 
@@ -107,6 +109,24 @@ public class FonctionsMetier implements IMetier
         }
         return mesRegions; 
     }
+    
+       @Override
+  public void AddRegion(int idSecteur, String nomRegion) 
+  {
+        try {
+            maCnx=ConnexionBdd.getCnx();
+            
+            //on ecrit dans le ps la requete
+            ps= maCnx.prepareStatement("INSERT INTO `region` (`id_region`, `id_secteur`, `nom_region`) VALUES (NULL, '"+idSecteur+"', '"+nomRegion+"');");
+            
+            //on met pr le add et le modifier
+            ps.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
+        }
+  }
+
 
     @Override
     public ArrayList<labo> getAllLabo() {
@@ -170,6 +190,23 @@ public class FonctionsMetier implements IMetier
         }
         return mesSecteurs; 
     }
+    
+           @Override
+  public void AddSecteur(String nomSecteur) 
+  {
+        try {
+            maCnx=ConnexionBdd.getCnx();
+            
+            //on ecrit dans le ps la requete
+            ps= maCnx.prepareStatement("INSERT INTO `secteur` (`id_secteur`, `nom_secteur`) VALUES (NULL,'"+nomSecteur+"');");
+            
+            //on met pr le add et le modifier
+            ps.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
+        }
+  }
 
     @Override
     public ArrayList<travailler> getAllTravailler() {
@@ -214,6 +251,23 @@ public class FonctionsMetier implements IMetier
         }
         return mesVisiteurs;
     }
+    
+               @Override
+  public void AddVisiteur(String adresseVisiteur,String cpVisiteur,Date dateEmbauche, int idLabo, int idSecteur, String nomVisiteur, String prenomVisiteur, String villeVisiteur) 
+  {
+        try {
+            maCnx=ConnexionBdd.getCnx();
+            
+            //on ecrit dans le ps la requete
+            ps= maCnx.prepareStatement("INSERT INTO `visiteur` (`adresse_visiteur`, `cp_visiteur`, `dateembauche_visiteur`, `id_labo`, `id_secteur`, `id_visiteur`, `nom_visiteur`, `prenom_visiteur`, `ville_visiteur`) VALUES ('"+adresseVisiteur+"', '"+cpVisiteur+"','"+dateEmbauche+"', '"+idLabo+"', '"+idSecteur+"', NULL, '"+nomVisiteur+"', '"+prenomVisiteur+"', '"+villeVisiteur+"');");
+            
+            //on met pr le add et le modifier
+            ps.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
+        }
+  }
 
     @Override
     public Utilisateur VerifierIdentifiants(String login, String mdp) {
