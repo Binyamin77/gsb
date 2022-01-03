@@ -40,6 +40,7 @@ public class frmAjouterRegion extends javax.swing.JFrame {
         enregistrerRegion = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         cbSecteur = new javax.swing.JComboBox<>();
+        Return = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -63,34 +64,49 @@ public class frmAjouterRegion extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setText("Ajouter Region");
 
+        cbSecteur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbSecteurActionPerformed(evt);
+            }
+        });
+
+        Return.setText("Retour");
+        Return.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ReturnActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(71, 71, 71)
+                .addComponent(Return, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(67, 67, 67)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(245, 245, 245)
+                        .addGap(161, 161, 161)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel2))
                         .addGap(83, 83, 83)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(nomRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(enregistrerRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(cbSecteur, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGap(1, 1, 1)))))
-                .addContainerGap(130, Short.MAX_VALUE))
+                            .addComponent(cbSecteur, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(334, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(64, 64, 64)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Return, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -101,7 +117,7 @@ public class frmAjouterRegion extends javax.swing.JFrame {
                     .addComponent(nomRegion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(66, 66, 66)
                 .addComponent(enregistrerRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
 
         pack();
@@ -145,6 +161,17 @@ public class frmAjouterRegion extends javax.swing.JFrame {
         
     }//GEN-LAST:event_formWindowOpened
 
+    private void ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        frmLabo frmAjout = new frmLabo();
+        frmAjout.setVisible(true);
+    }//GEN-LAST:event_ReturnActionPerformed
+
+    private void cbSecteurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSecteurActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbSecteurActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -181,6 +208,7 @@ public class frmAjouterRegion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Return;
     private javax.swing.JComboBox<String> cbSecteur;
     private javax.swing.JButton enregistrerRegion;
     private javax.swing.JLabel jLabel1;

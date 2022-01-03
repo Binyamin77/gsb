@@ -24,70 +24,7 @@ public class FonctionsMetier implements IMetier
     private PreparedStatement ps;
     private Connection maCnx;
     
-    @Override
-    public ArrayList<Utilisateur> getAllUsers() 
-    {
-        ArrayList<Utilisateur>mesUsers = new ArrayList <Utilisateur>();
-        try {
-            maCnx=ConnexionBdd.getCnx();
-            //on ecrit dans le ps la requete
-            ps= maCnx.prepareStatement("select idUser,nomUser from users");
-            
-            rs=ps.executeQuery();
-            while(rs.next())
-            {
-                Utilisateur u = new Utilisateur((rs.getInt(1)),rs.getString(2),"");
-                mesUsers.add(u);
-            }
-           
-        } catch (SQLException ex) {
-            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return mesUsers;
-    }
-
-    @Override
-    public ArrayList<Ticket> getAllTicketsByIdUser(int idUser) {
-        ArrayList<Ticket> desTickets = new ArrayList<>();
-        try {
-            maCnx = ConnexionBdd.getCnx();
-            ps = maCnx.prepareStatement("select tickets.idTicket, tickets.nomTicket, tickets.dateTicket, etats.nomEtat from tickets inner join etats on tickets.numEtat = etats.idEtat WHERE tickets.numUser ="+idUser);
-            rs = ps.executeQuery();
-            while(rs.next()){
-                Ticket monTicket = new Ticket(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4));
-                desTickets.add(monTicket);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        return desTickets;
-    }
-
-   /* @Override
-    public Utilisateur VerifierIdentifiants(String login, String mdp) {
-        Utilisateur u = null;
-        try {
-            maCnx=ConnexionBdd.getCnx();
-            
-            //on ecrit dans le ps la requete
-            ps= maCnx.prepareStatement("Select idUser, nomUser, statutUser from users where loginUser = '"+login+"' AND pwdUser='"+mdp+"'");
-            
-            rs=ps.executeQuery();
-            
-            //rs.next retourne boolean donc si c'est vrai 
-            if(rs.next())
-            {
-                //on met 1 car il ya une seule colonne 
-                //car dans le select on a mit seulement le statutUser
-                u = new Utilisateur(Integer.parseInt(rs.getString(1)), rs.getString(2),rs.getString(3));
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return u;
-    } */
-
+    
 
     @Override
     public ArrayList<region> getAllRegion() {
@@ -135,8 +72,8 @@ public class FonctionsMetier implements IMetier
         }
   }
   
-    /*  @Override
-  public void ModifRegion(String cbSecteur, String nomRegion) 
+        @Override
+  public void ModifRegion(int idRegion,String cbSecteur, String nomRegion) 
   {
         try {
             maCnx=ConnexionBdd.getCnx();
@@ -149,7 +86,7 @@ public class FonctionsMetier implements IMetier
             int numSecteur = rs.getInt(1);
             rs.close();
             //on ecrit dans le ps la requete
-            ps= maCnx.prepareStatement("INSERT INTO `region` (`id_region`, `id_secteur`, `nom_region`) VALUES (NULL, '"+numSecteur+"', '"+nomRegion+"');");
+            ps= maCnx.prepareStatement("UPDATE `region` SET `id_secteur` = '"+numSecteur+"',`nom_region` = '"+nomRegion+"' WHERE `region`.`id_region` = '"+idRegion+"';");
             
             //on met pr le add et le modifier
             ps.executeUpdate();
@@ -157,7 +94,8 @@ public class FonctionsMetier implements IMetier
         } catch (SQLException ex) {
             Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
         }
-  }*/
+  }
+
 
 
     @Override
@@ -248,6 +186,25 @@ public class FonctionsMetier implements IMetier
             
             //on ecrit dans le ps la requete
             ps= maCnx.prepareStatement("INSERT INTO `secteur` (`id_secteur`, `nom_secteur`) VALUES (NULL,'"+nomSecteur+"');");
+            
+            //on met pr le add et le modifier
+            ps.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
+        }
+  }
+  
+            @Override
+  public void ModifSecteur(int idSecteur,String nomSecteur) 
+  {
+      
+            try {
+            maCnx=ConnexionBdd.getCnx();
+            
+           
+            //on ecrit dans le ps la requete
+            ps= maCnx.prepareStatement("UPDATE `secteur` SET `nom_secteur` = '"+nomSecteur+"' WHERE `secteur`.`id_secteur` = '"+idSecteur+"';");
             
             //on met pr le add et le modifier
             ps.executeUpdate();
@@ -368,9 +325,4 @@ public class FonctionsMetier implements IMetier
             Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
         }
   }
-
-    @Override
-    public Utilisateur VerifierIdentifiants(String login, String mdp) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

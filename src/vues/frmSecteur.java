@@ -34,6 +34,7 @@ public class frmSecteur extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblSecteur = new javax.swing.JTable();
         btnSecteur = new javax.swing.JButton();
+        Modifier = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -64,6 +65,13 @@ public class frmSecteur extends javax.swing.JFrame {
             }
         });
 
+        Modifier.setText("Modifier");
+        Modifier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModifierActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -73,6 +81,8 @@ public class frmSecteur extends javax.swing.JFrame {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 731, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(Modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(36, 36, 36)
                         .addComponent(btnSecteur, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -80,7 +90,9 @@ public class frmSecteur extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 130, Short.MAX_VALUE)
-                .addComponent(btnSecteur)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnSecteur)
+                    .addComponent(Modifier))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -112,6 +124,13 @@ public class frmSecteur extends javax.swing.JFrame {
         frmAjouterSecteur frmAjout = new frmAjouterSecteur();
         frmAjout.setVisible(true);
     }//GEN-LAST:event_btnSecteurMouseClicked
+
+    private void ModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifierActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        frmModifierSecteur frmAjout = new frmModifierSecteur();
+        frmAjout.setVisible(true);
+    }//GEN-LAST:event_ModifierActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,6 +168,7 @@ public class frmSecteur extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Modifier;
     private javax.swing.JButton btnSecteur;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblSecteur;

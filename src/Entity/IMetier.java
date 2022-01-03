@@ -11,26 +11,24 @@ import javax.swing.ListModel;
 
 public interface IMetier 
 {
-    //on ecrit ici toutes les methodes qpour aller chercher les données dans la base
-    public ArrayList<Utilisateur>getAllUsers();
-    //passer en parametre un id pour avoir tout ses tickets 
-    public ArrayList<Ticket>getAllTicketsByIdUser(int idUser);
-    //verifier si login et mdp sont vrai dans la base de donnees
-    public Utilisateur VerifierIdentifiants (String login,String mdp);
+ 
     
     public ArrayList<region>getAllRegion();
     
     public void AddRegion(String cbSecteur, String nomRegion);
+    
+    public void ModifRegion(int idRegion,String cbSecteur, String nomRegion) ;
 
     public ArrayList<labo>getAllLabo();
     
     public void AddLabo(String nomChef, String nomLabo);
     
     public void ModifLabo(int idLabo, String nomChef, String nomLabo);
-
     
     public ArrayList<secteur>getAllSecteur();
     
+    public void ModifSecteur(int idSecteur,String nomSecteur) ;
+
     public void AddSecteur(String nomSecteur);
     
     public ArrayList<travailler>getAllTravailler();
