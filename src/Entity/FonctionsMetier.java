@@ -237,6 +237,41 @@ public class FonctionsMetier implements IMetier
         }
         return mesTravailler;
     }
+    
+    
+                  @Override
+  public void AddTravailler(String cbVisiteur, String cbLabo, String dateTravailler ,String roleTravailler) 
+  {
+        try {
+            maCnx=ConnexionBdd.getCnx();
+            
+            //recupere id Visiteur
+            ps = maCnx.prepareStatement("select id_visiteur from visiteur where nom_visiteur = '"+cbVisiteur+"'");
+            rs=ps.executeQuery();
+            rs.next();
+            
+            int numVisiteur = rs.getInt(1);
+            rs.close();
+            
+            //rcupere id du labo dans le selected
+            ps = maCnx.prepareStatement("select id_labo from labo where nom_labo = '"+cbLabo+"'");
+            rs=ps.executeQuery();
+            rs.next();
+            
+            int numLabo = rs.getInt(1);
+            rs.close();
+            
+            
+            //on ecrit dans le ps la requete
+            ps= maCnx.prepareStatement("INSERT INTO `travailler` (`id_visiteur`, `id_region`, `jjmmaa_travailler`, `role_travailler`) VALUES ('"+numVisiteur+"', '"+numLabo+"', '"+dateTravailler+"', '"+roleTravailler+"');");
+            
+            //on met pr le add et le modifier
+            ps.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
+        }
+  }
 
     @Override
     public ArrayList<visiteur> getAllVisiteur() {
