@@ -6,6 +6,8 @@ package vues;
 
 import Entity.ConnexionBdd;
 import Entity.FonctionsMetier;
+import Entity.labo;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import model.ModelLabo;
 
@@ -38,6 +40,7 @@ public class frmLabo extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblLabo = new javax.swing.JTable();
         btnAjouter = new javax.swing.JButton();
+        Modifier = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -54,6 +57,11 @@ public class frmLabo extends javax.swing.JFrame {
 
             }
         ));
+        tblLabo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tblLaboMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(tblLabo);
 
         btnAjouter.setText("Ajouter");
@@ -68,6 +76,13 @@ public class frmLabo extends javax.swing.JFrame {
             }
         });
 
+        Modifier.setText("Modifier");
+        Modifier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModifierActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -77,6 +92,8 @@ public class frmLabo extends javax.swing.JFrame {
                 .addGap(0, 131, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnAjouter, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -84,7 +101,9 @@ public class frmLabo extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(52, Short.MAX_VALUE)
-                .addComponent(btnAjouter, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnAjouter, javax.swing.GroupLayout.DEFAULT_SIZE, 58, Short.MAX_VALUE)
+                    .addComponent(Modifier, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -106,9 +125,6 @@ public class frmLabo extends javax.swing.JFrame {
 
     private void btnAjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterActionPerformed
         // TODO add your handling code here:
-        ConnexionBdd cnx = new ConnexionBdd();
-        fm = new FonctionsMetier();
-        mdlLabo = new ModelLabo();
     }//GEN-LAST:event_btnAjouterActionPerformed
 
     private void btnAjouterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAjouterMouseClicked
@@ -116,7 +132,22 @@ public class frmLabo extends javax.swing.JFrame {
         this.setVisible(false);
         frmAjouterLabo frmAjout = new frmAjouterLabo();
         frmAjout.setVisible(true);
+        
+        
     }//GEN-LAST:event_btnAjouterMouseClicked
+
+    private void tblLaboMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLaboMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_tblLaboMouseClicked
+
+    private void ModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifierActionPerformed
+        // TODO add your handling code here:
+        
+        this.setVisible(false);
+        frmModifierLabo frmAjout = new frmModifierLabo();
+        frmAjout.setVisible(true);
+    }//GEN-LAST:event_ModifierActionPerformed
         
    
     /**
@@ -140,6 +171,7 @@ public class frmLabo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Modifier;
     private javax.swing.JButton btnAjouter;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tblLabo;

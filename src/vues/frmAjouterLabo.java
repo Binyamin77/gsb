@@ -102,16 +102,12 @@ public class frmAjouterLabo extends javax.swing.JFrame {
             ConnexionBdd cnx = new ConnexionBdd();
             fm = new FonctionsMetier();
             fm.AddLabo(nomChef.getText(), nomLabo.getText());
+            
+            this.setVisible(false);
+            frmLabo frmAjout = new frmLabo();
+            frmAjout.setVisible(true);
    
-          // labo l = fm.AddLabo(nomChef.getText(),nomLabo.getText());
-         /* if(unLabo !=null)
-         {
-         if (unLabo.getNomLabo().compareTo("'+nomLabo+'") == nomLabo.getText())
-         {
-         //si il est admin
-         frmAdministrateur frm= new frmAdministrateur();
-         frm.setVisible(true);
-         }*/
+
         
     }//GEN-LAST:event_enregistrerLaboMouseClicked
 

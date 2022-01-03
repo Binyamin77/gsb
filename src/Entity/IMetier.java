@@ -26,6 +26,9 @@ public interface IMetier
     
     public void AddLabo(String nomChef, String nomLabo);
     
+    public void ModifLabo(int idLabo, String nomChef, String nomLabo);
+
+    
     public ArrayList<secteur>getAllSecteur();
     
     public void AddSecteur(String nomSecteur);

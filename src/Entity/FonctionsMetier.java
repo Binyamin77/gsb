@@ -134,6 +134,30 @@ public class FonctionsMetier implements IMetier
             Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
         }
   }
+  
+    /*  @Override
+  public void ModifRegion(String cbSecteur, String nomRegion) 
+  {
+        try {
+            maCnx=ConnexionBdd.getCnx();
+            
+             //recupere id seceteur
+            ps = maCnx.prepareStatement("select id_secteur from secteur where nom_secteur = '"+cbSecteur+"'");
+            rs=ps.executeQuery();
+            rs.next();
+            
+            int numSecteur = rs.getInt(1);
+            rs.close();
+            //on ecrit dans le ps la requete
+            ps= maCnx.prepareStatement("INSERT INTO `region` (`id_region`, `id_secteur`, `nom_region`) VALUES (NULL, '"+numSecteur+"', '"+nomRegion+"');");
+            
+            //on met pr le add et le modifier
+            ps.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
+        }
+  }*/
 
 
     @Override
@@ -158,6 +182,23 @@ public class FonctionsMetier implements IMetier
     }
     
       @Override
+  public void ModifLabo(int idLabo,String nomChef, String nomLabo) 
+  {
+        try {
+            maCnx=ConnexionBdd.getCnx();
+            
+            //on ecrit dans le ps la requete
+            ps= maCnx.prepareStatement("UPDATE `labo` SET `chefvente_labo` = '"+nomChef+"',`nom_labo` = '"+nomLabo+"' WHERE `labo`.`id_labo` = '"+idLabo+"';");
+            
+            //on met pr le add et le modifier
+            ps.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
+        }
+  }
+  
+        @Override
   public void AddLabo(String nomChef, String nomLabo) 
   {
         try {
