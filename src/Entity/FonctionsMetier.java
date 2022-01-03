@@ -238,7 +238,7 @@ public class FonctionsMetier implements IMetier
     
     
                   @Override
-  public void AddTravailler(String cbVisiteur, String cbLabo, String dateTravailler ,String roleTravailler) 
+  public void AddTravailler(String cbVisiteur, String cbRegion, String dateTravailler ,String roleTravailler) 
   {
         try {
             maCnx=ConnexionBdd.getCnx();
@@ -252,16 +252,50 @@ public class FonctionsMetier implements IMetier
             rs.close();
             
             //rcupere id du labo dans le selected
-            ps = maCnx.prepareStatement("select id_labo from labo where nom_labo = '"+cbLabo+"'");
+            ps = maCnx.prepareStatement("select id_region from region where nom_region = '"+cbRegion+"'");
             rs=ps.executeQuery();
             rs.next();
             
-            int numLabo = rs.getInt(1);
+            int numRegion = rs.getInt(1);
             rs.close();
             
             
             //on ecrit dans le ps la requete
-            ps= maCnx.prepareStatement("INSERT INTO `travailler` (`id_visiteur`, `id_region`, `jjmmaa_travailler`, `role_travailler`) VALUES ('"+numVisiteur+"', '"+numLabo+"', '"+dateTravailler+"', '"+roleTravailler+"');");
+            ps= maCnx.prepareStatement("INSERT INTO `travailler` (`id_visiteur`, `id_region`, `jjmmaa_travailler`, `role_travailler`) VALUES ('"+numVisiteur+"', '"+numRegion+"', '"+dateTravailler+"', '"+roleTravailler+"');");
+            
+            //on met pr le add et le modifier
+            ps.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
+        }
+  }
+  
+                    @Override
+  public void ModifTravailler(String cbVisiteur, String cbRegion, String dateTravailler ,String roleTravailler) 
+  {
+        try {
+            maCnx=ConnexionBdd.getCnx();
+            
+            //recupere id Visiteur
+            ps = maCnx.prepareStatement("select id_visiteur from visiteur where nom_visiteur = '"+cbVisiteur+"'");
+            rs=ps.executeQuery();
+            rs.next();
+            
+            int numVisiteur = rs.getInt(1);
+            rs.close();
+            
+            //rcupere id du labo dans le selected
+            ps = maCnx.prepareStatement("select id_region from region where nom_region = '"+cbRegion+"'");
+            rs=ps.executeQuery();
+            rs.next();
+            
+            int numRegion = rs.getInt(1);
+            rs.close();
+            
+            
+            //on ecrit dans le ps la requete
+            ps= maCnx.prepareStatement("UPDATE `travailler` SET `id_visiteur` = '"+numVisiteur+"', `id_region` = '"+numRegion+"', `jjmmaa_travailler` = '"+dateTravailler+"', `role_travailler` = '"+roleTravailler+"' WHERE `travailler`.`id_visiteur` = '"+numVisiteur+"' AND `travailler`.`id_region` = '"+numRegion+"' AND `travailler`.`jjmmaa_travailler` = '"+dateTravailler+"';");
             
             //on met pr le add et le modifier
             ps.executeUpdate();
@@ -325,4 +359,38 @@ public class FonctionsMetier implements IMetier
             Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
         }
   }
+  
+                @Override
+  public void ModifVisiteur(String adresseVisiteur,String cpVisiteur,String dateEmbauche, String cbLabo, String cbSecteur,int IdVisiteur, String nomVisiteur, String prenomVisiteur, String villeVisiteur) 
+  {
+        try {
+            maCnx=ConnexionBdd.getCnx();
+            
+            //rcupere id du labo dans le selected
+            ps = maCnx.prepareStatement("select id_labo from labo where nom_labo = '"+cbLabo+"'");
+            rs=ps.executeQuery();
+            rs.next();
+            
+            int numLabo = rs.getInt(1);
+            rs.close();
+            
+            //recupere id seceteur
+            ps = maCnx.prepareStatement("select id_secteur from secteur where nom_secteur = '"+cbSecteur+"'");
+            rs=ps.executeQuery();
+            rs.next();
+            
+            int numSecteur = rs.getInt(1);
+            rs.close();
+            
+            //on ecrit dans le ps la requete
+            ps= maCnx.prepareStatement("UPDATE `visiteur` SET `adresse_visiteur` = '"+adresseVisiteur+"', `cp_visiteur` =  '"+cpVisiteur+"', `dateembauche_visiteur` = '"+dateEmbauche+"' , `id_labo` = '"+numLabo+"' ,  `id_secteur` = '"+numSecteur+"' ,`nom_visiteur` = '"+nomVisiteur+"' ,`prenom_visiteur` = '"+prenomVisiteur+"' , `ville_visiteur` =  '"+villeVisiteur+"' WHERE `visiteur`.`id_visiteur` = '"+IdVisiteur+"';");
+            
+            //on met pr le add et le modifier
+            ps.executeUpdate();
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
+        }
+  }
+  
 }

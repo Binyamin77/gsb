@@ -7,6 +7,7 @@ package vues;
 import Entity.ConnexionBdd;
 import Entity.FonctionsMetier;
 import Entity.labo;
+import Entity.region;
 import Entity.visiteur;
 import java.text.SimpleDateFormat;
 
@@ -32,7 +33,7 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        cbLabo = new javax.swing.JComboBox<>();
+        cbRegion = new javax.swing.JComboBox<>();
         cbVisiteur = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -50,9 +51,9 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
             }
         });
 
-        cbLabo.addActionListener(new java.awt.event.ActionListener() {
+        cbRegion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbLaboActionPerformed(evt);
+                cbRegionActionPerformed(evt);
             }
         });
 
@@ -68,7 +69,7 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
 
         jLabel4.setText("Date Embauche");
 
-        jLabel5.setText("Laboratoire :");
+        jLabel5.setText("Region :");
 
         dateTravailler.setDateFormatString("yyyy-MM-dd");
 
@@ -110,9 +111,9 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
                                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(83, 83, 83)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(cbLabo, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(roleTravailler, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(roleTravailler, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
+                                    .addComponent(cbRegion, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                         .addGap(125, 125, 125))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -143,9 +144,9 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
                     .addComponent(roleTravailler, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbLabo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 86, Short.MAX_VALUE)
                 .addComponent(enregistrerTavailler, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(96, 96, 96))
         );
@@ -173,17 +174,17 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String date = sdf.format(dateTravailler.getDate());
 
-        fm.AddTravailler(cbVisiteur.getSelectedItem().toString(),cbLabo.getSelectedItem().toString(),date,roleTravailler.getText());
+        fm.AddTravailler(cbVisiteur.getSelectedItem().toString(),cbRegion.getSelectedItem().toString(),date,roleTravailler.getText());
 
         this.setVisible(false);
         frmTravailler frmAjout = new frmTravailler();
         frmAjout.setVisible(true);
     }//GEN-LAST:event_enregistrerTavaillerActionPerformed
 
-    private void cbLaboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbLaboActionPerformed
+    private void cbRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbRegionActionPerformed
         // TODO add your handling code here:
    
-    }//GEN-LAST:event_cbLaboActionPerformed
+    }//GEN-LAST:event_cbRegionActionPerformed
 
     private void cbVisiteurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbVisiteurActionPerformed
         // TODO add your handling code here:
@@ -195,16 +196,17 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
              ConnexionBdd cnx = new ConnexionBdd();
         fm = new FonctionsMetier();
         
+        for (region r : fm.getAllRegion())
+        {
+        
+            cbRegion.addItem(r.getNomRegion());
+        }
+        
+        
         for (visiteur v : fm.getAllVisiteur())
         {
         
             cbVisiteur.addItem(v.getNomVisiteur());
-        }
-        
-        for (labo l : fm.getAllLabo())
-        {
-        
-            cbLabo.addItem(l.getNomLabo());
         }
         
     }//GEN-LAST:event_formWindowOpened
@@ -245,7 +247,7 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> cbLabo;
+    private javax.swing.JComboBox<String> cbRegion;
     private javax.swing.JComboBox<String> cbVisiteur;
     private com.toedter.calendar.JDateChooser dateTravailler;
     private javax.swing.JButton enregistrerTavailler;

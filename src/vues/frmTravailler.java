@@ -34,6 +34,7 @@ public class frmTravailler extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblTravailler = new javax.swing.JTable();
         Ajouter = new javax.swing.JButton();
+        Modifier = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -59,6 +60,13 @@ public class frmTravailler extends javax.swing.JFrame {
             }
         });
 
+        Modifier.setText("Modifer");
+        Modifier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModifierActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -69,6 +77,8 @@ public class frmTravailler extends javax.swing.JFrame {
                 .addContainerGap(58, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(53, 53, 53)
                 .addComponent(Ajouter, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -76,7 +86,9 @@ public class frmTravailler extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 157, Short.MAX_VALUE)
-                .addComponent(Ajouter)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Ajouter)
+                    .addComponent(Modifier))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -101,6 +113,13 @@ public class frmTravailler extends javax.swing.JFrame {
         frmAjouterTravailler frmAjout = new frmAjouterTravailler();
         frmAjout.setVisible(true);
     }//GEN-LAST:event_AjouterMouseClicked
+
+    private void ModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifierActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        frmModifierTravailler frmAjout = new frmModifierTravailler();
+        frmAjout.setVisible(true);
+    }//GEN-LAST:event_ModifierActionPerformed
 
     /**
      * @param args the command line arguments
@@ -139,6 +158,7 @@ public class frmTravailler extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Ajouter;
+    private javax.swing.JButton Modifier;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblTravailler;
     // End of variables declaration//GEN-END:variables
