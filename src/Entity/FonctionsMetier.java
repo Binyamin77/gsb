@@ -111,13 +111,21 @@ public class FonctionsMetier implements IMetier
     }
     
        @Override
-  public void AddRegion(int idSecteur, String nomRegion) 
+  public void AddRegion(String cbSecteur, String nomRegion) 
   {
         try {
             maCnx=ConnexionBdd.getCnx();
             
+             //recupere id seceteur
+            ps = maCnx.prepareStatement("select id_secteur from secteur where nom_secteur = '"+cbSecteur+"'");
+            rs=ps.executeQuery();
+            rs.next();
+            
+            int numSecteur = rs.getInt(1);
+            rs.close();
+            
             //on ecrit dans le ps la requete
-            ps= maCnx.prepareStatement("INSERT INTO `region` (`id_region`, `id_secteur`, `nom_region`) VALUES (NULL, '"+idSecteur+"', '"+nomRegion+"');");
+            ps= maCnx.prepareStatement("INSERT INTO `region` (`id_region`, `id_secteur`, `nom_region`) VALUES (NULL, '"+numSecteur+"', '"+nomRegion+"');");
             
             //on met pr le add et le modifier
             ps.executeUpdate();
@@ -253,13 +261,29 @@ public class FonctionsMetier implements IMetier
     }
     
                @Override
-  public void AddVisiteur(String adresseVisiteur,String cpVisiteur,Date dateEmbauche, int idLabo, int idSecteur, String nomVisiteur, String prenomVisiteur, String villeVisiteur) 
+  public void AddVisiteur(String adresseVisiteur,String cpVisiteur,String dateEmbauche, String cbLabo, String cbSecteur, String nomVisiteur, String prenomVisiteur, String villeVisiteur) 
   {
         try {
             maCnx=ConnexionBdd.getCnx();
             
+            //rcupere id du labo dans le selected
+            ps = maCnx.prepareStatement("select id_labo from labo where nom_labo = '"+cbLabo+"'");
+            rs=ps.executeQuery();
+            rs.next();
+            
+            int numLabo = rs.getInt(1);
+            rs.close();
+            
+            //recupere id seceteur
+            ps = maCnx.prepareStatement("select id_secteur from secteur where nom_secteur = '"+cbSecteur+"'");
+            rs=ps.executeQuery();
+            rs.next();
+            
+            int numSecteur = rs.getInt(1);
+            rs.close();
+            
             //on ecrit dans le ps la requete
-            ps= maCnx.prepareStatement("INSERT INTO `visiteur` (`adresse_visiteur`, `cp_visiteur`, `dateembauche_visiteur`, `id_labo`, `id_secteur`, `id_visiteur`, `nom_visiteur`, `prenom_visiteur`, `ville_visiteur`) VALUES ('"+adresseVisiteur+"', '"+cpVisiteur+"','"+dateEmbauche+"', '"+idLabo+"', '"+idSecteur+"', NULL, '"+nomVisiteur+"', '"+prenomVisiteur+"', '"+villeVisiteur+"');");
+            ps= maCnx.prepareStatement("INSERT INTO `visiteur` (`adresse_visiteur`, `cp_visiteur`, `dateembauche_visiteur`, `id_labo`, `id_secteur`, `id_visiteur`, `nom_visiteur`, `prenom_visiteur`, `ville_visiteur`) VALUES ('"+adresseVisiteur+"', '"+cpVisiteur+"','"+dateEmbauche+"', '"+numLabo+"', '"+numSecteur+"', NULL, '"+nomVisiteur+"', '"+prenomVisiteur+"', '"+villeVisiteur+"');");
             
             //on met pr le add et le modifier
             ps.executeUpdate();

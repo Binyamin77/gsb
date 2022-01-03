@@ -20,7 +20,7 @@ public interface IMetier
     
     public ArrayList<region>getAllRegion();
     
-    public void AddRegion(int idSecteur, String nomRegion);
+    public void AddRegion(String cbSecteur, String nomRegion);
 
     public ArrayList<labo>getAllLabo();
     
@@ -34,6 +34,6 @@ public interface IMetier
     
     public ArrayList<visiteur>getAllVisiteur();
     
-    public void AddVisiteur(String adresseVisiteur,String cpVisiteur, Date dateEmbauche, int idLabo, int idSecteur, String nomVisiteur, String prenomVisiteur, String villeVisiteur);
+    public void AddVisiteur(String adresseVisiteur,String cpVisiteur, String dateEmbauche, String cbLabo, String cbSecteur, String nomVisiteur, String prenomVisiteur, String villeVisiteur);
 
 }

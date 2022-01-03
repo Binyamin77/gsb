@@ -6,6 +6,8 @@ package vues;
 
 import Entity.ConnexionBdd;
 import Entity.FonctionsMetier;
+import Entity.labo;
+import Entity.secteur;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
@@ -48,14 +50,17 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         nomVisiteur = new javax.swing.JTextField();
         dateEmbauche = new com.toedter.calendar.JDateChooser();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        idLabo = new javax.swing.JList<>();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        idSecteur = new javax.swing.JList<>();
+        cbLabo = new javax.swing.JComboBox<>();
+        cbSecteur = new javax.swing.JComboBox<>();
 
         popupMenu1.setLabel("popupMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowOpened(java.awt.event.WindowEvent evt) {
+                formWindowOpened(evt);
+            }
+        });
 
         jLabel2.setText("Adresse :");
 
@@ -95,36 +100,7 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
 
         jLabel9.setText("Nom Visiteur");
 
-        dateEmbauche.setIcon(null);
-        dateEmbauche.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dateEmbaucheMouseClicked(evt);
-            }
-        });
-
-        idLabo.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Selectionner", "Sanofi", "Jhanssen", "Bio Tech", "Moderna", "Pasteur", "Bioderna", "LODA" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        idLabo.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                idLaboMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(idLabo);
-
-        idSecteur.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "SELECTIONNER", "Nord", "Sud", "EST", "OUEST", "CENTRE" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        idSecteur.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                idSecteurMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(idSecteur);
+        dateEmbauche.setDateFormatString("yyyy-MM-dd");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,9 +108,6 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(245, 245, 245)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(84, 84, 84)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,17 +120,8 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
                                     .addComponent(adresseVisiteur)
                                     .addComponent(cpVisiteur, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
                                     .addComponent(enregistrerVisiteur, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(dateEmbauche, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -173,8 +137,17 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
                                 .addGap(83, 83, 83)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(nomVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addContainerGap(184, Short.MAX_VALUE))
+                                    .addComponent(cbSecteur, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(245, 245, 245)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(dateEmbauche, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cbLabo, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(207, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,19 +165,20 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
                 .addGap(37, 37, 37)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(dateEmbauche, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(dateEmbauche, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(cbLabo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(8, 8, 8)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(8, 8, 8)
+                    .addComponent(cbSecteur, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nomVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -237,21 +211,14 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
 
     }//GEN-LAST:event_enregistrerVisiteurMouseClicked
 
-    private void idLaboMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_idLaboMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idLaboMouseClicked
-
-    private void idSecteurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_idSecteurMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_idSecteurMouseClicked
-
     private void enregistrerVisiteurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enregistrerVisiteurActionPerformed
         // TODO add your handling code here:
         ConnexionBdd cnx = new ConnexionBdd();
         fm = new FonctionsMetier();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String date = sdf.format(dateEmbauche.getDate());
         
-
-        fm.AddVisiteur(adresseVisiteur.getText(),cpVisiteur.getText(),dateEmbauche.getDate(),idLabo.getSelectedIndex(),idSecteur.getSelectedIndex(),nomVisiteur.getText(),prenomVisiteur.getText(),villeVisiteur.getText());
+        fm.AddVisiteur(adresseVisiteur.getText(),cpVisiteur.getText(),date,cbLabo.getSelectedItem().toString(),cbSecteur.getSelectedItem().toString(),nomVisiteur.getText(),prenomVisiteur.getText(),villeVisiteur.getText());
 
         this.setVisible(false);
         frmVisiteur frmAjout = new frmVisiteur();
@@ -262,9 +229,27 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_adresseVisiteurActionPerformed
 
-    private void dateEmbaucheMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dateEmbaucheMouseClicked
+    private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-    }//GEN-LAST:event_dateEmbaucheMouseClicked
+        ConnexionBdd cnx = new ConnexionBdd();
+        fm = new FonctionsMetier();
+        
+        for (secteur s : fm.getAllSecteur())
+        {
+        
+            cbSecteur.addItem(s.getNomSecteur());
+        }
+        
+        for (labo l : fm.getAllLabo())
+        {
+        
+            cbLabo.addItem(l.getNomLabo());
+        }
+        
+        
+        
+        
+    }//GEN-LAST:event_formWindowOpened
 
     
    
@@ -305,11 +290,11 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adresseVisiteur;
+    private javax.swing.JComboBox<String> cbLabo;
+    private javax.swing.JComboBox<String> cbSecteur;
     private javax.swing.JTextField cpVisiteur;
     private com.toedter.calendar.JDateChooser dateEmbauche;
     private javax.swing.JButton enregistrerVisiteur;
-    private javax.swing.JList<String> idLabo;
-    private javax.swing.JList<String> idSecteur;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -319,8 +304,6 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField nomVisiteur;
     private java.awt.PopupMenu popupMenu1;
     private javax.swing.JTextField prenomVisiteur;
