@@ -30,6 +30,7 @@ public class frmDashbord extends javax.swing.JFrame {
         fondTitre = new javax.swing.JPanel();
         lblIconHome = new javax.swing.JLabel();
         titleHome = new javax.swing.JLabel();
+        photoMedoc = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         dashboardLab = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -68,6 +69,9 @@ public class frmDashbord extends javax.swing.JFrame {
             .addComponent(titleHome, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
         );
 
+        photoMedoc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        photoMedoc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/medoc.jpg"))); // NOI18N
+
         javax.swing.GroupLayout fondLayout = new javax.swing.GroupLayout(fond);
         fond.setLayout(fondLayout);
         fondLayout.setHorizontalGroup(
@@ -76,13 +80,15 @@ public class frmDashbord extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(fondTitre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(80, Short.MAX_VALUE))
+            .addComponent(photoMedoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         fondLayout.setVerticalGroup(
             fondLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fondLayout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addComponent(fondTitre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(photoMedoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
@@ -112,7 +118,7 @@ public class frmDashbord extends javax.swing.JFrame {
         });
 
         regionLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        regionLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/placeholderblackshapeforlocalizationonmaps_79861.png"))); // NOI18N
+        regionLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/icons8-application-scientifique-32.png"))); // NOI18N
         regionLab.setText("Régions");
         regionLab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -177,7 +183,7 @@ public class frmDashbord extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 528, Short.MAX_VALUE)
+            .addGap(0, 850, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -210,9 +216,10 @@ public class frmDashbord extends javax.swing.JFrame {
 
     private void regionLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regionLabMouseClicked
 
-        this.setVisible(false);
+        //this.setVisible(false);
         frmRegion frmAjout = new frmRegion();
         frmAjout.setVisible(true);
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_regionLabMouseClicked
 
@@ -267,6 +274,7 @@ public class frmDashbord extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel laboLab;
     private javax.swing.JLabel lblIconHome;
+    private javax.swing.JLabel photoMedoc;
     private javax.swing.JLabel regionLab;
     private javax.swing.JLabel titleHome;
     private javax.swing.JLabel travaillerLab;
