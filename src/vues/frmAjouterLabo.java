@@ -7,6 +7,8 @@ package vues;
 import Entity.ConnexionBdd;
 import Entity.FonctionsMetier;
 import Entity.labo;
+import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -48,6 +50,12 @@ public class frmAjouterLabo extends javax.swing.JFrame {
         jLabel2.setText("Chef labo :");
 
         jLabel3.setText("Nom labo :");
+
+        nomChef.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nomChefActionPerformed(evt);
+            }
+        });
 
         enregistrerLabo.setText("Enregistrer");
         enregistrerLabo.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -102,13 +110,13 @@ public class frmAjouterLabo extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nomChef, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(nomLabo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(66, 66, 66)
                 .addComponent(enregistrerLabo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
         );
 
         pack();
@@ -116,13 +124,23 @@ public class frmAjouterLabo extends javax.swing.JFrame {
 
     private void enregistrerLaboMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enregistrerLaboMouseClicked
         // TODO add your handling code here:
+        if(nomChef.getText().isEmpty() || nomLabo.getText().isEmpty()){
+            
+            if(nomChef.getText().isEmpty()){
+            nomChef.setBackground(Color.red); JOptionPane.showMessageDialog(this,"Veuiller saisir une donnée ");}
+            else if(nomLabo.getText().isEmpty()){
+            nomLabo.setBackground(Color.red);JOptionPane.showMessageDialog(this,"Veuiller saisir une donnée ");}
+              }
+        
+        
+        else{
             ConnexionBdd cnx = new ConnexionBdd();
             fm = new FonctionsMetier();
             fm.AddLabo(nomChef.getText(), nomLabo.getText());
             
             this.setVisible(false);
             frmLabo frmAjout = new frmLabo();
-            frmAjout.setVisible(true);
+            frmAjout.setVisible(true);}
    
 
         
@@ -138,6 +156,10 @@ public class frmAjouterLabo extends javax.swing.JFrame {
             frmLabo frmAjout = new frmLabo();
             frmAjout.setVisible(true);
     }//GEN-LAST:event_RetourActionPerformed
+
+    private void nomChefActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomChefActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nomChefActionPerformed
 
     /**
      * @param args the command line arguments
