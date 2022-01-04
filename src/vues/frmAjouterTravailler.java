@@ -43,6 +43,7 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
         roleTravailler = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         enregistrerTavailler = new javax.swing.JButton();
+        Retour = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -84,6 +85,13 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
             }
         });
 
+        Retour.setText("Retour");
+        Retour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RetourActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -112,7 +120,9 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
                         .addGap(125, 125, 125))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(245, 245, 245)
+                            .addGap(19, 19, 19)
+                            .addComponent(Retour, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(153, 153, 153)
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addContainerGap()
@@ -124,7 +134,9 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(11, 11, 11)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Retour))
                 .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -193,6 +205,13 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
         
     }//GEN-LAST:event_formWindowOpened
 
+    private void RetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetourActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        frmTravailler frmAjout = new frmTravailler();
+        frmAjout.setVisible(true);
+    }//GEN-LAST:event_RetourActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -229,6 +248,7 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Retour;
     private javax.swing.JComboBox<String> cbRegion;
     private javax.swing.JComboBox<String> cbVisiteur;
     private com.toedter.calendar.JDateChooser dateTravailler;

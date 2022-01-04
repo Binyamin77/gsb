@@ -8,7 +8,12 @@ import Entity.ConnexionBdd;
 import Entity.FonctionsMetier;
 import Entity.region;
 import Entity.visiteur;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import model.ModelTravailler;
 
 /**
@@ -19,7 +24,15 @@ public class frmModifierTravailler extends javax.swing.JFrame {
 
     /**
      * Creates new form frmModifierTravailler
+     * 
+     * String roleTravailler;
      */FonctionsMetier fm;
+     
+     String roleTravailler;
+     String nom;
+     String region;
+     String dateSelectionnee;
+     
     ModelTravailler mdlTravailler;
     public frmModifierTravailler() {
         initComponents();
@@ -40,13 +53,13 @@ public class frmModifierTravailler extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        dateTravailler = new com.toedter.calendar.JDateChooser();
         jLabel7 = new javax.swing.JLabel();
         roleTravaillerM = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         modifierTavailler = new javax.swing.JButton();
         cbRegionM = new javax.swing.JComboBox<>();
         Retour1 = new javax.swing.JButton();
+        dateTravailler = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -84,8 +97,6 @@ public class frmModifierTravailler extends javax.swing.JFrame {
 
         jLabel5.setText("Region :");
 
-        dateTravailler.setDateFormatString("yyyy-MM-dd");
-
         jLabel7.setText("Rôle :");
 
         jLabel8.setText("Visiteur :");
@@ -115,6 +126,8 @@ public class frmModifierTravailler extends javax.swing.JFrame {
             }
         });
 
+        dateTravailler.setDateFormatString("yyyy-MM-dd");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -122,51 +135,48 @@ public class frmModifierTravailler extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Retour1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Retour1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(152, 152, 152)
-                        .addComponent(cbVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(162, 162, 162)
-                        .addComponent(modifierTavailler, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(152, 152, 152)
+                                .addComponent(cbVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(162, 162, 162)
+                                .addComponent(modifierTavailler, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(83, 83, 83)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(cbRegionM, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(roleTravaillerM, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(21, 21, 21))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(90, 90, 90))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(dateTravailler, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(83, 83, 83)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbRegionM, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(roleTravaillerM, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(90, 90, 90))
+                        .addComponent(dateTravailler, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(43, 43, 43)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(dateTravailler, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(Retour1)
-                        .addGap(23, 23, 23)))
+                    .addComponent(Retour1)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dateTravailler, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(42, 42, 42)
@@ -183,9 +193,7 @@ public class frmModifierTravailler extends javax.swing.JFrame {
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(modifierTavailler, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -195,15 +203,35 @@ public class frmModifierTravailler extends javax.swing.JFrame {
     private void tblTravaillerMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTravaillerMMouseClicked
         // TODO add your handling code here:
         
-        String roleTravailler = tblTravaillerM.getValueAt(tblTravaillerM.getSelectedRow(), 3).toString();
+        roleTravailler = tblTravaillerM.getValueAt(tblTravaillerM.getSelectedRow(), 3).toString();
         roleTravaillerM.setText(roleTravailler);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String date = sdf.format(dateTravailler.getDate());
+        
+        nom = tblTravaillerM.getValueAt(tblTravaillerM.getSelectedRow(), 0).toString();
+        cbVisiteur.setSelectedItem(nom);
+        
+        region = tblTravaillerM.getValueAt(tblTravaillerM.getSelectedRow(), 1).toString();
+        cbRegionM.setSelectedItem(region);
         
         
+        dateSelectionnee = tblTravaillerM.getValueAt(tblTravaillerM.getSelectedRow(), 2).toString();
+        //SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        //String date = sdf.format(dateSelectionnee);
         
-        date = tblTravaillerM.getValueAt(tblTravaillerM.getSelectedRow(), 2).toString();
-        dateTravailler.setDateFormatString(date);
+       /* int annee = Integer.parseInt(dateSelectionnee.substring(0, 4));
+        int mois = Integer.parseInt(dateSelectionnee.substring(5, 7));
+        int jour = Integer.parseInt(dateSelectionnee.substring(8, 10));*/
+        
+        Date d;
+         try {
+             d = new SimpleDateFormat("yyyy-MM-dd").parse(dateSelectionnee);dateTravailler.setDate(d);
+         } catch (ParseException ex) {
+             Logger.getLogger(frmModifierTravailler.class.getName()).log(Level.SEVERE, null, ex);
+         }
+        
+        //date = tblTravaillerM.getValueAt(tblTravaillerM.getSelectedRow(), 2).toString();
+        //dateTravailler.setDateFormatString(dateSelectionnee);
+        
+        
     }//GEN-LAST:event_tblTravaillerMMouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -256,12 +284,15 @@ public class frmModifierTravailler extends javax.swing.JFrame {
 
     private void modifierTavaillerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifierTavaillerActionPerformed
         // TODO add your handling code here:
+        
+        
+        //JOptionPane.showMessageDialog(this,"ancien "+roleTravailler + "nouvelle "+roleTravaillerM.getText());
         ConnexionBdd cnx = new ConnexionBdd();
         fm = new FonctionsMetier();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String date = sdf.format(dateTravailler.getDate());
 
-        fm.ModifTravailler(cbVisiteur.getSelectedItem().toString(),cbRegionM.getSelectedItem().toString(),date,roleTravaillerM.getText());
+        fm.ModifTravailler(cbVisiteur.getSelectedItem().toString(),cbRegionM.getSelectedItem().toString(),date,roleTravaillerM.getText(),nom,region,dateSelectionnee,roleTravailler);
         
         Actualisation();
 

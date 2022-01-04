@@ -33,7 +33,7 @@ public interface IMetier
     
     public ArrayList<travailler>getAllTravailler();
     
-    public void ModifTravailler(String cbVisiteur, String cbRegion, String dateTravailler ,String roleTravailler) ;
+    public void ModifTravailler(String cbVisiteur, String cbRegion, String dateTravailler ,String roleTravailler,String cbVisiteur2, String cbRegion2, String dateTravailler2 ,String roleTravailler2);    
     
     public void AddTravailler(String cbVisiteur, String cbRegion, String dateTravailler ,String roleTravailler); 
 

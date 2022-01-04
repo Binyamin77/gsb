@@ -322,6 +322,13 @@ public class frmModifierVisiteur extends javax.swing.JFrame {
         String villeVisiteurM = tblVisiteurM.getValueAt(tblVisiteurM.getSelectedRow(), 3).toString();
         villeVisiteur.setText(villeVisiteurM);
         
+        String labo = tblVisiteurM.getValueAt(tblVisiteurM.getSelectedRow(), 7).toString();
+        cbLabo.setSelectedItem(labo);
+        
+        String secteur = tblVisiteurM.getValueAt(tblVisiteurM.getSelectedRow(), 6).toString();
+        cbSecteur.setSelectedItem(secteur);
+        
+        
     }//GEN-LAST:event_tblVisiteurMMouseClicked
 
     /**

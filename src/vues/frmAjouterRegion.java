@@ -164,7 +164,7 @@ public class frmAjouterRegion extends javax.swing.JFrame {
     private void ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
-        frmLabo frmAjout = new frmLabo();
+        frmRegion frmAjout = new frmRegion();
         frmAjout.setVisible(true);
     }//GEN-LAST:event_ReturnActionPerformed
 

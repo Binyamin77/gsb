@@ -214,6 +214,9 @@ public class frmModifierRegion extends javax.swing.JFrame {
         String nomRegion = tblRegionM.getValueAt(tblRegionM.getSelectedRow(), 2).toString();
         nomRegionM.setText(nomRegion);
         
+        String secteur = tblRegionM.getValueAt(tblRegionM.getSelectedRow(), 1).toString();
+        cbSecteur.setSelectedItem(secteur);
+        
     }//GEN-LAST:event_tblRegionMMouseClicked
 
     /**

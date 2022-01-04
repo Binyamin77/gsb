@@ -272,12 +272,12 @@ public class FonctionsMetier implements IMetier
   }
   
                     @Override
-  public void ModifTravailler(String cbVisiteur, String cbRegion, String dateTravailler ,String roleTravailler) 
+  public void ModifTravailler(String cbVisiteur, String cbRegion, String dateTravailler ,String roleTravailler,String cbVisiteur2, String cbRegion2, String dateTravailler2 ,String roleTravailler2) 
   {
         try {
             maCnx=ConnexionBdd.getCnx();
             
-            //recupere id Visiteur
+            //recupere id Visiteur New
             ps = maCnx.prepareStatement("select id_visiteur from visiteur where nom_visiteur = '"+cbVisiteur+"'");
             rs=ps.executeQuery();
             rs.next();
@@ -285,7 +285,15 @@ public class FonctionsMetier implements IMetier
             int numVisiteur = rs.getInt(1);
             rs.close();
             
-            //rcupere id du labo dans le selected
+            //recupere id Visiteur Old
+            ps = maCnx.prepareStatement("select id_visiteur from visiteur where nom_visiteur = '"+cbVisiteur2+"'");
+            rs=ps.executeQuery();
+            rs.next();
+            
+            int numVisiteur2 = rs.getInt(1);
+            rs.close();
+            
+            //rcupere id du region dans le selected
             ps = maCnx.prepareStatement("select id_region from region where nom_region = '"+cbRegion+"'");
             rs=ps.executeQuery();
             rs.next();
@@ -293,9 +301,18 @@ public class FonctionsMetier implements IMetier
             int numRegion = rs.getInt(1);
             rs.close();
             
+            //rcupere id du region dans le selected
+            ps = maCnx.prepareStatement("select id_region from region where nom_region = '"+cbRegion2+"'");
+            rs=ps.executeQuery();
+            rs.next();
+            
+            int numRegion2 = rs.getInt(1);
+            rs.close();
+            
+            
             
             //on ecrit dans le ps la requete
-            ps= maCnx.prepareStatement("UPDATE `travailler` SET `id_visiteur` = '"+numVisiteur+"', `id_region` = '"+numRegion+"', `jjmmaa_travailler` = '"+dateTravailler+"', `role_travailler` = '"+roleTravailler+"' WHERE `travailler`.`id_visiteur` = '"+numVisiteur+"' AND `travailler`.`id_region` = '"+numRegion+"' AND `travailler`.`jjmmaa_travailler` = '"+dateTravailler+"';");
+            ps= maCnx.prepareStatement("UPDATE `travailler` SET `id_visiteur` = '"+numVisiteur+"', `id_region` = '"+numRegion+"', `jjmmaa_travailler` = '"+dateTravailler+"', `role_travailler` = '"+roleTravailler+"' WHERE `travailler`.`id_visiteur` = '"+numVisiteur2+"' AND `travailler`.`id_region` = '"+numRegion2+"' AND `travailler`.`jjmmaa_travailler` = '"+dateTravailler2+"';");
             
             //on met pr le add et le modifier
             ps.executeUpdate();
