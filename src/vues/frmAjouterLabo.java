@@ -37,6 +37,7 @@ public class frmAjouterLabo extends javax.swing.JFrame {
         nomChef = new javax.swing.JTextField();
         nomLabo = new javax.swing.JTextField();
         enregistrerLabo = new javax.swing.JButton();
+        Retour = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,6 +55,18 @@ public class frmAjouterLabo extends javax.swing.JFrame {
                 enregistrerLaboMouseClicked(evt);
             }
         });
+        enregistrerLabo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enregistrerLaboActionPerformed(evt);
+            }
+        });
+
+        Retour.setText("Retour");
+        Retour.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RetourActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -62,7 +75,9 @@ public class frmAjouterLabo extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(245, 245, 245)
+                        .addContainerGap()
+                        .addComponent(Retour, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(162, 162, 162)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(84, 84, 84)
@@ -80,7 +95,9 @@ public class frmAjouterLabo extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Retour))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -110,6 +127,17 @@ public class frmAjouterLabo extends javax.swing.JFrame {
 
         
     }//GEN-LAST:event_enregistrerLaboMouseClicked
+
+    private void enregistrerLaboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enregistrerLaboActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enregistrerLaboActionPerformed
+
+    private void RetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetourActionPerformed
+        // TODO add your handling code here:
+            this.setVisible(false);
+            frmLabo frmAjout = new frmLabo();
+            frmAjout.setVisible(true);
+    }//GEN-LAST:event_RetourActionPerformed
 
     /**
      * @param args the command line arguments
@@ -147,6 +175,7 @@ public class frmAjouterLabo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Retour;
     private javax.swing.JButton enregistrerLabo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

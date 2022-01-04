@@ -32,7 +32,7 @@ public class FonctionsMetier implements IMetier
         try {
             maCnx=ConnexionBdd.getCnx();
             //on ecrit dans le ps la requete
-            ps= maCnx.prepareStatement("SELECT id_region,nom_region,nom_secteur FROM region, secteur WHERE region.id_secteur = secteur.id_secteur ORDER BY nom_secteur ASC");
+            ps= maCnx.prepareStatement("SELECT id_region,nom_secteur,nom_region FROM region, secteur WHERE region.id_secteur = secteur.id_secteur ORDER BY nom_secteur ASC");
             
             rs=ps.executeQuery();
             while(rs.next())

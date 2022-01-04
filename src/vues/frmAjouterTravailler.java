@@ -78,11 +78,6 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
         jLabel8.setText("Visiteur :");
 
         enregistrerTavailler.setText("Enregistrer");
-        enregistrerTavailler.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                enregistrerTavaillerMouseClicked(evt);
-            }
-        });
         enregistrerTavailler.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 enregistrerTavaillerActionPerformed(evt);
@@ -153,19 +148,6 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void enregistrerTavaillerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enregistrerTavaillerMouseClicked
-        // TODO add your handling code here:
-        // labo l = fm.AddLabo(nomChef.getText(),nomLabo.getText());
-        /* if(unLabo !=null)
-        {
-            if (unLabo.getNomLabo().compareTo("'+nomLabo+'") == nomLabo.getText())
-            {
-                //si il est admin
-                frmAdministrateur frm= new frmAdministrateur();
-                frm.setVisible(true);
-            }*/
-    }//GEN-LAST:event_enregistrerTavaillerMouseClicked
 
     private void enregistrerTavaillerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enregistrerTavaillerActionPerformed
         // TODO add your handling code here:

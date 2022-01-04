@@ -194,6 +194,16 @@ public class frmModifierTravailler extends javax.swing.JFrame {
 
     private void tblTravaillerMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblTravaillerMMouseClicked
         // TODO add your handling code here:
+        
+        String roleTravailler = tblTravaillerM.getValueAt(tblTravaillerM.getSelectedRow(), 3).toString();
+        roleTravaillerM.setText(roleTravailler);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String date = sdf.format(dateTravailler.getDate());
+        
+        
+        
+        date = tblTravaillerM.getValueAt(tblTravaillerM.getSelectedRow(), 2).toString();
+        dateTravailler.setDateFormatString(date);
     }//GEN-LAST:event_tblTravaillerMMouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
@@ -239,8 +249,7 @@ public class frmModifierTravailler extends javax.swing.JFrame {
     private void modifierTavaillerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifierTavaillerMouseClicked
         // TODO add your handling code here:
         // labo l = fm.AddLabo(nomChef.getText(),nomLabo.getText());
-        String roleTravailler = tblTravaillerM.getValueAt(tblTravaillerM.getSelectedRow(), 3).toString();
-        roleTravaillerM.setText(roleTravailler);
+      
         
       
     }//GEN-LAST:event_modifierTavaillerMouseClicked

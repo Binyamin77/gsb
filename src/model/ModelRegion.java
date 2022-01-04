@@ -40,11 +40,11 @@ public class ModelRegion extends AbstractTableModel{
     }
     
      public void LoadDatasRegion(ArrayList<region>desRegions){
-        nomsColonnes = new String[]{"Num","Regions","Secteurs"};
+        nomsColonnes = new String[]{"Num","Secteurs","Regions"};
         rows = new Vector<String[]>();
         
         for (region a  : desRegions){
-             rows.add(new String[] {String.valueOf(a.getIdRegion()),a.getNomRegion(),a.getIdSecteur()});
+             rows.add(new String[] {String.valueOf(a.getIdRegion()),a.getIdSecteur(),a.getNomRegion()});
         }
         fireTableDataChanged();
 }
