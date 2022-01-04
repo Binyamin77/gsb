@@ -48,8 +48,9 @@ public class frmDashbord extends javax.swing.JFrame {
         lblIconHome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         titleHome.setBackground(new java.awt.Color(255, 255, 255));
-        titleHome.setFont(new java.awt.Font("Arial Black", 2, 24)); // NOI18N
-        titleHome.setText("Bienvenue sur votre Tableau de bord ! ");
+        titleHome.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        titleHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/home_icon-icons.com_73532.png"))); // NOI18N
+        titleHome.setText("  Bienvenue sur votre Tableau de bord ! ");
 
         javax.swing.GroupLayout fondTitreLayout = new javax.swing.GroupLayout(fondTitre);
         fondTitre.setLayout(fondTitreLayout);
@@ -102,6 +103,7 @@ public class frmDashbord extends javax.swing.JFrame {
         jLabel3.setToolTipText("");
 
         visiteurLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        visiteurLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/3289576-individual-man-people-person_107097.png"))); // NOI18N
         visiteurLab.setText("Visiteurs");
         visiteurLab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -110,6 +112,7 @@ public class frmDashbord extends javax.swing.JFrame {
         });
 
         regionLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        regionLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/placeholderblackshapeforlocalizationonmaps_79861.png"))); // NOI18N
         regionLab.setText("Régions");
         regionLab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -118,6 +121,7 @@ public class frmDashbord extends javax.swing.JFrame {
         });
 
         travaillerLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        travaillerLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/work-briefcase_icon-icons.com_72464.png"))); // NOI18N
         travaillerLab.setText("Travailler");
         travaillerLab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -126,6 +130,7 @@ public class frmDashbord extends javax.swing.JFrame {
         });
 
         laboLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        laboLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/icons8-application-scientifique-32.png"))); // NOI18N
         laboLab.setText("Laboratoire");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

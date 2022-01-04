@@ -123,9 +123,12 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Arial Black" size="24" style="2"/>
+                  <Font name="Arial Black" size="24" style="0"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Bienvenue sur votre Tableau de bord ! "/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/vues/Pictures/home_icon-icons.com_73532.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="  Bienvenue sur votre Tableau de bord ! "/>
               </Properties>
             </Component>
           </SubComponents>
@@ -201,6 +204,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Light" size="14" style="0"/>
             </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/vues/Pictures/3289576-individual-man-people-person_107097.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Visiteurs"/>
           </Properties>
           <Events>
@@ -211,6 +217,9 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Light" size="14" style="0"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/vues/Pictures/placeholderblackshapeforlocalizationonmaps_79861.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="R&#xe9;gions"/>
           </Properties>
@@ -223,6 +232,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Light" size="14" style="0"/>
             </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/vues/Pictures/work-briefcase_icon-icons.com_72464.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Travailler"/>
           </Properties>
           <Events>
@@ -233,6 +245,9 @@
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI Light" size="14" style="0"/>
+            </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/vues/Pictures/icons8-application-scientifique-32.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Laboratoire"/>
           </Properties>
