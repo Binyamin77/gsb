@@ -32,76 +32,38 @@ public class frmRegion extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tblRegion = new javax.swing.JTable();
-        Modifier = new javax.swing.JButton();
-        btnAjouter = new javax.swing.JButton();
+        lblFontBarre = new javax.swing.JPanel();
+        logoLbl = new javax.swing.JLabel();
+        dashboardLab = new javax.swing.JLabel();
+        laboLab = new javax.swing.JLabel();
+        visiteurLab = new javax.swing.JLabel();
         regionLab = new javax.swing.JLabel();
         travaillerLab = new javax.swing.JLabel();
-        laboLab = new javax.swing.JLabel();
-        dashboardLab = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        visiteurLab = new javax.swing.JLabel();
+        regonFond = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblRegion = new javax.swing.JTable();
+        btnAjouter = new javax.swing.JButton();
+        Modifier = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1330, 960));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
 
-        tblRegion.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+        lblFontBarre.setBackground(new java.awt.Color(255, 255, 255));
 
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane1.setViewportView(tblRegion);
-
-        Modifier.setText("Modifier");
-        Modifier.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ModifierActionPerformed(evt);
-            }
-        });
-
-        btnAjouter.setText("Ajouter");
-        btnAjouter.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAjouterMouseClicked(evt);
-            }
-        });
-
-        regionLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        regionLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/icons8-application-scientifique-32.png"))); // NOI18N
-        regionLab.setText("Régions");
-        regionLab.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                regionLabMouseClicked(evt);
-            }
-        });
-
-        travaillerLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        travaillerLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/work-briefcase_icon-icons.com_72464.png"))); // NOI18N
-        travaillerLab.setText("Travailler");
-        travaillerLab.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                travaillerLabMouseClicked(evt);
-            }
-        });
-
-        laboLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        laboLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/icons8-application-scientifique-32.png"))); // NOI18N
-        laboLab.setText("Laboratoire");
-        laboLab.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                laboLabMouseClicked(evt);
-            }
-        });
+        logoLbl.setBackground(new java.awt.Color(255, 255, 255));
+        logoLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logoLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/SANOFI.png"))); // NOI18N
+        logoLbl.setToolTipText("");
 
         dashboardLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        dashboardLab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         dashboardLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/home_icon-icons.com_73532.png"))); // NOI18N
         dashboardLab.setText("Dashboard");
         dashboardLab.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -110,10 +72,18 @@ public class frmRegion extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setToolTipText("");
+        laboLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        laboLab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        laboLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/icons8-application-scientifique-32.png"))); // NOI18N
+        laboLab.setText("Laboratoire");
+        laboLab.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                laboLabMouseClicked(evt);
+            }
+        });
 
         visiteurLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        visiteurLab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         visiteurLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/3289576-individual-man-people-person_107097.png"))); // NOI18N
         visiteurLab.setText("Visiteurs");
         visiteurLab.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -122,55 +92,132 @@ public class frmRegion extends javax.swing.JFrame {
             }
         });
 
+        regionLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        regionLab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        regionLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/icons8-application-scientifique-32.png"))); // NOI18N
+        regionLab.setText("Régions");
+
+        travaillerLab.setBackground(new java.awt.Color(255, 255, 255));
+        travaillerLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        travaillerLab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        travaillerLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/work-briefcase_icon-icons.com_72464.png"))); // NOI18N
+        travaillerLab.setText("Travailler");
+        travaillerLab.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                travaillerLabMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout lblFontBarreLayout = new javax.swing.GroupLayout(lblFontBarre);
+        lblFontBarre.setLayout(lblFontBarreLayout);
+        lblFontBarreLayout.setHorizontalGroup(
+            lblFontBarreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(dashboardLab, javax.swing.GroupLayout.DEFAULT_SIZE, 170, Short.MAX_VALUE)
+            .addComponent(laboLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(visiteurLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(regionLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(logoLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(travaillerLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        lblFontBarreLayout.setVerticalGroup(
+            lblFontBarreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(lblFontBarreLayout.createSequentialGroup()
+                .addComponent(logoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dashboardLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(laboLab, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(visiteurLab, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(regionLab, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(travaillerLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 434, Short.MAX_VALUE))
+        );
+
+        regonFond.setBackground(new java.awt.Color(255, 255, 255));
+
+        tblRegion.setAutoCreateRowSorter(true);
+        tblRegion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tblRegion.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        tblRegion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        tblRegion.setGridColor(new java.awt.Color(255, 255, 255));
+        jScrollPane1.setViewportView(tblRegion);
+
+        btnAjouter.setBackground(new java.awt.Color(255, 255, 255));
+        btnAjouter.setText("Ajouter");
+        btnAjouter.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAjouterMouseClicked(evt);
+            }
+        });
+
+        Modifier.setBackground(new java.awt.Color(255, 255, 255));
+        Modifier.setText("Modifier");
+        Modifier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModifierActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Microsoft Himalaya", 3, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(102, 204, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Liste des Régions");
+
+        javax.swing.GroupLayout regonFondLayout = new javax.swing.GroupLayout(regonFond);
+        regonFond.setLayout(regonFondLayout);
+        regonFondLayout.setHorizontalGroup(
+            regonFondLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(regonFondLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 678, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(regonFondLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Modifier)
+                    .addComponent(btnAjouter, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(310, Short.MAX_VALUE))
+            .addGroup(regonFondLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        regonFondLayout.setVerticalGroup(
+            regonFondLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(regonFondLayout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(regonFondLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(regonFondLayout.createSequentialGroup()
+                        .addGap(191, 191, 191)
+                        .addComponent(btnAjouter)
+                        .addGap(18, 18, 18)
+                        .addComponent(Modifier))
+                    .addGroup(regonFondLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dashboardLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
-                    .addComponent(visiteurLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(regionLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(travaillerLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(laboLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(300, 300, 300)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnAjouter)
-                        .addGap(108, 108, 108)
-                        .addComponent(Modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(140, 140, 140))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+                .addComponent(lblFontBarre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(regonFond, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 209, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(Modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnAjouter))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(dashboardLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(laboLab, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(visiteurLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(regionLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(travaillerLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+            .addComponent(lblFontBarre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(regonFond, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -202,30 +249,6 @@ public class frmRegion extends javax.swing.JFrame {
         frmAjout.setVisible(true);
     }//GEN-LAST:event_btnAjouterMouseClicked
 
-    private void regionLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regionLabMouseClicked
-
-        this.setVisible(false);
-        frmRegion frmAjout = new frmRegion();
-        frmAjout.setVisible(true);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_regionLabMouseClicked
-
-    private void travaillerLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_travaillerLabMouseClicked
-        this.setVisible(false);
-        frmTravailler frmAjout = new frmTravailler();
-        frmAjout.setVisible(true);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_travaillerLabMouseClicked
-
-    private void laboLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_laboLabMouseClicked
-        // TODO add your handling code here:
-        this.setVisible(false);
-        frmLabo frmAjout = new frmLabo();
-        frmAjout.setVisible(true);
-    }//GEN-LAST:event_laboLabMouseClicked
-
     private void dashboardLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardLabMouseClicked
         this.setVisible(false);
         frmDashbord frmAjout = new frmDashbord();
@@ -234,6 +257,13 @@ public class frmRegion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_dashboardLabMouseClicked
 
+    private void laboLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_laboLabMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        frmLabo frmAjout = new frmLabo();
+        frmAjout.setVisible(true);
+    }//GEN-LAST:event_laboLabMouseClicked
+
     private void visiteurLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_visiteurLabMouseClicked
         this.setVisible(false);
         frmVisiteur frmAjout = new frmVisiteur();
@@ -241,6 +271,14 @@ public class frmRegion extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_visiteurLabMouseClicked
+
+    private void travaillerLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_travaillerLabMouseClicked
+        this.setVisible(false);
+        frmTravailler frmAjout = new frmTravailler();
+        frmAjout.setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_travaillerLabMouseClicked
 
     /**
      * @param args the command line arguments
@@ -281,10 +319,13 @@ public class frmRegion extends javax.swing.JFrame {
     private javax.swing.JButton Modifier;
     private javax.swing.JButton btnAjouter;
     private javax.swing.JLabel dashboardLab;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel laboLab;
+    private javax.swing.JPanel lblFontBarre;
+    private javax.swing.JLabel logoLbl;
     private javax.swing.JLabel regionLab;
+    private javax.swing.JPanel regonFond;
     private javax.swing.JTable tblRegion;
     private javax.swing.JLabel travaillerLab;
     private javax.swing.JLabel visiteurLab;
