@@ -138,6 +138,11 @@ public class frmDashbord extends javax.swing.JFrame {
         laboLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         laboLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/icons8-application-scientifique-32.png"))); // NOI18N
         laboLab.setText("Laboratoire");
+        laboLab.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                laboLabMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -230,6 +235,14 @@ public class frmDashbord extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_travaillerLabMouseClicked
+
+    private void laboLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_laboLabMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        frmLabo frmAjout = new frmLabo();
+        frmAjout.setVisible(true);
+
+    }//GEN-LAST:event_laboLabMouseClicked
 
     /**
      * @param args the command line arguments
