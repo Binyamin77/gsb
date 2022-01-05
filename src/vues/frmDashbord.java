@@ -221,7 +221,7 @@ public class frmDashbord extends javax.swing.JFrame {
 
     private void regionLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regionLabMouseClicked
 
-        //this.setVisible(false);
+        this.setVisible(false);
         frmRegion frmAjout = new frmRegion();
         frmAjout.setVisible(true);
         
