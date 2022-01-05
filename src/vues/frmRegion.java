@@ -34,10 +34,10 @@ public class frmRegion extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblRegion = new javax.swing.JTable();
-        btnRegion = new javax.swing.JButton();
         Modifier = new javax.swing.JButton();
+        btnAjouter = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -54,25 +54,17 @@ public class frmRegion extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblRegion);
 
-        btnRegion.setText("Ajouter");
-        btnRegion.setDefaultCapable(false);
-        btnRegion.setDisabledIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/button-304224_960_720 (1).png"))); // NOI18N
-        btnRegion.setDisabledSelectedIcon(null);
-        btnRegion.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnRegionMouseClicked(evt);
-            }
-        });
-        btnRegion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegionActionPerformed(evt);
-            }
-        });
-
         Modifier.setText("Modifier");
         Modifier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ModifierActionPerformed(evt);
+            }
+        });
+
+        btnAjouter.setText("Ajouter");
+        btnAjouter.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAjouterMouseClicked(evt);
             }
         });
 
@@ -84,19 +76,20 @@ public class frmRegion extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 38, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnAjouter)
+                .addGap(108, 108, 108)
                 .addComponent(Modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(btnRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(140, 140, 140))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(89, Short.MAX_VALUE)
+                .addContainerGap(78, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(Modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAjouter))
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -114,23 +107,20 @@ public class frmRegion extends javax.swing.JFrame {
         tblRegion.setModel(mdlRegion);
     }//GEN-LAST:event_formWindowOpened
 
-    private void btnRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegionActionPerformed
-
-    private void btnRegionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnRegionMouseClicked
-        // TODO add your handling code here:
-        this.setVisible(false);
-        frmAjouterRegion frmAjout = new frmAjouterRegion();
-        frmAjout.setVisible(true);
-    }//GEN-LAST:event_btnRegionMouseClicked
-
     private void ModifierActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModifierActionPerformed
         // TODO add your handling code here:
         this.setVisible(false);
         frmModifierRegion frmAjout = new frmModifierRegion();
         frmAjout.setVisible(true);
     }//GEN-LAST:event_ModifierActionPerformed
+
+    private void btnAjouterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAjouterMouseClicked
+        // TODO add your handling code here:
+        
+        this.setVisible(false);
+        frmAjouterRegion frmAjout = new frmAjouterRegion();
+        frmAjout.setVisible(true);
+    }//GEN-LAST:event_btnAjouterMouseClicked
 
     /**
      * @param args the command line arguments
@@ -169,7 +159,7 @@ public class frmRegion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Modifier;
-    private javax.swing.JButton btnRegion;
+    private javax.swing.JButton btnAjouter;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblRegion;
     // End of variables declaration//GEN-END:variables
