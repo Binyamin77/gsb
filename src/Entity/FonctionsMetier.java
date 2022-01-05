@@ -104,7 +104,7 @@ public class FonctionsMetier implements IMetier
         try {
             maCnx=ConnexionBdd.getCnx();
             //on ecrit dans le ps la requete
-            ps= maCnx.prepareStatement("select labo.chefvente_labo,id_labo,nom_labo from labo ORDER BY `chefvente_labo` ASC");
+            ps= maCnx.prepareStatement("select chefvente_labo,id_labo,nom_labo from labo ORDER BY `chefvente_labo` ASC");
             
             rs=ps.executeQuery();
             while(rs.next())

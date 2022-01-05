@@ -134,15 +134,6 @@ public class frmAjouterRegion extends javax.swing.JFrame {
         this.setVisible(false);
         frmRegion frmAjout = new frmRegion();
         frmAjout.setVisible(true);
-        // labo l = fm.AddLabo(nomChef.getText(),nomLabo.getText());
-        /* if(unLabo !=null)
-        {
-            if (unLabo.getNomLabo().compareTo("'+nomLabo+'") == nomLabo.getText())
-            {
-                //si il est admin
-                frmAdministrateur frm= new frmAdministrateur();
-                frm.setVisible(true);
-            }*/
 
     }//GEN-LAST:event_enregistrerRegionMouseClicked
 
