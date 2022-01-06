@@ -30,7 +30,7 @@ public class frmDashbord extends javax.swing.JFrame {
         fondTitre = new javax.swing.JPanel();
         titleHome = new javax.swing.JLabel();
         photoMedoc = new javax.swing.JLabel();
-        lblFontBarre = new javax.swing.JPanel();
+        menuDashbord = new javax.swing.JPanel();
         dashboardLab = new javax.swing.JLabel();
         logoLbl = new javax.swing.JLabel();
         visiteurLab = new javax.swing.JLabel();
@@ -51,7 +51,7 @@ public class frmDashbord extends javax.swing.JFrame {
         titleHome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/home_icon-icons.com_73532.png"))); // NOI18N
         titleHome.setText("  Bienvenue sur votre Tableau de bord ! ");
-        titleHome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        titleHome.setBorder(javax.swing.BorderFactory.createLineBorder(null));
 
         javax.swing.GroupLayout fondTitreLayout = new javax.swing.GroupLayout(fondTitre);
         fondTitre.setLayout(fondTitreLayout);
@@ -70,11 +70,11 @@ public class frmDashbord extends javax.swing.JFrame {
         photoMedoc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         photoMedoc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/medoc.jpg"))); // NOI18N
 
-        lblFontBarre.setBackground(new java.awt.Color(255, 255, 255));
-        lblFontBarre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        lblFontBarre.setAlignmentX(0.7F);
-        lblFontBarre.setAlignmentY(0.7F);
-        lblFontBarre.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        menuDashbord.setBackground(new java.awt.Color(255, 255, 255));
+        menuDashbord.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        menuDashbord.setAlignmentX(0.7F);
+        menuDashbord.setAlignmentY(0.7F);
+        menuDashbord.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         dashboardLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         dashboardLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -135,10 +135,10 @@ public class frmDashbord extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout lblFontBarreLayout = new javax.swing.GroupLayout(lblFontBarre);
-        lblFontBarre.setLayout(lblFontBarreLayout);
-        lblFontBarreLayout.setHorizontalGroup(
-            lblFontBarreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout menuDashbordLayout = new javax.swing.GroupLayout(menuDashbord);
+        menuDashbord.setLayout(menuDashbordLayout);
+        menuDashbordLayout.setHorizontalGroup(
+            menuDashbordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(dashboardLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(visiteurLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(logoLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -146,11 +146,11 @@ public class frmDashbord extends javax.swing.JFrame {
             .addComponent(travaillerLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(laboLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
         );
-        lblFontBarreLayout.setVerticalGroup(
-            lblFontBarreLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(lblFontBarreLayout.createSequentialGroup()
-                .addComponent(logoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
+        menuDashbordLayout.setVerticalGroup(
+            menuDashbordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuDashbordLayout.createSequentialGroup()
+                .addComponent(logoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(dashboardLab, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addComponent(laboLab, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -160,7 +160,7 @@ public class frmDashbord extends javax.swing.JFrame {
                 .addComponent(regionLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(travaillerLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout fondLayout = new javax.swing.GroupLayout(fond);
@@ -168,7 +168,7 @@ public class frmDashbord extends javax.swing.JFrame {
         fondLayout.setHorizontalGroup(
             fondLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fondLayout.createSequentialGroup()
-                .addComponent(lblFontBarre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuDashbord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(fondLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(fondLayout.createSequentialGroup()
                         .addGap(101, 101, 101)
@@ -176,7 +176,7 @@ public class frmDashbord extends javax.swing.JFrame {
                     .addGroup(fondLayout.createSequentialGroup()
                         .addGap(47, 47, 47)
                         .addComponent(photoMedoc, javax.swing.GroupLayout.PREFERRED_SIZE, 891, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(1416, Short.MAX_VALUE))
+                .addContainerGap(4164, Short.MAX_VALUE))
         );
         fondLayout.setVerticalGroup(
             fondLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -186,10 +186,7 @@ public class frmDashbord extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(photoMedoc, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lblFontBarre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(menuDashbord, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -291,8 +288,8 @@ public class frmDashbord extends javax.swing.JFrame {
     private javax.swing.JPanel fond;
     private javax.swing.JPanel fondTitre;
     private javax.swing.JLabel laboLab;
-    private javax.swing.JPanel lblFontBarre;
     private javax.swing.JLabel logoLbl;
+    private javax.swing.JPanel menuDashbord;
     private javax.swing.JLabel photoMedoc;
     private javax.swing.JLabel regionLab;
     private javax.swing.JLabel titleHome;
