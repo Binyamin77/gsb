@@ -71,6 +71,7 @@ public class frmDashbord extends javax.swing.JFrame {
         photoMedoc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/medoc.jpg"))); // NOI18N
 
         lblFontBarre.setBackground(new java.awt.Color(255, 255, 255));
+        lblFontBarre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         lblFontBarre.setAlignmentX(0.7F);
         lblFontBarre.setAlignmentY(0.7F);
         lblFontBarre.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -79,6 +80,9 @@ public class frmDashbord extends javax.swing.JFrame {
         dashboardLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         dashboardLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/home_icon-icons.com_73532.png"))); // NOI18N
         dashboardLab.setText("Dashboard");
+        dashboardLab.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        dashboardLab.setDisabledIcon(null);
+        dashboardLab.setInheritsPopupMenu(false);
         dashboardLab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 dashboardLabMouseClicked(evt);
@@ -124,6 +128,7 @@ public class frmDashbord extends javax.swing.JFrame {
         laboLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         laboLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/icons8-application-scientifique-32.png"))); // NOI18N
         laboLab.setText("Laboratoire");
+        laboLab.setPreferredSize(new java.awt.Dimension(101, 32));
         laboLab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 laboLabMouseClicked(evt);
@@ -163,16 +168,15 @@ public class frmDashbord extends javax.swing.JFrame {
         fondLayout.setHorizontalGroup(
             fondLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fondLayout.createSequentialGroup()
-                .addContainerGap()
                 .addComponent(lblFontBarre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(fondLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(fondLayout.createSequentialGroup()
-                        .addGap(89, 89, 89)
+                        .addGap(101, 101, 101)
                         .addComponent(fondTitre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(fondLayout.createSequentialGroup()
-                        .addGap(35, 35, 35)
+                        .addGap(47, 47, 47)
                         .addComponent(photoMedoc, javax.swing.GroupLayout.PREFERRED_SIZE, 891, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(42, Short.MAX_VALUE))
+                .addContainerGap(1416, Short.MAX_VALUE))
         );
         fondLayout.setVerticalGroup(
             fondLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,7 +196,7 @@ public class frmDashbord extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addComponent(fond, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
