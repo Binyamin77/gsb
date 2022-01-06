@@ -73,6 +73,8 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
             }
         });
 
+        enregistrerVisiteur.setBackground(new java.awt.Color(0, 153, 255));
+        enregistrerVisiteur.setForeground(new java.awt.Color(255, 255, 255));
         enregistrerVisiteur.setText("Enregistrer");
         enregistrerVisiteur.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -103,6 +105,8 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
 
         dateEmbauche.setDateFormatString("yyyy-MM-dd");
 
+        Retour.setBackground(new java.awt.Color(0, 153, 255));
+        Retour.setForeground(new java.awt.Color(255, 255, 255));
         Retour.setText("Retour");
         Retour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -60,6 +60,8 @@ public class frmModifierLabo extends javax.swing.JFrame {
 
         jLabel3.setText("Nom labo :");
 
+        modifierLabo.setBackground(new java.awt.Color(0, 153, 255));
+        modifierLabo.setForeground(new java.awt.Color(255, 255, 255));
         modifierLabo.setText("Enregister");
         modifierLabo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -87,6 +89,8 @@ public class frmModifierLabo extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tblLabo);
 
+        Return.setBackground(new java.awt.Color(0, 153, 255));
+        Return.setForeground(new java.awt.Color(255, 255, 255));
         Return.setText("Retour");
         Return.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

@@ -178,6 +178,8 @@ public class frmModifierRegion extends javax.swing.JFrame {
 
         jLabel3.setText("Nom Region :");
 
+        modifierRegion.setBackground(new java.awt.Color(0, 153, 255));
+        modifierRegion.setForeground(new java.awt.Color(255, 255, 255));
         modifierRegion.setText("Enregistrer");
         modifierRegion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -197,7 +199,8 @@ public class frmModifierRegion extends javax.swing.JFrame {
             }
         });
 
-        returnBtn.setBackground(new java.awt.Color(255, 255, 255));
+        returnBtn.setBackground(new java.awt.Color(0, 153, 255));
+        returnBtn.setForeground(new java.awt.Color(255, 255, 255));
         returnBtn.setText("Retour");
         returnBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

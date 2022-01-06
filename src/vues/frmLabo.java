@@ -71,6 +71,8 @@ public class frmLabo extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tblLabo);
 
+        btnAjouter.setBackground(new java.awt.Color(0, 153, 255));
+        btnAjouter.setForeground(new java.awt.Color(255, 255, 255));
         btnAjouter.setText("Ajouter");
         btnAjouter.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -83,6 +85,8 @@ public class frmLabo extends javax.swing.JFrame {
             }
         });
 
+        Modifier.setBackground(new java.awt.Color(0, 153, 255));
+        Modifier.setForeground(new java.awt.Color(255, 255, 255));
         Modifier.setText("Modifier");
         Modifier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

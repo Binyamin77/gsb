@@ -197,11 +197,6 @@
                   <Image iconType="3" name="/vues/Pictures/home_icon-icons.com_73532.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Dashboard"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="dashboardLabMouseClicked"/>
@@ -226,11 +221,6 @@
                   <Image iconType="3" name="/vues/Pictures/3289576-individual-man-people-person_107097.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Visiteurs"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="visiteurLabMouseClicked"/>
@@ -246,11 +236,6 @@
                   <Image iconType="3" name="/vues/Pictures/icons8-application-scientifique-32.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="R&#xe9;gions"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="regionLabMouseClicked"/>
@@ -266,11 +251,6 @@
                   <Image iconType="3" name="/vues/Pictures/work-briefcase_icon-icons.com_72464.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Travailler"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
-                </Property>
                 <Property name="doubleBuffered" type="boolean" value="true"/>
               </Properties>
               <Events>
@@ -287,11 +267,6 @@
                   <Image iconType="3" name="/vues/Pictures/icons8-application-scientifique-32.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Laboratoire"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                    <LineBorder/>
-                  </Border>
-                </Property>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="laboLabMouseClicked"/>

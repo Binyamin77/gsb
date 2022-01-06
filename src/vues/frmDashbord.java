@@ -79,7 +79,6 @@ public class frmDashbord extends javax.swing.JFrame {
         dashboardLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         dashboardLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/home_icon-icons.com_73532.png"))); // NOI18N
         dashboardLab.setText("Dashboard");
-        dashboardLab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         dashboardLab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 dashboardLabMouseClicked(evt);
@@ -94,7 +93,6 @@ public class frmDashbord extends javax.swing.JFrame {
         visiteurLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         visiteurLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/3289576-individual-man-people-person_107097.png"))); // NOI18N
         visiteurLab.setText("Visiteurs");
-        visiteurLab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         visiteurLab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 visiteurLabMouseClicked(evt);
@@ -105,7 +103,6 @@ public class frmDashbord extends javax.swing.JFrame {
         regionLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         regionLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/icons8-application-scientifique-32.png"))); // NOI18N
         regionLab.setText("Régions");
-        regionLab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         regionLab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 regionLabMouseClicked(evt);
@@ -116,7 +113,6 @@ public class frmDashbord extends javax.swing.JFrame {
         travaillerLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         travaillerLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/work-briefcase_icon-icons.com_72464.png"))); // NOI18N
         travaillerLab.setText("Travailler");
-        travaillerLab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         travaillerLab.setDoubleBuffered(true);
         travaillerLab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -128,7 +124,6 @@ public class frmDashbord extends javax.swing.JFrame {
         laboLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         laboLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/icons8-application-scientifique-32.png"))); // NOI18N
         laboLab.setText("Laboratoire");
-        laboLab.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         laboLab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 laboLabMouseClicked(evt);

@@ -49,10 +49,17 @@ public class frmModifierSecteur extends javax.swing.JFrame {
 
         jLabel3.setText("Nom Secteur :");
 
+        modifierSecteur.setBackground(new java.awt.Color(0, 153, 255));
+        modifierSecteur.setForeground(new java.awt.Color(255, 255, 255));
         modifierSecteur.setText("Enregistrer");
         modifierSecteur.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 modifierSecteurMouseClicked(evt);
+            }
+        });
+        modifierSecteur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modifierSecteurActionPerformed(evt);
             }
         });
 
@@ -75,6 +82,8 @@ public class frmModifierSecteur extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblSecteurM);
 
+        Retour.setBackground(new java.awt.Color(0, 153, 255));
+        Retour.setForeground(new java.awt.Color(255, 255, 255));
         Retour.setText("Retour");
         Retour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -167,6 +176,10 @@ public class frmModifierSecteur extends javax.swing.JFrame {
         
         tblSecteurM.setModel(mdlSecteur);
     }//GEN-LAST:event_formWindowOpened
+
+    private void modifierSecteurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modifierSecteurActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_modifierSecteurActionPerformed
 
        private void Actualisation()
     {

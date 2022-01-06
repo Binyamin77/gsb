@@ -48,7 +48,6 @@ public class frmRegion extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-        setPreferredSize(new java.awt.Dimension(1330, 960));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
@@ -152,15 +151,22 @@ public class frmRegion extends javax.swing.JFrame {
         tblRegion.setGridColor(new java.awt.Color(255, 255, 255));
         jScrollPane1.setViewportView(tblRegion);
 
-        btnAjouter.setBackground(new java.awt.Color(255, 255, 255));
+        btnAjouter.setBackground(new java.awt.Color(0, 153, 255));
+        btnAjouter.setForeground(new java.awt.Color(255, 255, 255));
         btnAjouter.setText("Ajouter");
         btnAjouter.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnAjouterMouseClicked(evt);
             }
         });
+        btnAjouter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAjouterActionPerformed(evt);
+            }
+        });
 
-        Modifier.setBackground(new java.awt.Color(255, 255, 255));
+        Modifier.setBackground(new java.awt.Color(0, 153, 255));
+        Modifier.setForeground(new java.awt.Color(255, 255, 255));
         Modifier.setText("Modifier");
         Modifier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -279,6 +285,10 @@ public class frmRegion extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_travaillerLabMouseClicked
+
+    private void btnAjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAjouterActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAjouterActionPerformed
 
     /**
      * @param args the command line arguments

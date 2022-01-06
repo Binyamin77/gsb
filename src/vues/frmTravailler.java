@@ -59,6 +59,8 @@ public class frmTravailler extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblTravailler);
 
+        Ajouter.setBackground(new java.awt.Color(0, 153, 255));
+        Ajouter.setForeground(new java.awt.Color(255, 255, 255));
         Ajouter.setText("Ajouter");
         Ajouter.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -66,6 +68,8 @@ public class frmTravailler extends javax.swing.JFrame {
             }
         });
 
+        Modifier.setBackground(new java.awt.Color(0, 153, 255));
+        Modifier.setForeground(new java.awt.Color(255, 255, 255));
         Modifier.setText("Modifer");
         Modifier.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

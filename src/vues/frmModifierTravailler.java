@@ -101,6 +101,8 @@ public class frmModifierTravailler extends javax.swing.JFrame {
 
         jLabel8.setText("Visiteur :");
 
+        modifierTavailler.setBackground(new java.awt.Color(0, 153, 255));
+        modifierTavailler.setForeground(new java.awt.Color(255, 255, 255));
         modifierTavailler.setText("Enregistrer");
         modifierTavailler.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -119,6 +121,8 @@ public class frmModifierTravailler extends javax.swing.JFrame {
             }
         });
 
+        Retour1.setBackground(new java.awt.Color(0, 153, 255));
+        Retour1.setForeground(new java.awt.Color(255, 255, 255));
         Retour1.setText("Retour");
         Retour1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

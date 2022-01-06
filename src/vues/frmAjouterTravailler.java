@@ -78,6 +78,8 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
 
         jLabel8.setText("Visiteur :");
 
+        enregistrerTavailler.setBackground(new java.awt.Color(0, 153, 255));
+        enregistrerTavailler.setForeground(new java.awt.Color(255, 255, 255));
         enregistrerTavailler.setText("Enregistrer");
         enregistrerTavailler.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,6 +87,8 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
             }
         });
 
+        Retour.setBackground(new java.awt.Color(0, 153, 255));
+        Retour.setForeground(new java.awt.Color(255, 255, 255));
         Retour.setText("Retour");
         Retour.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
