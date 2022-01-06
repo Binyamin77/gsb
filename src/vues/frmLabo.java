@@ -37,10 +37,9 @@ public class frmLabo extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        fondFrmLabo = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tblLabo = new javax.swing.JTable();
-        btnAjouter = new javax.swing.JButton();
-        Modifier = new javax.swing.JButton();
         panelDashbord = new javax.swing.JPanel();
         dashboardLab = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -48,6 +47,8 @@ public class frmLabo extends javax.swing.JFrame {
         regionLab = new javax.swing.JLabel();
         travaillerLab = new javax.swing.JLabel();
         laboLab = new javax.swing.JLabel();
+        Modifier = new javax.swing.JButton();
+        btnAjouter = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -55,6 +56,8 @@ public class frmLabo extends javax.swing.JFrame {
                 formWindowOpened(evt);
             }
         });
+
+        fondFrmLabo.setBackground(new java.awt.Color(255, 255, 255));
 
         tblLabo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -71,28 +74,7 @@ public class frmLabo extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(tblLabo);
 
-        btnAjouter.setBackground(new java.awt.Color(0, 153, 255));
-        btnAjouter.setForeground(new java.awt.Color(255, 255, 255));
-        btnAjouter.setText("Ajouter");
-        btnAjouter.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnAjouterMouseClicked(evt);
-            }
-        });
-        btnAjouter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAjouterActionPerformed(evt);
-            }
-        });
-
-        Modifier.setBackground(new java.awt.Color(0, 153, 255));
-        Modifier.setForeground(new java.awt.Color(255, 255, 255));
-        Modifier.setText("Modifier");
-        Modifier.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ModifierActionPerformed(evt);
-            }
-        });
+        panelDashbord.setBackground(new java.awt.Color(255, 255, 255));
 
         dashboardLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         dashboardLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/home_icon-icons.com_73532.png"))); // NOI18N
@@ -149,13 +131,17 @@ public class frmLabo extends javax.swing.JFrame {
             .addGroup(panelDashbordLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(panelDashbordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dashboardLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
-                    .addComponent(visiteurLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(regionLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(travaillerLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(laboLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(21, 21, 21))
+                    .addGroup(panelDashbordLayout.createSequentialGroup()
+                        .addGroup(panelDashbordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(dashboardLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(visiteurLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(regionLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(travaillerLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(laboLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
+                        .addGap(21, 21, 21))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelDashbordLayout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())))
         );
         panelDashbordLayout.setVerticalGroup(
             panelDashbordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -172,40 +158,74 @@ public class frmLabo extends javax.swing.JFrame {
                 .addComponent(regionLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(travaillerLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        Modifier.setBackground(new java.awt.Color(0, 153, 255));
+        Modifier.setForeground(new java.awt.Color(255, 255, 255));
+        Modifier.setText("Modifier");
+        Modifier.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ModifierActionPerformed(evt);
+            }
+        });
+
+        btnAjouter.setBackground(new java.awt.Color(0, 153, 255));
+        btnAjouter.setForeground(new java.awt.Color(255, 255, 255));
+        btnAjouter.setText("Ajouter");
+        btnAjouter.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAjouterMouseClicked(evt);
+            }
+        });
+        btnAjouter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAjouterActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout fondFrmLaboLayout = new javax.swing.GroupLayout(fondFrmLabo);
+        fondFrmLabo.setLayout(fondFrmLaboLayout);
+        fondFrmLaboLayout.setHorizontalGroup(
+            fondFrmLaboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondFrmLaboLayout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addComponent(panelDashbord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 468, Short.MAX_VALUE)
+                .addGroup(fondFrmLaboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(fondFrmLaboLayout.createSequentialGroup()
+                        .addComponent(Modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(141, 141, 141)
+                        .addComponent(btnAjouter, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 744, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(323, 323, 323))
+        );
+        fondFrmLaboLayout.setVerticalGroup(
+            fondFrmLaboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondFrmLaboLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(fondFrmLaboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(panelDashbord, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(fondFrmLaboLayout.createSequentialGroup()
+                        .addGap(0, 13, Short.MAX_VALUE)
+                        .addGroup(fondFrmLaboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Modifier)
+                            .addComponent(btnAjouter, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelDashbord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Modifier, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(74, 74, 74)
-                        .addComponent(btnAjouter, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 749, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(65, 65, 65))
+            .addComponent(fondFrmLabo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnAjouter, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Modifier))
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(79, 79, 79)
-                        .addComponent(panelDashbord, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
+            .addComponent(fondFrmLabo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -314,6 +334,7 @@ public class frmLabo extends javax.swing.JFrame {
     private javax.swing.JButton Modifier;
     private javax.swing.JButton btnAjouter;
     private javax.swing.JLabel dashboardLab;
+    private javax.swing.JPanel fondFrmLabo;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel laboLab;
