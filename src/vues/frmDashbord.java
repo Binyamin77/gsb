@@ -51,7 +51,7 @@ public class frmDashbord extends javax.swing.JFrame {
         titleHome.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleHome.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/home_icon-icons.com_73532.png"))); // NOI18N
         titleHome.setText("  Bienvenue sur votre Tableau de bord ! ");
-        titleHome.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        titleHome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout fondTitreLayout = new javax.swing.GroupLayout(fondTitre);
         fondTitre.setLayout(fondTitreLayout);
@@ -71,7 +71,7 @@ public class frmDashbord extends javax.swing.JFrame {
         photoMedoc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/medoc.jpg"))); // NOI18N
 
         menuDashbord.setBackground(new java.awt.Color(255, 255, 255));
-        menuDashbord.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        menuDashbord.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         menuDashbord.setAlignmentX(0.7F);
         menuDashbord.setAlignmentY(0.7F);
         menuDashbord.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
