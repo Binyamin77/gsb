@@ -34,43 +34,94 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
     private void initComponents() {
 
         popupMenu1 = new java.awt.PopupMenu();
-        fondAddVisiteurs = new javax.swing.JPanel();
-        titleAddVisiteurs = new javax.swing.JLabel();
-        Retour = new javax.swing.JButton();
+        fondAddVisiteur = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         adresseVisiteur = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
         cpVisiteur = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
         dateEmbauche = new com.toedter.calendar.JDateChooser();
-        jLabel4 = new javax.swing.JLabel();
         cbLabo = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
         cbSecteur = new javax.swing.JComboBox<>();
+        nomVisiteur = new javax.swing.JTextField();
+        prenomVisiteur = new javax.swing.JTextField();
+        villeVisiteur = new javax.swing.JTextField();
+        enregistrerVisiteur = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        fondMenuAddVisiteur = new javax.swing.JPanel();
-        regionLab = new javax.swing.JLabel();
-        travaillerLab = new javax.swing.JLabel();
-        laboLab = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        menuAddVisiteur = new javax.swing.JPanel();
+        Retour = new javax.swing.JButton();
+        menuDashbord = new javax.swing.JPanel();
         dashboardLab = new javax.swing.JLabel();
         logoLbl = new javax.swing.JLabel();
         visiteurLab = new javax.swing.JLabel();
+        regionLab = new javax.swing.JLabel();
+        travaillerLab = new javax.swing.JLabel();
+        laboLab = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        border = new javax.swing.JPanel();
 
         popupMenu1.setLabel("popupMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1500, 1000));
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
             }
         });
 
-        fondAddVisiteurs.setBackground(new java.awt.Color(255, 255, 255));
+        fondAddVisiteur.setBackground(new java.awt.Color(255, 255, 255));
 
-        titleAddVisiteurs.setBackground(new java.awt.Color(255, 255, 255));
-        titleAddVisiteurs.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        titleAddVisiteurs.setForeground(new java.awt.Color(153, 204, 0));
-        titleAddVisiteurs.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        titleAddVisiteurs.setText("Ajouter Visiteur");
+        jLabel1.setFont(new java.awt.Font("Aharoni", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 153, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Ajouter Visiteur");
+
+        adresseVisiteur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adresseVisiteurActionPerformed(evt);
+            }
+        });
+
+        dateEmbauche.setDateFormatString("yyyy-MM-dd");
+
+        enregistrerVisiteur.setBackground(new java.awt.Color(0, 153, 255));
+        enregistrerVisiteur.setForeground(new java.awt.Color(255, 255, 255));
+        enregistrerVisiteur.setText("Enregistrer");
+        enregistrerVisiteur.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                enregistrerVisiteurMouseClicked(evt);
+            }
+        });
+        enregistrerVisiteur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enregistrerVisiteurActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Adresse :");
+
+        jLabel7.setText("Ville");
+
+        jLabel6.setText("Prenom");
+
+        jLabel9.setText("Nom Visiteur");
+
+        jLabel8.setText("Secteur :");
+
+        jLabel5.setText("Laboratoire :");
+
+        jLabel4.setText("Date Embauche");
+
+        jLabel3.setText("Code Postal");
+
+        menuAddVisiteur.setBackground(new java.awt.Color(255, 255, 255));
+        menuAddVisiteur.setPreferredSize(new java.awt.Dimension(150, 545));
 
         Retour.setBackground(new java.awt.Color(0, 153, 255));
         Retour.setForeground(new java.awt.Color(255, 255, 255));
@@ -81,32 +132,54 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
             }
         });
 
-        adresseVisiteur.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adresseVisiteurActionPerformed(evt);
+        javax.swing.GroupLayout menuAddVisiteurLayout = new javax.swing.GroupLayout(menuAddVisiteur);
+        menuAddVisiteur.setLayout(menuAddVisiteurLayout);
+        menuAddVisiteurLayout.setHorizontalGroup(
+            menuAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuAddVisiteurLayout.createSequentialGroup()
+                .addGap(0, 20, Short.MAX_VALUE)
+                .addComponent(Retour, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        menuAddVisiteurLayout.setVerticalGroup(
+            menuAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuAddVisiteurLayout.createSequentialGroup()
+                .addGap(148, 148, 148)
+                .addComponent(Retour, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        menuDashbord.setBackground(new java.awt.Color(255, 255, 255));
+        menuDashbord.setAlignmentX(0.7F);
+        menuDashbord.setAlignmentY(0.7F);
+        menuDashbord.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        menuDashbord.setPreferredSize(new java.awt.Dimension(150, 545));
+
+        dashboardLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        dashboardLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dashboardLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/home_icon-icons.com_73532.png"))); // NOI18N
+        dashboardLab.setText("Dashboard");
+        dashboardLab.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        dashboardLab.setDisabledIcon(null);
+        dashboardLab.setInheritsPopupMenu(false);
+        dashboardLab.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dashboardLabMouseClicked(evt);
             }
         });
 
-        jLabel2.setText("Adresse :");
+        logoLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logoLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/SANOFI.png"))); // NOI18N
+        logoLbl.setToolTipText("");
 
-        jLabel3.setText("Cp :");
-
-        dateEmbauche.setDateFormatString("yyyy-MM-dd");
-
-        jLabel4.setText("Date Embauche");
-
-        jLabel5.setText("Laboratoire :");
-
-        cbSecteur.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbSecteurActionPerformed(evt);
+        visiteurLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        visiteurLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        visiteurLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/3289576-individual-man-people-person_107097.png"))); // NOI18N
+        visiteurLab.setText("Visiteurs");
+        visiteurLab.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                visiteurLabMouseClicked(evt);
             }
         });
-
-        jLabel8.setText("Secteur :");
-
-        fondMenuAddVisiteur.setBackground(new java.awt.Color(255, 255, 255));
-        fondMenuAddVisiteur.setPreferredSize(new java.awt.Dimension(150, 575));
 
         regionLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
         regionLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -140,49 +213,62 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
             }
         });
 
-        dashboardLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        dashboardLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dashboardLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/home_icon-icons.com_73532.png"))); // NOI18N
-        dashboardLab.setText("Dashboard");
-        dashboardLab.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
-        dashboardLab.setDisabledIcon(null);
-        dashboardLab.setInheritsPopupMenu(false);
-        dashboardLab.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dashboardLabMouseClicked(evt);
-            }
-        });
+        jPanel2.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel2.setPreferredSize(new java.awt.Dimension(0, 3));
 
-        logoLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logoLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/SANOFI.png"))); // NOI18N
-        logoLbl.setToolTipText("");
-
-        visiteurLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        visiteurLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        visiteurLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/3289576-individual-man-people-person_107097.png"))); // NOI18N
-        visiteurLab.setText("Visiteurs");
-        visiteurLab.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                visiteurLabMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout fondMenuAddVisiteurLayout = new javax.swing.GroupLayout(fondMenuAddVisiteur);
-        fondMenuAddVisiteur.setLayout(fondMenuAddVisiteurLayout);
-        fondMenuAddVisiteurLayout.setHorizontalGroup(
-            fondMenuAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(dashboardLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(visiteurLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(logoLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(regionLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(travaillerLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(laboLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 123, Short.MAX_VALUE)
         );
-        fondMenuAddVisiteurLayout.setVerticalGroup(
-            fondMenuAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(fondMenuAddVisiteurLayout.createSequentialGroup()
-                .addComponent(logoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        border.setBackground(new java.awt.Color(255, 204, 51));
+        border.setForeground(new java.awt.Color(255, 204, 0));
+
+        javax.swing.GroupLayout borderLayout = new javax.swing.GroupLayout(border);
+        border.setLayout(borderLayout);
+        borderLayout.setHorizontalGroup(
+            borderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 9, Short.MAX_VALUE)
+        );
+        borderLayout.setVerticalGroup(
+            borderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout menuDashbordLayout = new javax.swing.GroupLayout(menuDashbord);
+        menuDashbord.setLayout(menuDashbordLayout);
+        menuDashbordLayout.setHorizontalGroup(
+            menuDashbordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuDashbordLayout.createSequentialGroup()
+                .addGroup(menuDashbordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(menuDashbordLayout.createSequentialGroup()
+                        .addGroup(menuDashbordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(logoLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(dashboardLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(laboLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(visiteurLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(regionLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(travaillerLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(3, 3, 3))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuDashbordLayout.createSequentialGroup()
+                        .addGap(0, 11, Short.MAX_VALUE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(border, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        menuDashbordLayout.setVerticalGroup(
+            menuDashbordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuDashbordLayout.createSequentialGroup()
+                .addComponent(logoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
                 .addComponent(dashboardLab, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
                 .addComponent(laboLab, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -192,92 +278,148 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
                 .addComponent(regionLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(travaillerLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(436, Short.MAX_VALUE))
+            .addComponent(border, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout fondAddVisiteursLayout = new javax.swing.GroupLayout(fondAddVisiteurs);
-        fondAddVisiteurs.setLayout(fondAddVisiteursLayout);
-        fondAddVisiteursLayout.setHorizontalGroup(
-            fondAddVisiteursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(fondAddVisiteursLayout.createSequentialGroup()
-                .addComponent(fondMenuAddVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(fondAddVisiteursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondAddVisiteursLayout.createSequentialGroup()
+        javax.swing.GroupLayout fondAddVisiteurLayout = new javax.swing.GroupLayout(fondAddVisiteur);
+        fondAddVisiteur.setLayout(fondAddVisiteurLayout);
+        fondAddVisiteurLayout.setHorizontalGroup(
+            fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(fondAddVisiteurLayout.createSequentialGroup()
+                .addComponent(menuDashbord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(fondAddVisiteurLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(titleAddVisiteurs, javax.swing.GroupLayout.PREFERRED_SIZE, 1089, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(fondAddVisiteursLayout.createSequentialGroup()
-                        .addGroup(fondAddVisiteursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(fondAddVisiteursLayout.createSequentialGroup()
-                                .addGap(400, 400, 400)
-                                .addGroup(fondAddVisiteursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(fondAddVisiteursLayout.createSequentialGroup()
-                                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(170, 170, 170)
-                                        .addComponent(cbSecteur, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondAddVisiteursLayout.createSequentialGroup()
-                                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(170, 170, 170)
-                                        .addComponent(cbLabo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addGroup(fondAddVisiteursLayout.createSequentialGroup()
-                                        .addGroup(fondAddVisiteursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(125, 125, 125)
-                                        .addGroup(fondAddVisiteursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(adresseVisiteur, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(cpVisiteur, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(dateEmbauche, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)))))
-                            .addGroup(fondAddVisiteursLayout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addComponent(Retour, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap())))
+                        .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9))
+                        .addGap(266, 266, 266)
+                        .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(dateEmbauche, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(cpVisiteur, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                                .addComponent(adresseVisiteur, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(villeVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(nomVisiteur)
+                                    .addComponent(cbSecteur, 0, 121, Short.MAX_VALUE)
+                                    .addComponent(prenomVisiteur)))
+                            .addComponent(cbLabo, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(305, 305, 305))
+                    .addGroup(fondAddVisiteurLayout.createSequentialGroup()
+                        .addComponent(menuAddVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(fondAddVisiteurLayout.createSequentialGroup()
+                                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(fondAddVisiteurLayout.createSequentialGroup()
+                                        .addGap(146, 146, 146)
+                                        .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel7)
+                                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(fondAddVisiteurLayout.createSequentialGroup()
+                                        .addGap(293, 293, 293)
+                                        .addComponent(enregistrerVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(fondAddVisiteurLayout.createSequentialGroup()
+                                        .addGap(147, 147, 147)
+                                        .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jLabel4)
+                                            .addComponent(jLabel5)))
+                                    .addGroup(fondAddVisiteurLayout.createSequentialGroup()
+                                        .addGap(147, 147, 147)
+                                        .addComponent(jLabel3)))
+                                .addContainerGap())
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondAddVisiteurLayout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 906, javax.swing.GroupLayout.PREFERRED_SIZE))))))
         );
-        fondAddVisiteursLayout.setVerticalGroup(
-            fondAddVisiteursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(fondAddVisiteursLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(titleAddVisiteurs, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(Retour)
-                .addGap(35, 35, 35)
-                .addGroup(fondAddVisiteursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        fondAddVisiteurLayout.setVerticalGroup(
+            fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(menuAddVisiteur, javax.swing.GroupLayout.DEFAULT_SIZE, 1006, Short.MAX_VALUE)
+            .addGroup(fondAddVisiteurLayout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(47, 47, 47)
+                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(adresseVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
-                .addGroup(fondAddVisiteursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cpVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel2))
                 .addGap(18, 18, 18)
-                .addGroup(fondAddVisiteursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(fondAddVisiteursLayout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addGroup(fondAddVisiteursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cbLabo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(40, 40, 40)
-                        .addGroup(fondAddVisiteursLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbSecteur, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(dateEmbauche, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cpVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dateEmbauche, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(18, 18, 18)
+                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(cbLabo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(50, 50, 50)
+                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbSecteur, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8))
+                .addGap(18, 18, 18)
+                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nomVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addGap(18, 18, 18)
+                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(prenomVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(villeVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addGap(31, 31, 31)
+                .addComponent(enregistrerVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(fondMenuAddVisiteur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(menuDashbord, javax.swing.GroupLayout.DEFAULT_SIZE, 1006, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fondAddVisiteurs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(fondAddVisiteur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fondAddVisiteurs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(fondAddVisiteur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void enregistrerVisiteurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enregistrerVisiteurMouseClicked
+        // TODO add your handling code here:
+        // labo l = fm.AddLabo(nomChef.getText(),nomLabo.getText());
+        /* if(unLabo !=null)
+        {
+            if (unLabo.getNomLabo().compareTo("'+nomLabo+'") == nomLabo.getText())
+            {
+                //si il est admin
+                frmAdministrateur frm= new frmAdministrateur();
+                frm.setVisible(true);
+            }*/
+
+    }//GEN-LAST:event_enregistrerVisiteurMouseClicked
+
+    private void enregistrerVisiteurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enregistrerVisiteurActionPerformed
+        // TODO add your handling code here:
+        ConnexionBdd cnx = new ConnexionBdd();
+        fm = new FonctionsMetier();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String date = sdf.format(dateEmbauche.getDate());
+        
+        fm.AddVisiteur(adresseVisiteur.getText(),cpVisiteur.getText(),date,cbLabo.getSelectedItem().toString(),cbSecteur.getSelectedItem().toString(),nomVisiteur.getText(),prenomVisiteur.getText(),villeVisiteur.getText());
+
+        this.setVisible(false);
+        frmVisiteur frmAjout = new frmVisiteur();
+        frmAjout.setVisible(true);
+    }//GEN-LAST:event_enregistrerVisiteurActionPerformed
 
     private void adresseVisiteurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adresseVisiteurActionPerformed
         // TODO add your handling code here:
@@ -312,9 +454,21 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
         frmAjout.setVisible(true);
     }//GEN-LAST:event_RetourActionPerformed
 
-    private void cbSecteurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbSecteurActionPerformed
+    private void dashboardLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardLabMouseClicked
+        this.setVisible(false);
+        frmDashbord frmAjout = new frmDashbord();
+        frmAjout.setVisible(true);
+
         // TODO add your handling code here:
-    }//GEN-LAST:event_cbSecteurActionPerformed
+    }//GEN-LAST:event_dashboardLabMouseClicked
+
+    private void visiteurLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_visiteurLabMouseClicked
+        this.setVisible(false);
+        frmVisiteur frmAjout = new frmVisiteur();
+        frmAjout.setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_visiteurLabMouseClicked
 
     private void regionLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regionLabMouseClicked
 
@@ -339,22 +493,6 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
         frmLabo frmAjout = new frmLabo();
         frmAjout.setVisible(true);
     }//GEN-LAST:event_laboLabMouseClicked
-
-    private void dashboardLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardLabMouseClicked
-        this.setVisible(false);
-        frmDashbord frmAjout = new frmDashbord();
-        frmAjout.setVisible(true);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dashboardLabMouseClicked
-
-    private void visiteurLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_visiteurLabMouseClicked
-        this.setVisible(false);
-        frmVisiteur frmAjout = new frmVisiteur();
-        frmAjout.setVisible(true);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_visiteurLabMouseClicked
 
     
    
@@ -384,6 +522,9 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(frmAjouterVisiteur.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -396,24 +537,34 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Retour;
     private javax.swing.JTextField adresseVisiteur;
+    private javax.swing.JPanel border;
     private javax.swing.JComboBox<String> cbLabo;
     private javax.swing.JComboBox<String> cbSecteur;
     private javax.swing.JTextField cpVisiteur;
     private javax.swing.JLabel dashboardLab;
     private com.toedter.calendar.JDateChooser dateEmbauche;
-    private javax.swing.JPanel fondAddVisiteurs;
-    private javax.swing.JPanel fondMenuAddVisiteur;
+    private javax.swing.JButton enregistrerVisiteur;
+    private javax.swing.JPanel fondAddVisiteur;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel laboLab;
     private javax.swing.JLabel logoLbl;
+    private javax.swing.JPanel menuAddVisiteur;
+    private javax.swing.JPanel menuDashbord;
+    private javax.swing.JTextField nomVisiteur;
     private java.awt.PopupMenu popupMenu1;
+    private javax.swing.JTextField prenomVisiteur;
     private javax.swing.JLabel regionLab;
-    private javax.swing.JLabel titleAddVisiteurs;
     private javax.swing.JLabel travaillerLab;
+    private javax.swing.JTextField villeVisiteur;
     private javax.swing.JLabel visiteurLab;
     // End of variables declaration//GEN-END:variables
 }

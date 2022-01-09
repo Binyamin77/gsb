@@ -44,12 +44,14 @@ public class frmModifierRegion extends javax.swing.JFrame {
         cbSecteur = new javax.swing.JComboBox<>();
         returnBtn = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
+        border = new javax.swing.JPanel();
+        dashboardLab2 = new javax.swing.JLabel();
+        logoLbl = new javax.swing.JLabel();
+        visiteurLab = new javax.swing.JLabel();
         regionLab = new javax.swing.JLabel();
         travaillerLab = new javax.swing.JLabel();
         laboLab = new javax.swing.JLabel();
-        dashboardLab = new javax.swing.JLabel();
-        logoLbl = new javax.swing.JLabel();
-        visiteurLab = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -90,10 +92,11 @@ public class frmModifierRegion extends javax.swing.JFrame {
         });
 
         modifierRegionTitle.setBackground(new java.awt.Color(255, 255, 255));
-        modifierRegionTitle.setFont(new java.awt.Font("PMingLiU-ExtB", 3, 24)); // NOI18N
-        modifierRegionTitle.setForeground(new java.awt.Color(51, 204, 0));
+        modifierRegionTitle.setFont(new java.awt.Font("Aharoni", 0, 24)); // NOI18N
+        modifierRegionTitle.setForeground(new java.awt.Color(0, 153, 0));
         modifierRegionTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         modifierRegionTitle.setText("Modifier Region");
+        modifierRegionTitle.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         cbSecteur.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,8 +116,63 @@ public class frmModifierRegion extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setPreferredSize(new java.awt.Dimension(150, 575));
 
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel3.setPreferredSize(new java.awt.Dimension(0, 3));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 123, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        border.setBackground(new java.awt.Color(255, 204, 51));
+        border.setForeground(new java.awt.Color(255, 204, 0));
+
+        javax.swing.GroupLayout borderLayout = new javax.swing.GroupLayout(border);
+        border.setLayout(borderLayout);
+        borderLayout.setHorizontalGroup(
+            borderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 9, Short.MAX_VALUE)
+        );
+        borderLayout.setVerticalGroup(
+            borderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        dashboardLab2.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        dashboardLab2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dashboardLab2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/home_icon-icons.com_73532.png"))); // NOI18N
+        dashboardLab2.setText("Dashboard");
+        dashboardLab2.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        dashboardLab2.setDisabledIcon(null);
+        dashboardLab2.setInheritsPopupMenu(false);
+        dashboardLab2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                dashboardLab2MouseClicked(evt);
+            }
+        });
+
+        logoLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logoLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/SANOFI.png"))); // NOI18N
+        logoLbl.setToolTipText("");
+
+        visiteurLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        visiteurLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        visiteurLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/3289576-individual-man-people-person_107097.png"))); // NOI18N
+        visiteurLab.setText("Visiteurs");
+        visiteurLab.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                visiteurLabMouseClicked(evt);
+            }
+        });
+
         regionLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        regionLab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        regionLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         regionLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/icons8-application-scientifique-32.png"))); // NOI18N
         regionLab.setText("Régions");
         regionLab.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -124,9 +182,10 @@ public class frmModifierRegion extends javax.swing.JFrame {
         });
 
         travaillerLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        travaillerLab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        travaillerLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         travaillerLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/work-briefcase_icon-icons.com_72464.png"))); // NOI18N
         travaillerLab.setText("Travailler");
+        travaillerLab.setDoubleBuffered(true);
         travaillerLab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 travaillerLabMouseClicked(evt);
@@ -134,36 +193,13 @@ public class frmModifierRegion extends javax.swing.JFrame {
         });
 
         laboLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        laboLab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        laboLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         laboLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/icons8-application-scientifique-32.png"))); // NOI18N
         laboLab.setText("Laboratoire");
+        laboLab.setPreferredSize(new java.awt.Dimension(101, 32));
         laboLab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 laboLabMouseClicked(evt);
-            }
-        });
-
-        dashboardLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        dashboardLab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dashboardLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/home_icon-icons.com_73532.png"))); // NOI18N
-        dashboardLab.setText("Dashboard");
-        dashboardLab.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dashboardLabMouseClicked(evt);
-            }
-        });
-
-        logoLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logoLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/SANOFI.png"))); // NOI18N
-        logoLbl.setToolTipText("");
-
-        visiteurLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        visiteurLab.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        visiteurLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/3289576-individual-man-people-person_107097.png"))); // NOI18N
-        visiteurLab.setText("Visiteurs");
-        visiteurLab.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                visiteurLabMouseClicked(evt);
             }
         });
 
@@ -171,28 +207,41 @@ public class frmModifierRegion extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(dashboardLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(visiteurLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(logoLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(regionLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(travaillerLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(laboLab, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(logoLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(dashboardLab2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(laboLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(visiteurLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(regionLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(travaillerLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(3, 3, 3))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGap(0, 11, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(border, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(logoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1, 1, 1)
-                .addComponent(dashboardLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(2, 2, 2)
-                .addComponent(laboLab, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(logoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(visiteurLab, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(dashboardLab2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addComponent(laboLab, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
+                .addComponent(visiteurLab, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7)
                 .addComponent(regionLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(travaillerLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(92, Short.MAX_VALUE))
+            .addComponent(border, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout fondModifierRegionLayout = new javax.swing.GroupLayout(fondModifierRegion);
@@ -201,40 +250,39 @@ public class frmModifierRegion extends javax.swing.JFrame {
             fondModifierRegionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondModifierRegionLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(0, 0, 0)
                 .addGroup(fondModifierRegionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(modifierRegionTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1476, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(fondModifierRegionLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 704, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addGroup(fondModifierRegionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(fondModifierRegionLayout.createSequentialGroup()
-                                .addGap(58, 58, 58)
-                                .addGroup(fondModifierRegionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(nomRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(secteurRegionPnl))
-                                .addGap(104, 104, 104)
-                                .addGroup(fondModifierRegionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(nomRegionM, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cbSecteur, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(returnBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(fondModifierRegionLayout.createSequentialGroup()
-                                .addGap(160, 160, 160)
-                                .addComponent(modifierRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(362, 362, 362))
-                    .addComponent(modifierRegionTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(fondModifierRegionLayout.createSequentialGroup()
-                        .addComponent(returnBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addComponent(jScrollPane1)
+                                .addGroup(fondModifierRegionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(fondModifierRegionLayout.createSequentialGroup()
+                                        .addGap(58, 58, 58)
+                                        .addGroup(fondModifierRegionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(nomRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(secteurRegionPnl))
+                                        .addGap(104, 104, 104)
+                                        .addGroup(fondModifierRegionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(nomRegionM, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(cbSecteur, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addGroup(fondModifierRegionLayout.createSequentialGroup()
+                                        .addGap(160, 160, 160)
+                                        .addComponent(modifierRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(362, 362, 362))))))
         );
         fondModifierRegionLayout.setVerticalGroup(
             fondModifierRegionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fondModifierRegionLayout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(modifierRegionTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(returnBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(modifierRegionTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(fondModifierRegionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(fondModifierRegionLayout.createSequentialGroup()
-                        .addGap(121, 121, 121)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondModifierRegionLayout.createSequentialGroup()
                         .addGroup(fondModifierRegionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(fondModifierRegionLayout.createSequentialGroup()
                                 .addGroup(fondModifierRegionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -244,10 +292,13 @@ public class frmModifierRegion extends javax.swing.JFrame {
                                 .addComponent(cbSecteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(secteurRegionPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(35, 35, 35)
-                        .addComponent(modifierRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(modifierRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondModifierRegionLayout.createSequentialGroup()
+                        .addComponent(returnBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 472, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 656, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 662, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -331,6 +382,22 @@ public class frmModifierRegion extends javax.swing.JFrame {
         
     }//GEN-LAST:event_tblRegionMMouseClicked
 
+    private void dashboardLab2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardLab2MouseClicked
+        this.setVisible(false);
+        frmDashbord frmAjout = new frmDashbord();
+        frmAjout.setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dashboardLab2MouseClicked
+
+    private void visiteurLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_visiteurLabMouseClicked
+        this.setVisible(false);
+        frmVisiteur frmAjout = new frmVisiteur();
+        frmAjout.setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_visiteurLabMouseClicked
+
     private void regionLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regionLabMouseClicked
 
         this.setVisible(false);
@@ -354,22 +421,6 @@ public class frmModifierRegion extends javax.swing.JFrame {
         frmLabo frmAjout = new frmLabo();
         frmAjout.setVisible(true);
     }//GEN-LAST:event_laboLabMouseClicked
-
-    private void dashboardLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardLabMouseClicked
-        this.setVisible(false);
-        frmDashbord frmAjout = new frmDashbord();
-        frmAjout.setVisible(true);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_dashboardLabMouseClicked
-
-    private void visiteurLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_visiteurLabMouseClicked
-        this.setVisible(false);
-        frmVisiteur frmAjout = new frmVisiteur();
-        frmAjout.setVisible(true);
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_visiteurLabMouseClicked
 
     /**
      * @param args the command line arguments
@@ -407,10 +458,12 @@ public class frmModifierRegion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel border;
     private javax.swing.JComboBox<String> cbSecteur;
-    private javax.swing.JLabel dashboardLab;
+    private javax.swing.JLabel dashboardLab2;
     private javax.swing.JPanel fondModifierRegion;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel laboLab;
     private javax.swing.JLabel logoLbl;

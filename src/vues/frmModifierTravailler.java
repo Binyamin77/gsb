@@ -62,12 +62,14 @@ public class frmModifierTravailler extends javax.swing.JFrame {
         modifierTavailler = new javax.swing.JButton();
         Retour1 = new javax.swing.JButton();
         menuModifierTravailler = new javax.swing.JPanel();
-        laboLab1 = new javax.swing.JLabel();
-        dashboardLab1 = new javax.swing.JLabel();
-        logoLbl1 = new javax.swing.JLabel();
-        visiteurLab1 = new javax.swing.JLabel();
-        regionLab1 = new javax.swing.JLabel();
-        travaillerLab1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        border = new javax.swing.JPanel();
+        dashboardLab2 = new javax.swing.JLabel();
+        logoLbl = new javax.swing.JLabel();
+        visiteurLab = new javax.swing.JLabel();
+        regionLab = new javax.swing.JLabel();
+        travaillerLab = new javax.swing.JLabel();
+        laboLab = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1330, 960));
@@ -118,8 +120,8 @@ public class frmModifierTravailler extends javax.swing.JFrame {
 
         jLabel5.setText("Region :");
 
-        titleModifierTravailler.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        titleModifierTravailler.setForeground(new java.awt.Color(102, 204, 0));
+        titleModifierTravailler.setFont(new java.awt.Font("Aharoni", 0, 24)); // NOI18N
+        titleModifierTravailler.setForeground(new java.awt.Color(0, 153, 0));
         titleModifierTravailler.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleModifierTravailler.setText("Modifier Travailler");
 
@@ -149,62 +151,90 @@ public class frmModifierTravailler extends javax.swing.JFrame {
         menuModifierTravailler.setBackground(new java.awt.Color(255, 255, 255));
         menuModifierTravailler.setPreferredSize(new java.awt.Dimension(150, 575));
 
-        laboLab1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        laboLab1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        laboLab1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/icons8-application-scientifique-32.png"))); // NOI18N
-        laboLab1.setText("Laboratoire");
-        laboLab1.setPreferredSize(new java.awt.Dimension(101, 32));
-        laboLab1.addMouseListener(new java.awt.event.MouseAdapter() {
+        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel3.setPreferredSize(new java.awt.Dimension(0, 3));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 123, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 3, Short.MAX_VALUE)
+        );
+
+        border.setBackground(new java.awt.Color(255, 204, 51));
+        border.setForeground(new java.awt.Color(255, 204, 0));
+
+        javax.swing.GroupLayout borderLayout = new javax.swing.GroupLayout(border);
+        border.setLayout(borderLayout);
+        borderLayout.setHorizontalGroup(
+            borderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 9, Short.MAX_VALUE)
+        );
+        borderLayout.setVerticalGroup(
+            borderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        dashboardLab2.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        dashboardLab2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        dashboardLab2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/home_icon-icons.com_73532.png"))); // NOI18N
+        dashboardLab2.setText("Dashboard");
+        dashboardLab2.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
+        dashboardLab2.setDisabledIcon(null);
+        dashboardLab2.setInheritsPopupMenu(false);
+        dashboardLab2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                laboLab1MouseClicked(evt);
+                dashboardLab2MouseClicked(evt);
             }
         });
 
-        dashboardLab1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        dashboardLab1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        dashboardLab1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/home_icon-icons.com_73532.png"))); // NOI18N
-        dashboardLab1.setText("Dashboard");
-        dashboardLab1.setDebugGraphicsOptions(javax.swing.DebugGraphics.BUFFERED_OPTION);
-        dashboardLab1.setDisabledIcon(null);
-        dashboardLab1.setInheritsPopupMenu(false);
-        dashboardLab1.addMouseListener(new java.awt.event.MouseAdapter() {
+        logoLbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logoLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/SANOFI.png"))); // NOI18N
+        logoLbl.setToolTipText("");
+
+        visiteurLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        visiteurLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        visiteurLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/3289576-individual-man-people-person_107097.png"))); // NOI18N
+        visiteurLab.setText("Visiteurs");
+        visiteurLab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                dashboardLab1MouseClicked(evt);
+                visiteurLabMouseClicked(evt);
             }
         });
 
-        logoLbl1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logoLbl1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/SANOFI.png"))); // NOI18N
-        logoLbl1.setToolTipText("");
-
-        visiteurLab1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        visiteurLab1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        visiteurLab1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/3289576-individual-man-people-person_107097.png"))); // NOI18N
-        visiteurLab1.setText("Visiteurs");
-        visiteurLab1.addMouseListener(new java.awt.event.MouseAdapter() {
+        regionLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        regionLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        regionLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/icons8-application-scientifique-32.png"))); // NOI18N
+        regionLab.setText("Régions");
+        regionLab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                visiteurLab1MouseClicked(evt);
+                regionLabMouseClicked(evt);
             }
         });
 
-        regionLab1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        regionLab1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        regionLab1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/icons8-application-scientifique-32.png"))); // NOI18N
-        regionLab1.setText("Régions");
-        regionLab1.addMouseListener(new java.awt.event.MouseAdapter() {
+        travaillerLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        travaillerLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        travaillerLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/work-briefcase_icon-icons.com_72464.png"))); // NOI18N
+        travaillerLab.setText("Travailler");
+        travaillerLab.setDoubleBuffered(true);
+        travaillerLab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                regionLab1MouseClicked(evt);
+                travaillerLabMouseClicked(evt);
             }
         });
 
-        travaillerLab1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
-        travaillerLab1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        travaillerLab1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/work-briefcase_icon-icons.com_72464.png"))); // NOI18N
-        travaillerLab1.setText("Travailler");
-        travaillerLab1.setDoubleBuffered(true);
-        travaillerLab1.addMouseListener(new java.awt.event.MouseAdapter() {
+        laboLab.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        laboLab.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        laboLab.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/icons8-application-scientifique-32.png"))); // NOI18N
+        laboLab.setText("Laboratoire");
+        laboLab.setPreferredSize(new java.awt.Dimension(101, 32));
+        laboLab.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                travaillerLab1MouseClicked(evt);
+                laboLabMouseClicked(evt);
             }
         });
 
@@ -212,28 +242,41 @@ public class frmModifierTravailler extends javax.swing.JFrame {
         menuModifierTravailler.setLayout(menuModifierTravaillerLayout);
         menuModifierTravaillerLayout.setHorizontalGroup(
             menuModifierTravaillerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(dashboardLab1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(visiteurLab1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(logoLbl1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(regionLab1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(travaillerLab1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(laboLab1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuModifierTravaillerLayout.createSequentialGroup()
+                .addGroup(menuModifierTravaillerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(menuModifierTravaillerLayout.createSequentialGroup()
+                        .addGroup(menuModifierTravaillerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(logoLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(dashboardLab2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(laboLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(visiteurLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(regionLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(travaillerLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(3, 3, 3))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuModifierTravaillerLayout.createSequentialGroup()
+                        .addGap(0, 11, Short.MAX_VALUE)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addComponent(border, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         menuModifierTravaillerLayout.setVerticalGroup(
             menuModifierTravaillerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuModifierTravaillerLayout.createSequentialGroup()
-                .addComponent(logoLbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(logoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(dashboardLab1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(dashboardLab2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
-                .addComponent(laboLab1, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(laboLab, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
-                .addComponent(visiteurLab1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(visiteurLab, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(7, 7, 7)
-                .addComponent(regionLab1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(regionLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(travaillerLab1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(646, Short.MAX_VALUE))
+                .addComponent(travaillerLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(636, Short.MAX_VALUE))
+            .addComponent(border, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout fondModifTravaillerLayout = new javax.swing.GroupLayout(fondModifTravailler);
@@ -243,13 +286,11 @@ public class frmModifierTravailler extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondModifTravaillerLayout.createSequentialGroup()
                 .addComponent(menuModifierTravailler, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(fondModifTravaillerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(fondModifTravaillerLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(titleModifierTravailler, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(titleModifierTravailler, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(fondModifTravaillerLayout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addGroup(fondModifTravaillerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Retour1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Retour1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(fondModifTravaillerLayout.createSequentialGroup()
                                 .addComponent(tabTravail, javax.swing.GroupLayout.PREFERRED_SIZE, 630, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(fondModifTravaillerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,15 +315,15 @@ public class frmModifierTravailler extends javax.swing.JFrame {
                                                 .addComponent(dateTravailler, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(fondModifTravaillerLayout.createSequentialGroup()
                                         .addGap(130, 130, 130)
-                                        .addComponent(modifierTavailler, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                        .addComponent(modifierTavailler, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                         .addContainerGap(518, Short.MAX_VALUE))))
         );
         fondModifTravaillerLayout.setVerticalGroup(
             fondModifTravaillerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fondModifTravaillerLayout.createSequentialGroup()
-                .addComponent(titleModifierTravailler, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75)
-                .addComponent(Retour1)
+                .addComponent(titleModifierTravailler, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(85, 85, 85)
+                .addComponent(Retour1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(50, 50, 50)
                 .addGroup(fondModifTravaillerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(tabTravail, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -305,7 +346,7 @@ public class frmModifierTravailler extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(cbRegionM, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
-                        .addComponent(modifierTavailler, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(modifierTavailler, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(menuModifierTravailler, javax.swing.GroupLayout.DEFAULT_SIZE, 1206, Short.MAX_VALUE)
         );
@@ -435,45 +476,45 @@ public class frmModifierTravailler extends javax.swing.JFrame {
         frmAjout.setVisible(true);
     }//GEN-LAST:event_Retour1ActionPerformed
 
-    private void laboLab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_laboLab1MouseClicked
-        // TODO add your handling code here:
-        this.setVisible(false);
-        frmLabo frmAjout = new frmLabo();
-        frmAjout.setVisible(true);
-    }//GEN-LAST:event_laboLab1MouseClicked
-
-    private void dashboardLab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardLab1MouseClicked
+    private void dashboardLab2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardLab2MouseClicked
         this.setVisible(false);
         frmDashbord frmAjout = new frmDashbord();
         frmAjout.setVisible(true);
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_dashboardLab1MouseClicked
+    }//GEN-LAST:event_dashboardLab2MouseClicked
 
-    private void visiteurLab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_visiteurLab1MouseClicked
+    private void visiteurLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_visiteurLabMouseClicked
         this.setVisible(false);
         frmVisiteur frmAjout = new frmVisiteur();
         frmAjout.setVisible(true);
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_visiteurLab1MouseClicked
+    }//GEN-LAST:event_visiteurLabMouseClicked
 
-    private void regionLab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regionLab1MouseClicked
+    private void regionLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regionLabMouseClicked
 
         this.setVisible(false);
         frmRegion frmAjout = new frmRegion();
         frmAjout.setVisible(true);
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_regionLab1MouseClicked
+    }//GEN-LAST:event_regionLabMouseClicked
 
-    private void travaillerLab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_travaillerLab1MouseClicked
+    private void travaillerLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_travaillerLabMouseClicked
         this.setVisible(false);
         frmTravailler frmAjout = new frmTravailler();
         frmAjout.setVisible(true);
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_travaillerLab1MouseClicked
+    }//GEN-LAST:event_travaillerLabMouseClicked
+
+    private void laboLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_laboLabMouseClicked
+        // TODO add your handling code here:
+        this.setVisible(false);
+        frmLabo frmAjout = new frmLabo();
+        frmAjout.setVisible(true);
+    }//GEN-LAST:event_laboLabMouseClicked
 
     /**
      * @param args the command line arguments
@@ -512,32 +553,27 @@ public class frmModifierTravailler extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Retour1;
+    private javax.swing.JPanel border;
     private javax.swing.JComboBox<String> cbRegionM;
     private javax.swing.JComboBox<String> cbVisiteur;
-    private javax.swing.JLabel dashboardLab;
-    private javax.swing.JLabel dashboardLab1;
+    private javax.swing.JLabel dashboardLab2;
     private com.toedter.calendar.JDateChooser dateTravailler;
     private javax.swing.JPanel fondModifTravailler;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel laboLab;
-    private javax.swing.JLabel laboLab1;
     private javax.swing.JLabel logoLbl;
-    private javax.swing.JLabel logoLbl1;
-    private javax.swing.JPanel menuDashbord;
     private javax.swing.JPanel menuModifierTravailler;
     private javax.swing.JButton modifierTavailler;
     private javax.swing.JLabel regionLab;
-    private javax.swing.JLabel regionLab1;
     private javax.swing.JTextField roleTravaillerM;
     private javax.swing.JScrollPane tabTravail;
     private javax.swing.JTable tblTravaillerM;
     private javax.swing.JLabel titleModifierTravailler;
     private javax.swing.JLabel travaillerLab;
-    private javax.swing.JLabel travaillerLab1;
     private javax.swing.JLabel visiteurLab;
-    private javax.swing.JLabel visiteurLab1;
     // End of variables declaration//GEN-END:variables
 }
