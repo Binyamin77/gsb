@@ -7,6 +7,7 @@ package vues;
 import Entity.ConnexionBdd;
 import Entity.FonctionsMetier;
 import Entity.secteur;
+import javax.swing.JOptionPane;
 import model.ModelRegion;
 
 /**
@@ -342,6 +343,9 @@ public class frmModifierRegion extends javax.swing.JFrame {
         fm.ModifRegion(IdRegion,cbSecteur.getSelectedItem().toString(), nomRegionM.getText());
 
         Actualisation();
+        
+        JOptionPane.showMessageDialog(this,"Votre modification a été rélisé avec succés");
+
 
     }//GEN-LAST:event_modifierRegionMouseClicked
 

@@ -450,6 +450,9 @@ public class frmModifierVisiteur extends javax.swing.JFrame {
         fm.ModifVisiteur(adresseVisiteur.getText(),cpVisiteur.getText(),date,cbLabo.getSelectedItem().toString(),cbSecteur.getSelectedItem().toString(),IdVisiteur,nomVisiteur.getText(),prenomVisiteur.getText(),villeVisiteur.getText());
         
         Actualisation();
+        
+        JOptionPane.showMessageDialog(this,"Votre modification a été rélisé avec succés");
+
 
     }//GEN-LAST:event_modifierVisiteurMouseClicked
 

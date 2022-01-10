@@ -460,6 +460,9 @@ public class frmModifierTravailler extends javax.swing.JFrame {
         fm.ModifTravailler(cbVisiteur.getSelectedItem().toString(),cbRegionM.getSelectedItem().toString(),date,roleTravaillerM.getText(),nom,region,dateSelectionnee,roleTravailler);
         
         Actualisation();
+        
+        JOptionPane.showMessageDialog(this,"Votre modification a été rélisé avec succés");
+
 
      
     }//GEN-LAST:event_modifierTavaillerActionPerformed

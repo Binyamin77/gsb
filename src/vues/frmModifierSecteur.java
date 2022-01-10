@@ -6,6 +6,7 @@ package vues;
 
 import Entity.ConnexionBdd;
 import Entity.FonctionsMetier;
+import javax.swing.JOptionPane;
 import model.ModelRegion;
 import model.ModelSecteur;
 
@@ -320,6 +321,9 @@ public class frmModifierSecteur extends javax.swing.JFrame {
         fm.ModifSecteur(IdSecteur,nomSecteurM.getText());
 
         Actualisation();
+        
+        JOptionPane.showMessageDialog(this,"Votre modification a été rélisé avec succés");
+
     }//GEN-LAST:event_modifierSecteurMouseClicked
 
     private void RetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetourActionPerformed
