@@ -299,7 +299,7 @@ public class frmAjouterLabo extends javax.swing.JFrame {
             if(nomChef.getText().isEmpty()){
             nomChef.setBackground(Color.red); JOptionPane.showMessageDialog(this,"Veuiller saisir une donnée ");}
             else if(nomLabo.getText().isEmpty()){
-            nomLabo.setBackground(Color.red);JOptionPane.showMessageDialog(this,"Veuiller saisir une donnée ");}
+            JOptionPane.showMessageDialog(this,"Veuiller saisir une donnée ");}
               }
         
         
