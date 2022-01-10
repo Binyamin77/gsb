@@ -40,7 +40,7 @@ public class ModelTravailler extends AbstractTableModel{
     }
     
      public void LoadDatasTravailler(ArrayList<travailler>desTravailler){
-        nomsColonnes = new String[]{"Nom","Regions","Date de Travaille","Rôle"};
+        nomsColonnes = new String[]{"Nom","Region","Date de Travail","Rôle"};
         rows = new Vector<String[]>();
         
         for (travailler a  : desTravailler){

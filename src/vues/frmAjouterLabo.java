@@ -50,6 +50,7 @@ public class frmAjouterLabo extends javax.swing.JFrame {
         travaillerLab = new javax.swing.JLabel();
         laboLab = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        secteurLab1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,7 +60,7 @@ public class frmAjouterLabo extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Aharoni", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Ajouter un Labo");
+        jLabel1.setText("Ajouter un Laboratoire");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         Retour.setBackground(new java.awt.Color(0, 153, 255));
@@ -71,7 +72,7 @@ public class frmAjouterLabo extends javax.swing.JFrame {
             }
         });
 
-        jLabel2.setText("Chef labo :");
+        jLabel2.setText("Chef du laboratoire");
 
         nomChef.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,7 +80,7 @@ public class frmAjouterLabo extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("Nom labo :");
+        jLabel3.setText("Nom du laboratoire");
 
         enregistrerLabo.setBackground(new java.awt.Color(0, 153, 255));
         enregistrerLabo.setForeground(new java.awt.Color(255, 255, 255));
@@ -184,6 +185,17 @@ public class frmAjouterLabo extends javax.swing.JFrame {
             .addGap(0, 3, Short.MAX_VALUE)
         );
 
+        secteurLab1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        secteurLab1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        secteurLab1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/placeholderblackshapeforlocalizationonmaps_79861.png"))); // NOI18N
+        secteurLab1.setText("Secteur");
+        secteurLab1.setDoubleBuffered(true);
+        secteurLab1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                secteurLab1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout fondMenuAddLaboLayout = new javax.swing.GroupLayout(fondMenuAddLabo);
         fondMenuAddLabo.setLayout(fondMenuAddLaboLayout);
         fondMenuAddLaboLayout.setHorizontalGroup(
@@ -196,12 +208,17 @@ public class frmAjouterLabo extends javax.swing.JFrame {
                             .addComponent(dashboardLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(laboLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(visiteurLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(regionLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(travaillerLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(regionLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(3, 3, 3))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondMenuAddLaboLayout.createSequentialGroup()
                         .addGap(0, 11, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondMenuAddLaboLayout.createSequentialGroup()
+                        .addComponent(secteurLab1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondMenuAddLaboLayout.createSequentialGroup()
+                        .addComponent(travaillerLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(border, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -220,8 +237,10 @@ public class frmAjouterLabo extends javax.swing.JFrame {
                 .addGap(7, 7, 7)
                 .addComponent(regionLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(secteurLab1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(travaillerLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(375, Short.MAX_VALUE))
+                .addContainerGap(306, Short.MAX_VALUE))
             .addComponent(border, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -238,11 +257,11 @@ public class frmAjouterLabo extends javax.swing.JFrame {
                                 .addGap(195, 195, 195)
                                 .addGroup(fondAjouterLaboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(fondAjouterLaboLayout.createSequentialGroup()
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(129, 129, 129)
+                                        .addComponent(jLabel2)
+                                        .addGap(96, 96, 96)
                                         .addComponent(nomChef, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(fondAjouterLaboLayout.createSequentialGroup()
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondAjouterLaboLayout.createSequentialGroup()
+                                        .addComponent(jLabel3)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addComponent(nomLabo, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(fondAjouterLaboLayout.createSequentialGroup()
@@ -252,15 +271,13 @@ public class frmAjouterLabo extends javax.swing.JFrame {
                                 .addGap(264, 264, 264)
                                 .addComponent(enregistrerLabo, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(414, Short.MAX_VALUE))
-                    .addGroup(fondAjouterLaboLayout.createSequentialGroup()
-                        .addGap(0, 0, 0)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         fondAjouterLaboLayout.setVerticalGroup(
             fondAjouterLaboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fondAjouterLaboLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66)
                 .addComponent(Retour, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31)
                 .addGroup(fondAjouterLaboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -297,9 +314,9 @@ public class frmAjouterLabo extends javax.swing.JFrame {
         if(nomChef.getText().isEmpty() || nomLabo.getText().isEmpty()){
             
             if(nomChef.getText().isEmpty()){
-            nomChef.setBackground(Color.red); JOptionPane.showMessageDialog(this,"Veuiller saisir une donnée ");}
+            nomChef.setBackground(Color.red); JOptionPane.showMessageDialog(this,"Veuillez saisir un nom ");}
             else if(nomLabo.getText().isEmpty()){
-            nomLabo.setBackground(Color.red);JOptionPane.showMessageDialog(this,"Veuiller saisir une donnée ");}
+            nomLabo.setBackground(Color.red);JOptionPane.showMessageDialog(this,"Veuillez saisir un nom de laboratoire ");}
               }
         
         
@@ -371,6 +388,14 @@ public class frmAjouterLabo extends javax.swing.JFrame {
         frmAjout.setVisible(true);
     }//GEN-LAST:event_laboLabMouseClicked
 
+    private void secteurLab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_secteurLab1MouseClicked
+        this.setVisible(false);
+        frmSecteur frmAjout = new frmSecteur();
+        frmAjout.setVisible(true);
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_secteurLab1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -422,6 +447,7 @@ public class frmAjouterLabo extends javax.swing.JFrame {
     private javax.swing.JTextField nomChef;
     private javax.swing.JTextField nomLabo;
     private javax.swing.JLabel regionLab;
+    private javax.swing.JLabel secteurLab1;
     private javax.swing.JLabel travaillerLab;
     private javax.swing.JLabel visiteurLab;
     // End of variables declaration//GEN-END:variables

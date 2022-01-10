@@ -40,7 +40,7 @@ public class ModelSecteur extends AbstractTableModel{
     }
     
      public void LoadDatasSecteur(ArrayList<secteur>desSecteurs){
-        nomsColonnes = new String[]{"num","Nom Secteur"};
+        nomsColonnes = new String[]{"Numéro","Nom du Secteur"};
         rows = new Vector<String[]>();
         
         for (secteur a  : desSecteurs){

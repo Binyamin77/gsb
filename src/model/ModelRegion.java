@@ -40,7 +40,7 @@ public class ModelRegion extends AbstractTableModel{
     }
     
      public void LoadDatasRegion(ArrayList<region>desRegions){
-        nomsColonnes = new String[]{"Num","Secteurs","Regions"};
+        nomsColonnes = new String[]{"Numéro","Secteur","Region"};
         rows = new Vector<String[]>();
         
         for (region a  : desRegions){
@@ -50,7 +50,7 @@ public class ModelRegion extends AbstractTableModel{
 }
      
           public void LoadDatasRegionLISTSECTEUR(ArrayList<region>desRegions){
-        nomsColonnes = new String[]{"Secteurs"};
+        nomsColonnes = new String[]{"Secteur"};
         rows = new Vector<String[]>();
         
         for (region a  : desRegions){

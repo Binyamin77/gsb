@@ -40,7 +40,7 @@ public class ModelVisiteur extends AbstractTableModel{
     }
     
      public void LoadDatasVisiteur(ArrayList<visiteur>desVisiteurs){
-        nomsColonnes = new String[]{"Num","Nom","Prenom","Ville","Cp","Adresse","Secteur","Labo","Date Embauche"};
+        nomsColonnes = new String[]{"Numéro","Nom","Prenom","Ville","Code Postal","Adresse","Secteur","Laboratoire","Date d'Embauche"};
         rows = new Vector<String[]>();
         
         for (visiteur a  : desVisiteurs){

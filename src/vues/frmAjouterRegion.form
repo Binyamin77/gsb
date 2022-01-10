@@ -102,9 +102,9 @@
                   </Group>
                   <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="enregistrerRegion" min="-2" pref="40" max="-2" attributes="0"/>
-                  <EmptySpace pref="239" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
-              <Component id="menuAddRegion" alignment="0" pref="634" max="32767" attributes="0"/>
+              <Component id="menuAddRegion" alignment="0" pref="678" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -200,15 +200,16 @@
                                   <Component id="dashboardLab" alignment="0" max="32767" attributes="0"/>
                                   <Component id="laboLab" alignment="0" max="32767" attributes="0"/>
                                   <Component id="visiteurLab" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="regionLab" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="travaillerLab" alignment="1" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
                               <Component id="jPanel2" min="-2" pref="123" max="-2" attributes="0"/>
                           </Group>
+                          <Component id="travaillerLab" alignment="0" max="32767" attributes="0"/>
+                          <Component id="regionLab" alignment="0" max="32767" attributes="0"/>
+                          <Component id="secteurLab1" alignment="1" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="border" min="-2" max="-2" attributes="0"/>
@@ -218,8 +219,8 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="logoLbl" min="-2" pref="183" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
@@ -232,11 +233,13 @@
                               <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                               <Component id="regionLab" min="-2" pref="62" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
+                              <Component id="secteurLab1" min="-2" pref="62" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
                               <Component id="travaillerLab" min="-2" pref="62" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="border" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="border" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="39" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -381,6 +384,22 @@
                 </DimensionLayout>
               </Layout>
             </Container>
+            <Component class="javax.swing.JLabel" name="secteurLab1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI Light" size="14" style="0"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="2"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/vues/Pictures/placeholderblackshapeforlocalizationonmaps_79861.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Secteur"/>
+                <Property name="doubleBuffered" type="boolean" value="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="secteurLab1MouseClicked"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
       </SubComponents>

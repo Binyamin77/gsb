@@ -40,7 +40,7 @@ public class ModelLabo extends AbstractTableModel{
     }
     
      public void LoadDatasLabo(ArrayList<labo>desLabos){
-        nomsColonnes = new String[]{"num","Laboratoire","chefVente"};
+        nomsColonnes = new String[]{"Numéro","Laboratoire","Chef de Vente"};
         rows = new Vector<String[]>();
         
         for (labo a  : desLabos){
