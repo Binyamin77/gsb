@@ -7,6 +7,8 @@ package vues;
 import Entity.ConnexionBdd;
 import Entity.FonctionsMetier;
 import Entity.secteur;
+import java.awt.Color;
+import javax.swing.JOptionPane;
 import javax.swing.ListModel;
 import model.ModelRegion;
 
@@ -295,7 +297,14 @@ public class frmAjouterRegion extends javax.swing.JFrame {
 
     private void enregistrerRegionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enregistrerRegionMouseClicked
         // TODO add your handling code here:
-        ConnexionBdd cnx = new ConnexionBdd();
+      
+            
+            if(nomRegion.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this,"Veuiller saisir une donnée ");}
+        
+        else{
+            ConnexionBdd cnx = new ConnexionBdd();
+        }
         fm = new FonctionsMetier();
 
         
@@ -304,7 +313,7 @@ public class frmAjouterRegion extends javax.swing.JFrame {
         this.setVisible(false);
         frmRegion frmAjout = new frmRegion();
         frmAjout.setVisible(true);
-
+    
     }//GEN-LAST:event_enregistrerRegionMouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened

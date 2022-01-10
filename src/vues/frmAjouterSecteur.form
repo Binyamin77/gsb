@@ -51,10 +51,6 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="Retour" min="-2" pref="130" max="-2" attributes="0"/>
-                              </Group>
                               <Group type="102" alignment="1" attributes="0">
                                   <EmptySpace min="-2" pref="301" max="-2" attributes="0"/>
                                   <Component id="titleNomSecteur" min="-2" pref="104" max="-2" attributes="0"/>
@@ -62,8 +58,16 @@
                                   <Component id="nomSecteur" min="-2" pref="121" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" attributes="0">
-                                  <EmptySpace min="-2" pref="389" max="-2" attributes="0"/>
-                                  <Component id="enregistrerSecteur" min="-2" pref="130" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="Retour" min="-2" pref="130" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" attributes="0">
+                                          <EmptySpace min="-2" pref="389" max="-2" attributes="0"/>
+                                          <Component id="enregistrerSecteur" min="-2" pref="130" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -202,7 +206,7 @@
                                   <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
                                   <Component id="jPanel2" min="-2" pref="123" max="-2" attributes="0"/>
                               </Group>
                               <Component id="logoLbl" pref="134" max="32767" attributes="0"/>

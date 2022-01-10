@@ -10,6 +10,7 @@ import Entity.labo;
 import Entity.region;
 import Entity.visiteur;
 import java.text.SimpleDateFormat;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -324,6 +325,13 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
 
     private void enregistrerTavaillerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enregistrerTavaillerActionPerformed
         // TODO add your handling code here:
+        
+        
+            
+            if(roleTravailler.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this,"Veuiller saisir une donnée ");}
+        
+        else{
         ConnexionBdd cnx = new ConnexionBdd();
         fm = new FonctionsMetier();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -333,7 +341,7 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
 
         this.setVisible(false);
         frmTravailler frmAjout = new frmTravailler();
-        frmAjout.setVisible(true);
+        frmAjout.setVisible(true);}
     }//GEN-LAST:event_enregistrerTavaillerActionPerformed
 
     private void cbRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbRegionActionPerformed

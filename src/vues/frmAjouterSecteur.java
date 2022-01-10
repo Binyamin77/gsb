@@ -6,6 +6,7 @@ package vues;
 
 import Entity.ConnexionBdd;
 import Entity.FonctionsMetier;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -291,6 +292,13 @@ public class frmAjouterSecteur extends javax.swing.JFrame {
 
     private void enregistrerSecteurMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enregistrerSecteurMouseClicked
         // TODO add your handling code here:
+        
+       
+            
+            if(nomSecteur.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this,"Veuiller saisir une donnée ");}
+        
+        else{
         ConnexionBdd cnx = new ConnexionBdd();
         fm = new FonctionsMetier();
         fm.AddSecteur(nomSecteur.getText());
@@ -298,19 +306,14 @@ public class frmAjouterSecteur extends javax.swing.JFrame {
         this.setVisible(false);
         frmSecteur frmAjout = new frmSecteur();
         frmAjout.setVisible(true);
-        // labo l = fm.AddLabo(nomChef.getText(),nomLabo.getText());
-        /* if(unLabo !=null)
-        {
-            if (unLabo.getNomLabo().compareTo("'+nomLabo+'") == nomLabo.getText())
-            {
-                //si il est admin
-                frmAdministrateur frm= new frmAdministrateur();
-                frm.setVisible(true);
-            }*/
+            
+        }
     }//GEN-LAST:event_enregistrerSecteurMouseClicked
 
     private void enregistrerSecteurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enregistrerSecteurActionPerformed
         // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_enregistrerSecteurActionPerformed
 
     private void RetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetourActionPerformed
