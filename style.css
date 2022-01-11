@@ -668,3 +668,126 @@ body {
     transition: transform 0.3s 0.1s linear;
     transform: translateX(400px);
 }
+
+
+/* Media portfolio */
+
+@media screen and (max-width: 1300px){
+
+    .cont-portfolio {
+        padding-left: 0;
+    }
+
+    .titre-port {
+        font-size: 40px;
+        margin: 50px 0 70px 0;
+        padding-left: 0;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .titre-port {
+        margin: 10px 0;
+        padding: 30px 0;
+    }
+
+    .item {
+        height: 420px;
+    }
+
+    .cont-img-port {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 340px){
+    .item{
+        height: 380px ;
+    }
+}
+
+/* ------------- Section Range ----------- */
+
+.section-range{
+    width: 100%;
+    height: auto;
+    display: flex ;
+    justify-content: center; /* Pour que ca soit centré */
+    align-items: center;
+    flex-direction: column; /* --On fait une colonne pour mettre au dessus le titre au dessus de la grille -- */
+    padding-bottom: 200px;
+    border-bottom:  1px dashed #333;
+    background: #485563;
+    background-image: linear-gradient(to right, #29323c, #485563);
+    color: #f1f1f1;
+    position: relative;
+    z-index: -1;
+
+}
+
+.range-cont {
+    position: relative;
+}
+
+.titre-exp{
+    font-size: 40px;
+    text-align: center;
+    margin: 80px 0 90px 0;
+    padding-left: 300px;
+}
+
+.grille-skill {
+    display: grid;
+    grid-template: repeat(3,80px) / repeat(2, 500px);
+    grid-gap: 50px;
+    padding-left: 300px ;
+}
+
+.barre-skill {
+    height: 15px ;
+    background: rgb(167,146,243);
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.barre-grises {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    bottom: 0;
+    width: 500px;
+    height: 15px ;
+    background: rgb(216,216,216);
+    border-radius: 5px;
+}
+
+.b1{
+    width: 90%;
+}
+
+.b2{
+    width: 90%;
+    background: rgb(243,237,146);
+}
+
+.b3{
+    width: 75%;
+    background: rgb(243,237,146);
+}
+.b4{
+    width: 60%;
+
+}
+.b5{
+    width: 60%;
+
+}
+.b6{
+    width: 20%;
+    background: rgb(243,237,146);
+}
+.label-skill {
+    font-size: 22px;
+}
