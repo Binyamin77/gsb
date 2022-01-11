@@ -315,7 +315,7 @@ public class frmAjouterRegion extends javax.swing.JFrame {
       
             
             if(nomRegion.getText().isEmpty()){
-            JOptionPane.showMessageDialog(this,"Veuillez saisir une donnée ");}
+            JOptionPane.showMessageDialog(this,"Veuillez saisir un Nom ");}
         
         else{
             ConnexionBdd cnx = new ConnexionBdd();

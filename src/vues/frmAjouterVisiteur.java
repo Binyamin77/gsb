@@ -405,20 +405,6 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         if(adresseVisiteur.getText().isEmpty() || cpVisiteur.getText().isEmpty() || nomVisiteur.getText().isEmpty() || prenomVisiteur.getText().isEmpty() || villeVisiteur.getText().isEmpty() ){
-            
-            if(adresseVisiteur.getText().isEmpty()){
-            JOptionPane.showMessageDialog(this,"Veuiller saisir une donnée ");}
-            
-            if(cpVisiteur.getText().isEmpty()){
-            JOptionPane.showMessageDialog(this,"Veuiller saisir une donnée ");}
-            
-            if(nomVisiteur.getText().isEmpty()){
-            JOptionPane.showMessageDialog(this,"Veuiller saisir une donnée ");}
-            
-            if(prenomVisiteur.getText().isEmpty()){
-            JOptionPane.showMessageDialog(this,"Veuiller saisir une donnée ");}
-            
-            if(villeVisiteur.getText().isEmpty()){
             JOptionPane.showMessageDialog(this,"Veuiller saisir une donnée ");}
         
         else{
@@ -431,7 +417,7 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
 
         this.setVisible(false);
         frmVisiteur frmAjout = new frmVisiteur();
-        frmAjout.setVisible(true);}}
+        frmAjout.setVisible(true);}
     }//GEN-LAST:event_enregistrerVisiteurActionPerformed
 
     private void adresseVisiteurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adresseVisiteurActionPerformed
