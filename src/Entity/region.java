@@ -26,21 +26,21 @@ public class region {
     }
     
         /**
-     * @return the idTicket
+     * @return the idRegion
      */
     public int getIdRegion() {
         return id_region;
     }
     
     /**
-     * @return the nomTicket
+     * @return the nomRegion
      */
     public String getNomRegion() {
         return nom_region;
     }
     
         /**
-     * @return the dateTicket
+     * @return the idSecteur
      */
     public String getIdSecteur() {
         return id_secteur;

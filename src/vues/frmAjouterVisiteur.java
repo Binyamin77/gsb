@@ -36,20 +36,16 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
 
         popupMenu1 = new java.awt.PopupMenu();
         fondAddVisiteur = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        titreAddVisiteur = new javax.swing.JLabel();
         adresseVisiteur = new javax.swing.JTextField();
         cpVisiteur = new javax.swing.JTextField();
         dateEmbauche = new com.toedter.calendar.JDateChooser();
         cbLabo = new javax.swing.JComboBox<>();
         cbSecteur = new javax.swing.JComboBox<>();
-        nomVisiteur = new javax.swing.JTextField();
         prenomVisiteur = new javax.swing.JTextField();
-        villeVisiteur = new javax.swing.JTextField();
         enregistrerVisiteur = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -65,6 +61,11 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
         laboLab = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         border = new javax.swing.JPanel();
+        secteurLab1 = new javax.swing.JLabel();
+        nomVisiteur = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        villeVisiteur = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
 
         popupMenu1.setLabel("popupMenu1");
 
@@ -77,10 +78,11 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
 
         fondAddVisiteur.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setFont(new java.awt.Font("Aharoni", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 0));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Ajouter Visiteur");
+        titreAddVisiteur.setFont(new java.awt.Font("Aharoni", 0, 24)); // NOI18N
+        titreAddVisiteur.setForeground(new java.awt.Color(0, 153, 0));
+        titreAddVisiteur.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titreAddVisiteur.setText("Ajouter un Visiteur");
+        titreAddVisiteur.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         adresseVisiteur.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,11 +108,7 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
 
         jLabel2.setText("Adresse :");
 
-        jLabel7.setText("Ville");
-
         jLabel6.setText("Prenom");
-
-        jLabel9.setText("Nom Visiteur");
 
         jLabel8.setText("Secteur :");
 
@@ -136,14 +134,15 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
         menuAddVisiteur.setLayout(menuAddVisiteurLayout);
         menuAddVisiteurLayout.setHorizontalGroup(
             menuAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuAddVisiteurLayout.createSequentialGroup()
-                .addGap(0, 20, Short.MAX_VALUE)
-                .addComponent(Retour, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(menuAddVisiteurLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Retour, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         menuAddVisiteurLayout.setVerticalGroup(
             menuAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuAddVisiteurLayout.createSequentialGroup()
-                .addGap(148, 148, 148)
+                .addGap(80, 80, 80)
                 .addComponent(Retour, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -241,6 +240,12 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        secteurLab1.setFont(new java.awt.Font("Segoe UI Light", 0, 14)); // NOI18N
+        secteurLab1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        secteurLab1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vues/Pictures/placeholderblackshapeforlocalizationonmaps_79861.png"))); // NOI18N
+        secteurLab1.setText("Secteur");
+        secteurLab1.setDoubleBuffered(true);
+
         javax.swing.GroupLayout menuDashbordLayout = new javax.swing.GroupLayout(menuDashbord);
         menuDashbord.setLayout(menuDashbordLayout);
         menuDashbordLayout.setHorizontalGroup(
@@ -253,12 +258,16 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
                             .addComponent(dashboardLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(laboLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(visiteurLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(regionLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(travaillerLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(regionLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(3, 3, 3))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuDashbordLayout.createSequentialGroup()
                         .addGap(0, 12, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuDashbordLayout.createSequentialGroup()
+                        .addGroup(menuDashbordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(secteurLab1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(travaillerLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addComponent(border, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -277,10 +286,16 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
                 .addGap(7, 7, 7)
                 .addComponent(regionLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(secteurLab1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(travaillerLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(438, Short.MAX_VALUE))
+                .addContainerGap(370, Short.MAX_VALUE))
             .addComponent(border, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        jLabel9.setText("Nom");
+
+        jLabel7.setText("Ville");
 
         javax.swing.GroupLayout fondAddVisiteurLayout = new javax.swing.GroupLayout(fondAddVisiteur);
         fondAddVisiteur.setLayout(fondAddVisiteurLayout);
@@ -291,60 +306,59 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(fondAddVisiteurLayout.createSequentialGroup()
-                        .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(fondAddVisiteurLayout.createSequentialGroup()
-                                .addGap(245, 245, 245)
-                                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondAddVisiteurLayout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addGap(26, 26, 26))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondAddVisiteurLayout.createSequentialGroup()
-                                        .addComponent(jLabel3)
-                                        .addGap(18, 18, 18))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondAddVisiteurLayout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondAddVisiteurLayout.createSequentialGroup()
-                                        .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel9)
-                                            .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jLabel8)
-                                                .addComponent(jLabel5))
-                                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(18, 18, 18))))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondAddVisiteurLayout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(41, 41, 41)))
-                        .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(dateEmbauche, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(cpVisiteur, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
-                                .addComponent(adresseVisiteur, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(villeVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(nomVisiteur)
-                                    .addComponent(cbSecteur, 0, 121, Short.MAX_VALUE)
-                                    .addComponent(prenomVisiteur)))
-                            .addComponent(cbLabo, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(305, 305, 305))
-                    .addGroup(fondAddVisiteurLayout.createSequentialGroup()
                         .addComponent(menuAddVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(fondAddVisiteurLayout.createSequentialGroup()
-                                .addGap(293, 293, 293)
+                                .addGap(103, 103, 103)
                                 .addComponent(enregistrerVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap())
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondAddVisiteurLayout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 906, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addComponent(titreAddVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, 1264, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(fondAddVisiteurLayout.createSequentialGroup()
+                        .addGap(232, 232, 232)
+                        .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondAddVisiteurLayout.createSequentialGroup()
+                                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel5))
+                                .addGap(31, 31, 31))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondAddVisiteurLayout.createSequentialGroup()
+                                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel9)
+                                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)))
+                        .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(dateEmbauche, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(cpVisiteur, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
+                                .addComponent(adresseVisiteur, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(nomVisiteur))
+                            .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(cbSecteur, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cbLabo, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(prenomVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(villeVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap())))
         );
         fondAddVisiteurLayout.setVerticalGroup(
             fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(menuAddVisiteur, javax.swing.GroupLayout.DEFAULT_SIZE, 1006, Short.MAX_VALUE)
             .addGroup(fondAddVisiteurLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
+                .addComponent(titreAddVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(63, 63, 63)
+                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(prenomVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(nomVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addGap(18, 18, 18)
                 .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(adresseVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
@@ -352,31 +366,26 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
                 .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cpVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dateEmbauche, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(12, 12, 12)
+                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(fondAddVisiteurLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel4))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondAddVisiteurLayout.createSequentialGroup()
+                        .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(villeVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(dateEmbauche, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
-                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(cbLabo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(50, 50, 50)
-                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbLabo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
+                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cbSecteur, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel8))
-                .addGap(18, 18, 18)
-                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nomVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
-                .addGap(18, 18, 18)
-                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(prenomVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(fondAddVisiteurLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(villeVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(31, 31, 31)
+                .addGap(42, 42, 42)
                 .addComponent(enregistrerVisiteur, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(menuDashbord, javax.swing.GroupLayout.DEFAULT_SIZE, 1006, Short.MAX_VALUE)
@@ -544,7 +553,6 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
     private com.toedter.calendar.JDateChooser dateEmbauche;
     private javax.swing.JButton enregistrerVisiteur;
     private javax.swing.JPanel fondAddVisiteur;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -562,6 +570,8 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
     private java.awt.PopupMenu popupMenu1;
     private javax.swing.JTextField prenomVisiteur;
     private javax.swing.JLabel regionLab;
+    private javax.swing.JLabel secteurLab1;
+    private javax.swing.JLabel titreAddVisiteur;
     private javax.swing.JLabel travaillerLab;
     private javax.swing.JTextField villeVisiteur;
     private javax.swing.JLabel visiteurLab;

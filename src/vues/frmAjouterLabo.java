@@ -311,6 +311,11 @@ public class frmAjouterLabo extends javax.swing.JFrame {
 
     private void enregistrerLaboMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enregistrerLaboMouseClicked
         // TODO add your handling code here:
+        
+        /**
+         * Si nomChef est vide ou nomLabo vide. Le input se met en rouge et unmessage s'affiche pour prévenir l'uitlisateur
+         */
+        
         if(nomChef.getText().isEmpty() || nomLabo.getText().isEmpty()){
             
             if(nomChef.getText().isEmpty()){
@@ -321,14 +326,18 @@ public class frmAjouterLabo extends javax.swing.JFrame {
         
         
         else{
+            
             ConnexionBdd cnx = new ConnexionBdd();
             fm = new FonctionsMetier();
+            
+            /**
+             * Utilisation AddLabo fonction métier
+             */
             fm.AddLabo(nomChef.getText(), nomLabo.getText());
             
             this.setVisible(false);
             frmLabo frmAjout = new frmLabo();
-            frmAjout.setVisible(true);}
-   
+            frmAjout.setVisible(true);}   
 
         
     }//GEN-LAST:event_enregistrerLaboMouseClicked

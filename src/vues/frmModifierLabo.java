@@ -43,7 +43,6 @@ public class frmModifierLabo extends javax.swing.JFrame {
         nomLaboM = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         nomChefM = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
         menuModifLabo = new javax.swing.JPanel();
         dashboardLab = new javax.swing.JLabel();
         logoLbl = new javax.swing.JLabel();
@@ -54,6 +53,7 @@ public class frmModifierLabo extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         border = new javax.swing.JPanel();
         secteurLab2 = new javax.swing.JLabel();
+        titleAddSecteur = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -111,11 +111,6 @@ public class frmModifierLabo extends javax.swing.JFrame {
                 nomChefMActionPerformed(evt);
             }
         });
-
-        jLabel1.setFont(new java.awt.Font("Aharoni", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 153, 0));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Modifier un Laboratoire");
 
         menuModifLabo.setBackground(new java.awt.Color(255, 255, 255));
         menuModifLabo.setPreferredSize(new java.awt.Dimension(150, 575));
@@ -262,9 +257,15 @@ public class frmModifierLabo extends javax.swing.JFrame {
                 .addComponent(secteurLab2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(travaillerLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(208, Short.MAX_VALUE))
             .addComponent(border, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        titleAddSecteur.setFont(new java.awt.Font("Aharoni", 0, 24)); // NOI18N
+        titleAddSecteur.setForeground(new java.awt.Color(0, 153, 0));
+        titleAddSecteur.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titleAddSecteur.setText("Modifier un Laboratoire");
+        titleAddSecteur.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         javax.swing.GroupLayout fondModifLaboLayout = new javax.swing.GroupLayout(fondModifLabo);
         fondModifLabo.setLayout(fondModifLaboLayout);
@@ -272,10 +273,9 @@ public class frmModifierLabo extends javax.swing.JFrame {
             fondModifLaboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fondModifLaboLayout.createSequentialGroup()
                 .addComponent(menuModifLabo, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(fondModifLaboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 1190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fondModifLaboLayout.createSequentialGroup()
+                    .addGroup(fondModifLaboLayout.createSequentialGroup()
+                        .addGap(0, 221, Short.MAX_VALUE)
                         .addGroup(fondModifLaboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Return, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(fondModifLaboLayout.createSequentialGroup()
@@ -295,13 +295,16 @@ public class frmModifierLabo extends javax.swing.JFrame {
                                     .addGroup(fondModifLaboLayout.createSequentialGroup()
                                         .addGap(105, 105, 105)
                                         .addComponent(modifierLabo, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                        .addGap(107, 107, 107))))
+                        .addGap(107, 107, 107))
+                    .addGroup(fondModifLaboLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(titleAddSecteur, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         fondModifLaboLayout.setVerticalGroup(
             fondModifLaboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fondModifLaboLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                .addComponent(titleAddSecteur, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Return, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(fondModifLaboLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -486,7 +489,6 @@ public class frmModifierLabo extends javax.swing.JFrame {
     private javax.swing.JPanel border;
     private javax.swing.JLabel dashboardLab;
     private javax.swing.JPanel fondModifLabo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
@@ -498,9 +500,9 @@ public class frmModifierLabo extends javax.swing.JFrame {
     private javax.swing.JTextField nomChefM;
     private javax.swing.JTextField nomLaboM;
     private javax.swing.JLabel regionLab;
-    private javax.swing.JLabel secteurLab1;
     private javax.swing.JLabel secteurLab2;
     private javax.swing.JTable tblLabo;
+    private javax.swing.JLabel titleAddSecteur;
     private javax.swing.JLabel travaillerLab;
     private javax.swing.JLabel visiteurLab;
     // End of variables declaration//GEN-END:variables

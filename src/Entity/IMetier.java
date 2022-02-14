@@ -7,6 +7,7 @@ package Entity;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import javax.swing.ListModel;
 
 public interface IMetier 
@@ -14,7 +15,7 @@ public interface IMetier
  
     
     public ArrayList<region>getAllRegion();
-    
+
     public void AddRegion(String cbSecteur, String nomRegion);
     
     public void ModifRegion(int idRegion,String cbSecteur, String nomRegion) ;
@@ -42,5 +43,8 @@ public interface IMetier
     public void ModifVisiteur(String adresseVisiteur,String cpVisiteur,String dateEmbauche, String cbLabo, String cbSecteur,int IdVisiteur, String nomVisiteur, String prenomVisiteur, String villeVisiteur) ;
     
     public void AddVisiteur(String adresseVisiteur,String cpVisiteur, String dateEmbauche, String cbLabo, String cbSecteur, String nomVisiteur, String prenomVisiteur, String villeVisiteur);
+    
+    public HashMap<String,Double> GetDatasGraph1();
+
 
 }

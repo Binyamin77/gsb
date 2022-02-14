@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ListModel;
@@ -27,6 +28,11 @@ public class FonctionsMetier implements IMetier
     
 
     @Override
+    /**
+     * Affichage en liste des régions disponible
+     * 
+     */
+    
     public ArrayList<region> getAllRegion() {
       ArrayList<region>mesRegions = new ArrayList <region>();
         try {
@@ -48,6 +54,9 @@ public class FonctionsMetier implements IMetier
     }
     
        @Override
+       /**
+        * Ajout d'une région
+        */
   public void AddRegion(String cbSecteur, String nomRegion) 
   {
         try {
@@ -73,6 +82,9 @@ public class FonctionsMetier implements IMetier
   }
   
         @Override
+        /**
+         * Modifier une region
+         */
   public void ModifRegion(int idRegion,String cbSecteur, String nomRegion) 
   {
         try {
@@ -99,6 +111,9 @@ public class FonctionsMetier implements IMetier
 
 
     @Override
+    /**
+     * Récuperer l'ensemble des laboratoires 
+     */
     public ArrayList<labo> getAllLabo() {
         ArrayList<labo>mesLabos = new ArrayList <labo>();
         try {
@@ -409,5 +424,25 @@ public class FonctionsMetier implements IMetier
             Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
         }
   }
+  
+  
+      public HashMap<String,Double> GetDatasGraph1()
+    {
+        HashMap<String,Double> lesDatas = new HashMap<>();
+        try {
+            
+            maCnx = ConnexionBdd.getCnx();
+            ps = maCnx.prepareStatement("SELECT nom_secteur,COUNT(region.id_region) AS 'Nombre region' FROM `secteur`,region WHERE secteur.id_secteur=region.id_secteur GROUP BY nom_secteur");
+            rs = ps.executeQuery();
+            while(rs.next())
+            {
+                lesDatas.put(rs.getString(1),rs.getDouble(2));
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lesDatas;
+    } 
   
 }

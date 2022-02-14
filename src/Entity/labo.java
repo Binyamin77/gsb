@@ -23,21 +23,21 @@ public class labo {
     }
     
         /**
-     * @return the idTicket
+     * @return the idLabo
      */
     public int getIdLabo() {
         return id_labo;
     }
     
     /**
-     * @return the nomTicket
+     * @return the nomLabo
      */
     public String getNomLabo() {
         return nom_labo;
     }
     
         /**
-     * @return the dateTicket
+     * @return the dateChefVente
      */
     public String getChefVente() {
         return chefvente_labo;

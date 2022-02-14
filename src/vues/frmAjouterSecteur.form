@@ -79,8 +79,8 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Component id="titleAddSecteur" min="-2" pref="42" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                  <Component id="titleAddSecteur" min="-2" pref="50" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                   <Component id="Retour" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -91,7 +91,7 @@
                   <Component id="enregistrerSecteur" min="-2" pref="40" max="-2" attributes="0"/>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
-              <Component id="menuAddSecteur" alignment="0" max="32767" attributes="0"/>
+              <Component id="menuAddSecteur" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -227,7 +227,7 @@
                           <Component id="secteurLab1" min="-2" pref="62" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="travaillerLab" min="-2" pref="62" max="-2" attributes="0"/>
-                          <EmptySpace pref="198" max="32767" attributes="0"/>
+                          <EmptySpace pref="201" max="32767" attributes="0"/>
                       </Group>
                       <Component id="border" alignment="0" max="32767" attributes="0"/>
                   </Group>
