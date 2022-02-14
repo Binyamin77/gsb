@@ -135,6 +135,9 @@ public class FonctionsMetier implements IMetier
     }
     
       @Override
+      /**
+       * MODIFIER LABORATOIRE
+       */
   public void ModifLabo(int idLabo,String nomChef, String nomLabo) 
   {
         try {
@@ -152,6 +155,9 @@ public class FonctionsMetier implements IMetier
   }
   
         @Override
+        /**
+         * AJOUTER LABORATOIRE
+         */
   public void AddLabo(String nomChef, String nomLabo) 
   {
         try {
@@ -173,6 +179,9 @@ public class FonctionsMetier implements IMetier
     
 
     @Override
+    /**
+     * LISTER LES SECTEURS 
+     */
     public ArrayList<secteur> getAllSecteur() {
         ArrayList<secteur>mesSecteurs = new ArrayList <secteur>();
         try {
@@ -194,6 +203,9 @@ public class FonctionsMetier implements IMetier
     }
     
            @Override
+           /**
+            * AJOUTER SECTEUR
+            */
   public void AddSecteur(String nomSecteur) 
   {
         try {
@@ -211,6 +223,9 @@ public class FonctionsMetier implements IMetier
   }
   
             @Override
+            /**
+             * MODIFIER SECTEUR
+             */
   public void ModifSecteur(int idSecteur,String nomSecteur) 
   {
       
@@ -230,6 +245,9 @@ public class FonctionsMetier implements IMetier
   }
 
     @Override
+    /**
+     * LISTER TRAVAILLEUR
+     */
     public ArrayList<travailler> getAllTravailler() {
            ArrayList<travailler>mesTravailler = new ArrayList <travailler>();
         try {
@@ -253,6 +271,9 @@ public class FonctionsMetier implements IMetier
     
     
                   @Override
+                  /**
+                   * AJOUTER UN TRAVILLEUR POUR UNE JOURNEE, DANS UNE REGION, AVEC LABOO
+                   */
   public void AddTravailler(String cbVisiteur, String cbRegion, String dateTravailler ,String roleTravailler) 
   {
         try {
@@ -287,6 +308,9 @@ public class FonctionsMetier implements IMetier
   }
   
                     @Override
+                    /**
+                     * MODIFIER UN TRAVAILLEUR
+                     */
   public void ModifTravailler(String cbVisiteur, String cbRegion, String dateTravailler ,String roleTravailler,String cbVisiteur2, String cbRegion2, String dateTravailler2 ,String roleTravailler2) 
   {
         try {
@@ -338,6 +362,9 @@ public class FonctionsMetier implements IMetier
   }
 
     @Override
+    /**
+     * LISTER VISITEUR
+     */
     public ArrayList<visiteur> getAllVisiteur() {
                 ArrayList<visiteur>mesVisiteurs = new ArrayList <visiteur>();
         try {
@@ -360,6 +387,9 @@ public class FonctionsMetier implements IMetier
     }
     
                @Override
+               /**
+                * AJOUTER UN VISITEUR
+                */
   public void AddVisiteur(String adresseVisiteur,String cpVisiteur,String dateEmbauche, String cbLabo, String cbSecteur, String nomVisiteur, String prenomVisiteur, String villeVisiteur) 
   {
         try {
@@ -393,6 +423,9 @@ public class FonctionsMetier implements IMetier
   }
   
                 @Override
+                /**
+                 * MODIFIER UN VISITEUR
+                 */
   public void ModifVisiteur(String adresseVisiteur,String cpVisiteur,String dateEmbauche, String cbLabo, String cbSecteur,int IdVisiteur, String nomVisiteur, String prenomVisiteur, String villeVisiteur) 
   {
         try {
@@ -414,7 +447,7 @@ public class FonctionsMetier implements IMetier
             int numSecteur = rs.getInt(1);
             rs.close();
             
-            //on ecrit dans le ps la requete
+            //on ecrit dans le ps la requete POUR UNE MISE A JOUR
             ps= maCnx.prepareStatement("UPDATE `visiteur` SET `adresse_visiteur` = '"+adresseVisiteur+"', `cp_visiteur` =  '"+cpVisiteur+"', `dateembauche_visiteur` = '"+dateEmbauche+"' , `id_labo` = '"+numLabo+"' ,  `id_secteur` = '"+numSecteur+"' ,`nom_visiteur` = '"+nomVisiteur+"' ,`prenom_visiteur` = '"+prenomVisiteur+"' , `ville_visiteur` =  '"+villeVisiteur+"' WHERE `visiteur`.`id_visiteur` = '"+IdVisiteur+"';");
             
             //on met pr le add et le modifier
@@ -425,7 +458,10 @@ public class FonctionsMetier implements IMetier
         }
   }
   
-  
+  /**
+   * 
+   * @return STATISTIQUE
+   */
       public HashMap<String,Double> GetDatasGraph1()
     {
         HashMap<String,Double> lesDatas = new HashMap<>();
