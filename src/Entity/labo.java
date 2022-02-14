@@ -5,7 +5,7 @@
 package Entity;
 
 /**
- *
+ *  
  * @author IBGUI
  */
 public class labo {
