@@ -23,6 +23,18 @@ public class visiteur {
     private String id_labo;
     private Date dateembauche_visiteur;
     
+    /**
+     * 
+     * @param unAdresse
+     * @param unCp
+     * @param unDateEmbauche
+     * @param unIdLabo
+     * @param unIdSecteur
+     * @param unId
+     * @param unNom
+     * @param unPrenom
+     * @param unVille 
+     */
     public visiteur(String unAdresse,String unCp,Date unDateEmbauche,String unIdLabo, String unIdSecteur, int unId, String unNom, String unPrenom, String unVille){
         adresse_visiteur = unAdresse;
         cp_visiteur = unCp;

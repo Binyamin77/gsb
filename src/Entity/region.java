@@ -13,6 +13,12 @@ public class region {
     private String nom_region;
     private String id_secteur;
     
+    /**
+     * 
+     * @param unId
+     * @param unIdSecteur
+     * @param unNom 
+     */
     public region(int unId,String unIdSecteur, String unNom )
     {
         id_region = unId;

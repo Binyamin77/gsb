@@ -26,13 +26,13 @@ public class FonctionsMetier implements IMetier
     private Connection maCnx;
     
     
-
-    @Override
     /**
      * Affichage en liste des régions disponible
+     * @author polo
+     * @param test
      * 
      */
-    
+    @Override
     public ArrayList<region> getAllRegion() {
       ArrayList<region>mesRegions = new ArrayList <region>();
         try {
@@ -84,6 +84,7 @@ public class FonctionsMetier implements IMetier
         @Override
         /**
          * Modifier une region
+         * @autor
          */
   public void ModifRegion(int idRegion,String cbSecteur, String nomRegion) 
   {

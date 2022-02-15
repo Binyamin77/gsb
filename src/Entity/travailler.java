@@ -20,7 +20,13 @@ public class travailler {
 
   
     
-    
+    /**
+     * 
+     * @param unId
+     * @param unIdRegion
+     * @param unDateEmbauche
+     * @param unRole 
+     */
     public travailler(String unId, String unIdRegion,Date unDateEmbauche, String unRole){
         id_visiteur = unId;
         id_region = unIdRegion;

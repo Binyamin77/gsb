@@ -13,6 +13,13 @@ public class labo {
     private String nom_labo;
     private String chefvente_labo;
     
+    /**
+     * @author alain
+     * @param unChefVente correspond à polo
+     * @param unId
+     * @param unNom 
+     * 
+     */
     public labo(String unChefVente, int unId, String unNom)
     {
         chefvente_labo = unChefVente;

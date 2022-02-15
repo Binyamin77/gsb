@@ -12,7 +12,11 @@ public class secteur {
      private int id_secteur;
      private String nom_secteur;
 
-    
+    /**
+     * 
+     * @param unId
+     * @param unNom 
+     */
     public secteur(int unId, String unNom)
     {
         id_secteur = unId;
