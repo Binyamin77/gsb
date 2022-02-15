@@ -313,6 +313,9 @@ public class frmAjouterRegion extends javax.swing.JFrame {
     private void enregistrerRegionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_enregistrerRegionMouseClicked
         // TODO add your handling code here:
       
+            /**
+             * Si nomRegion est vide. Le input affiche un message s'affiche pour prévenir l'uitlisateur
+             */
             
             if(nomRegion.getText().isEmpty()){
             JOptionPane.showMessageDialog(this,"Veuillez saisir un Nom ");}

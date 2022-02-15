@@ -331,7 +331,7 @@ public class frmAjouterLabo extends javax.swing.JFrame {
             fm = new FonctionsMetier();
             
             /**
-             * Utilisation AddLabo fonction métier
+             * Utilisation AddLabo via fonction métier PR ENVOYER EN BASE LE NOM DU CHEF ET NOM D'UN LABO
              */
             fm.AddLabo(nomChef.getText(), nomLabo.getText());
             
@@ -346,6 +346,9 @@ public class frmAjouterLabo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_enregistrerLaboActionPerformed
 
+    /**
+     * SI CLIQUE SUR RETOUR RENVOIE SUR PAGE LABO PRINCIPALE LISTER
+     */
     private void RetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetourActionPerformed
         // TODO add your handling code here:
             this.setVisible(false);
@@ -357,6 +360,9 @@ public class frmAjouterLabo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nomChefActionPerformed
 
+    /**
+     * REDIRECTION SI ON CLIQUE SUR LES ICONES PARTIE GAUCHE MENU
+     */
     private void dashboardLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardLabMouseClicked
         this.setVisible(false);
         frmDashbord frmAjout = new frmDashbord();
@@ -365,6 +371,9 @@ public class frmAjouterLabo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_dashboardLabMouseClicked
 
+    /**
+     * REDIRECTION SI ON CLIQUE SUR LES ICONES PARTIE GAUCHE MENU
+     */
     private void visiteurLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_visiteurLabMouseClicked
         this.setVisible(false);
         frmVisiteur frmAjout = new frmVisiteur();
@@ -373,6 +382,9 @@ public class frmAjouterLabo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_visiteurLabMouseClicked
 
+    /**
+     * REDIRECTION SI ON CLIQUE SUR LES ICONES PARTIE GAUCHE MENU
+     */
     private void regionLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regionLabMouseClicked
 
         this.setVisible(false);
@@ -382,6 +394,9 @@ public class frmAjouterLabo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_regionLabMouseClicked
 
+    /**
+     * REDIRECTION SI ON CLIQUE SUR LES ICONES PARTIE GAUCHE MENU
+     */
     private void travaillerLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_travaillerLabMouseClicked
         this.setVisible(false);
         frmTravailler frmAjout = new frmTravailler();
@@ -390,6 +405,9 @@ public class frmAjouterLabo extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_travaillerLabMouseClicked
 
+    /**
+     * REDIRECTION SI ON CLIQUE SUR LES ICONES PARTIE GAUCHE MENU
+     */
     private void laboLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_laboLabMouseClicked
         // TODO add your handling code here:
         this.setVisible(false);
@@ -397,6 +415,9 @@ public class frmAjouterLabo extends javax.swing.JFrame {
         frmAjout.setVisible(true);
     }//GEN-LAST:event_laboLabMouseClicked
 
+    /**
+     * REDIRECTION SI ON CLIQUE SUR LES ICONES PARTIE GAUCHE MENU
+     */
     private void secteurLab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_secteurLab1MouseClicked
         this.setVisible(false);
         frmSecteur frmAjout = new frmSecteur();
