@@ -41,6 +41,7 @@ public class frmStatistique extends javax.swing.JFrame {
     private void initComponents() {
 
         nbRegion = new javax.swing.JButton();
+        btn2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -56,21 +57,32 @@ public class frmStatistique extends javax.swing.JFrame {
             }
         });
 
+        btn2.setText("NB DE REGION CAMENBERT");
+        btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(174, 174, 174)
-                .addComponent(nbRegion, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(375, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(nbRegion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(367, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(61, 61, 61)
                 .addComponent(nbRegion)
-                .addContainerGap(372, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addComponent(btn2)
+                .addContainerGap(305, Short.MAX_VALUE))
         );
 
         pack();
@@ -101,6 +113,23 @@ public class frmStatistique extends javax.swing.JFrame {
         ConnexionBdd cnx = new ConnexionBdd();
         fm = new FonctionsMetier();
     }//GEN-LAST:event_formWindowOpened
+
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+        // TODO add your handling code here:
+        DefaultPieDataset donnees = new DefaultPieDataset();
+        
+        /**for(Map.Entry valeur : fm.GetDatasGraph1()
+        {
+             donnees.setValue(valeur.getKey().toString(), Double.parseDouble(valeur.getValue().toString()));
+        }
+        */
+            
+        fm.GetDatasGraph1();
+        JFreeChart graph = ChartFactory.createPieChart("Nombre de region ",(PieDataset) donnees);
+        ChartFrame fra = new ChartFrame("Graphique n°2", graph);
+        fra.pack();
+        fra.setVisible(true);
+    }//GEN-LAST:event_btn2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -138,6 +167,7 @@ public class frmStatistique extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn2;
     private javax.swing.JButton nbRegion;
     // End of variables declaration//GEN-END:variables
 }
