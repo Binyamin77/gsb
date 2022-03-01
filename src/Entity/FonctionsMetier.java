@@ -481,5 +481,25 @@ public class FonctionsMetier implements IMetier
         }
         return lesDatas;
     } 
+      
+          public HashMap<String,Double> GetDatasGraph2()
+    {
+        HashMap<String,Double> lesDatas = new HashMap<>();
+        try {
+            
+            maCnx = ConnexionBdd.getCnx();
+            ps = maCnx.prepareStatement("SELECT nom_secteur,COUNT(region.id_region) AS 'Nombre region' FROM `secteur`,region WHERE secteur.id_secteur=region.id_secteur GROUP BY nom_secteur");
+            rs = ps.executeQuery();
+            while(rs.next())
+            {
+                lesDatas.put(rs.getString(1),rs.getDouble(2));
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lesDatas;
+    } 
+    
   
 }

@@ -94,10 +94,10 @@ public class frmStatistique extends javax.swing.JFrame {
         // Permet de remplir un jeu de séries dans notre objet donnees
         // DatasSet
         
-        /* for(Map.Entry valeur : fm.GetDatasGraph1().entrySet())
+        for(Map.Entry valeur : fm.GetDatasGraph1().entrySet())
         {
-            donnees.getValue(NORMAL, NORMAL);
-        }*/
+            donnees.setValue(Double.parseDouble(valeur.getValue().toString()), "Nombre de Région", valeur.getKey().toString());
+        }
         
         fm.GetDatasGraph1();
         JFreeChart graph = ChartFactory.createLineChart("Nombre de regions ", "Secteur", "Region", (CategoryDataset) donnees);
@@ -118,14 +118,14 @@ public class frmStatistique extends javax.swing.JFrame {
         // TODO add your handling code here:
         DefaultPieDataset donnees = new DefaultPieDataset();
         
-        /**for(Map.Entry valeur : fm.GetDatasGraph1()
+        for(Map.Entry valeur : fm.GetDatasGraph2().entrySet())
         {
              donnees.setValue(valeur.getKey().toString(), Double.parseDouble(valeur.getValue().toString()));
         }
-        */
+        
             
-        fm.GetDatasGraph1();
-        JFreeChart graph = ChartFactory.createPieChart("Nombre de region ",(PieDataset) donnees);
+        fm.GetDatasGraph2();
+        JFreeChart graph = ChartFactory.createPieChart("Nombre de region par Secteur",(PieDataset) donnees,true,true,true);
         ChartFrame fra = new ChartFrame("Graphique n°2", graph);
         fra.pack();
         fra.setVisible(true);

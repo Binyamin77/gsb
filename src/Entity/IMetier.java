@@ -45,6 +45,9 @@ public interface IMetier
     public void AddVisiteur(String adresseVisiteur,String cpVisiteur, String dateEmbauche, String cbLabo, String cbSecteur, String nomVisiteur, String prenomVisiteur, String villeVisiteur);
     
     public HashMap<String,Double> GetDatasGraph1();
+    
+    public HashMap<String,Double> GetDatasGraph2();
+
 
 
 }
