@@ -17,7 +17,7 @@ import javax.swing.JOptionPane;
 public class frmAjouterLabo extends javax.swing.JFrame {
 
     /**
-     * Creates new form frmAjouterLabo
+     * On crée un nouveau form frmAjouterLabo
      */    FonctionsMetier fm;
 
     public frmAjouterLabo() {
@@ -318,15 +318,20 @@ public class frmAjouterLabo extends javax.swing.JFrame {
         
         if(nomChef.getText().isEmpty() || nomLabo.getText().isEmpty()){
             
-            if(nomChef.getText().isEmpty()){
-            nomChef.setBackground(Color.red); JOptionPane.showMessageDialog(this,"Veuillez saisir un nom ");}
-            else if(nomLabo.getText().isEmpty()){
-            nomLabo.setBackground(Color.red);JOptionPane.showMessageDialog(this,"Veuillez saisir un nom de laboratoire ");}
-              }
+            if(nomChef.getText().isEmpty()) //Si nomChef est vide 
+            {
+            nomChef.setBackground(Color.red); JOptionPane.showMessageDialog(this,"Veuillez saisir un nom "); //Mettre le fond en rouge + Message d'erreur
+            }
+            else if(nomLabo.getText().isEmpty()) //Si le nomLabo est vide 
+            {
+            nomLabo.setBackground(Color.red);JOptionPane.showMessageDialog(this,"Veuillez saisir un nom de laboratoire "); //Mettre le fond en rouge + Message d'erreur
+            }
+            }
         
         
-        else{
-            
+        else
+        {
+            //On appelle la base de données et le fonction metier
             ConnexionBdd cnx = new ConnexionBdd();
             fm = new FonctionsMetier();
             
@@ -335,9 +340,10 @@ public class frmAjouterLabo extends javax.swing.JFrame {
              */
             fm.AddLabo(nomChef.getText(), nomLabo.getText());
             
-            this.setVisible(false);
-            frmLabo frmAjout = new frmLabo();
-            frmAjout.setVisible(true);}   
+            this.setVisible(false); 
+            frmLabo frmAjout = new frmLabo(); //lors de l'ajout, on revient sur le formulaire
+            frmAjout.setVisible(true); //la fenetre frmAJout est alors visible
+        }   
 
         
     }//GEN-LAST:event_enregistrerLaboMouseClicked
@@ -351,8 +357,8 @@ public class frmAjouterLabo extends javax.swing.JFrame {
      */
     private void RetourActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RetourActionPerformed
         // TODO add your handling code here:
-            this.setVisible(false);
-            frmLabo frmAjout = new frmLabo();
+            this.setVisible(false);  
+            frmLabo frmAjout = new frmLabo(); //On retourne sur la page d'ajout
             frmAjout.setVisible(true);
     }//GEN-LAST:event_RetourActionPerformed
 
@@ -365,7 +371,7 @@ public class frmAjouterLabo extends javax.swing.JFrame {
      */
     private void dashboardLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardLabMouseClicked
         this.setVisible(false);
-        frmDashbord frmAjout = new frmDashbord();
+        frmDashbord frmAjout = new frmDashbord();//On retourne sur le dashboard
         frmAjout.setVisible(true);
 
         // TODO add your handling code here:
@@ -454,8 +460,10 @@ public class frmAjouterLabo extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+        java.awt.EventQueue.invokeLater(new Runnable()
+        {
+            public void run() 
+            {
                 new frmAjouterLabo().setVisible(true);
             }
         });

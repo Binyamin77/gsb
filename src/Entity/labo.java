@@ -8,8 +8,8 @@ package Entity;
  *  
  * @author IBGUI
  */
-public class labo {
-    private int id_labo;
+public class labo { //On déclare la classe et le type des variables
+    private int id_labo; 
     private String nom_labo;
     private String chefvente_labo;
     
@@ -21,32 +21,34 @@ public class labo {
      * 
      */
     public labo(String unChefVente, int unId, String unNom)
-    {
+    { //On déclare le constructeur 
         chefvente_labo = unChefVente;
         id_labo = unId;
         nom_labo = unNom;
-       
-        
     }
     
         /**
      * @return the idLabo
      */
-    public int getIdLabo() {
+    //On déclare les méthodes get
+    public int getIdLabo() 
+    {
         return id_labo;
     }
     
     /**
      * @return the nomLabo
      */
-    public String getNomLabo() {
+    public String getNomLabo() 
+    {
         return nom_labo;
     }
     
         /**
      * @return the dateChefVente
      */
-    public String getChefVente() {
+    public String getChefVente()
+    {
         return chefvente_labo;
     }
     }

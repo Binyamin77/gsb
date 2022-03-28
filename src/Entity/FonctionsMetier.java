@@ -185,19 +185,21 @@ public class FonctionsMetier implements IMetier
      */
     public ArrayList<secteur> getAllSecteur() {
         ArrayList<secteur>mesSecteurs = new ArrayList <secteur>();
-        try {
+        try 
+        {
             maCnx=ConnexionBdd.getCnx();
             //on ecrit dans le ps la requete
             ps= maCnx.prepareStatement("select * from secteur");
             
-            rs=ps.executeQuery();
+            rs=ps.executeQuery(); //On execute la requete
             while(rs.next())
             {
                 secteur s = new secteur((rs.getInt(1)),rs.getString(2));
                 mesSecteurs.add(s);
-            }
-           
-        } catch (SQLException ex) {
+            }  
+        } 
+        catch (SQLException ex)
+        {
             Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
         }
         return mesSecteurs; 
@@ -500,6 +502,5 @@ public class FonctionsMetier implements IMetier
         }
         return lesDatas;
     } 
-    
-  
+
 }

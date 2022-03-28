@@ -119,12 +119,12 @@ public class frmStatistique extends javax.swing.JFrame {
         // Permet de remplir un jeu de séries dans notre objet donnees
         // DatasSet
         
-        for(Map.Entry valeur : fm.GetDatasGraph3().entrySet())
+        for(Map.Entry valeur : fm.GetDatasGraph2().entrySet())
         {
             donnees.setValue(Double.parseDouble(valeur.getValue().toString()), "Nombre de Visiteur pour le Laboratoire", valeur.getKey().toString());
         }
         
-        fm.GetDatasGraph1();
+        fm.GetDatasGraph2();
         JFreeChart graph = ChartFactory.createLineChart("Nombre de Visiteur par Laboratoire", "Labo", "Visiteur", (CategoryDataset) donnees);
         ChartFrame fra = new ChartFrame("Graphique n°3", graph);
         fra.pack();

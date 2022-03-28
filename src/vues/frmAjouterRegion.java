@@ -21,9 +21,10 @@ public class frmAjouterRegion extends javax.swing.JFrame {
     /**
      * Creates new form frmAjouterRegion
      */FonctionsMetier fm;
-            ModelRegion mdlRegion;
+       ModelRegion mdlRegion;
 
-    public frmAjouterRegion() {
+    public frmAjouterRegion()
+    {
         initComponents();
     }
 
@@ -80,6 +81,11 @@ public class frmAjouterRegion extends javax.swing.JFrame {
         enregistrerRegion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 enregistrerRegionMouseClicked(evt);
+            }
+        });
+        enregistrerRegion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enregistrerRegionActionPerformed(evt);
             }
         });
 
@@ -213,7 +219,7 @@ public class frmAjouterRegion extends javax.swing.JFrame {
                             .addComponent(visiteurLab, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(3, 3, 3))
                     .addGroup(menuAddRegionLayout.createSequentialGroup()
-                        .addGap(0, 11, Short.MAX_VALUE)
+                        .addGap(0, 12, Short.MAX_VALUE)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(travaillerLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(regionLab, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -317,17 +323,19 @@ public class frmAjouterRegion extends javax.swing.JFrame {
              * Si nomRegion est vide. Le input affiche un message s'affiche pour prévenir l'uitlisateur
              */
             
-            if(nomRegion.getText().isEmpty()){
-            JOptionPane.showMessageDialog(this,"Veuillez saisir un Nom ");}
+            if(nomRegion.getText().isEmpty()) //Si nomRegion vide alors :
+            {
+            JOptionPane.showMessageDialog(this,"Veuillez saisir un Nom "); //Boite de dialogue avec message
+            }
         
-        else{
+            else //Sinon, on peut effectuer la connexion avec la bdd 
+        {
             ConnexionBdd cnx = new ConnexionBdd();
         }
-        fm = new FonctionsMetier();
+        fm = new FonctionsMetier(); //On appelle la fm
 
-        
         fm.AddRegion(cbSecteur.getSelectedItem().toString(), nomRegion.getText());
-        
+        //On ajoute une region grace au secteur que l'on selectionne dans la liste déroulante (on le met en string) et le nom de la region qui est en text
         this.setVisible(false);
         frmRegion frmAjout = new frmRegion();
         frmAjout.setVisible(true);
@@ -336,13 +344,13 @@ public class frmAjouterRegion extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-         ConnexionBdd cnx = new ConnexionBdd();
-        fm = new FonctionsMetier();
+         ConnexionBdd cnx = new ConnexionBdd();  //On se connecte a la bdd
+        fm = new FonctionsMetier(); //On appelle fm 
         
-        for (secteur s : fm.getAllSecteur())
+        for (secteur s : fm.getAllSecteur()) //Pour secteur, on va chercher dans la fm la connexion a la bdd + la requete sql
         {
         
-            cbSecteur.addItem(s.getNomSecteur());
+            cbSecteur.addItem(s.getNomSecteur()); //On ajoute avec le boutton, en base de données le nom du secteur
         }
         
       
@@ -351,8 +359,8 @@ public class frmAjouterRegion extends javax.swing.JFrame {
 
     private void ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnActionPerformed
         // TODO add your handling code here:
-        this.setVisible(false);
-        frmRegion frmAjout = new frmRegion();
+        this.setVisible(false); //L'action effectuée apres l'ajout sera:
+        frmRegion frmAjout = new frmRegion(); //On est redirigé vers la fenêtre d'ajout d'une nouvelle région
         frmAjout.setVisible(true);
     }//GEN-LAST:event_ReturnActionPerformed
 
@@ -408,6 +416,10 @@ public class frmAjouterRegion extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_secteurLab1MouseClicked
 
+    private void enregistrerRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enregistrerRegionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enregistrerRegionActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -436,8 +448,10 @@ public class frmAjouterRegion extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+        java.awt.EventQueue.invokeLater(new Runnable() 
+        {
+            public void run()
+            {
                 new frmAjouterRegion().setVisible(true);
             }
         });
