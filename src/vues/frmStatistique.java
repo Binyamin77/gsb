@@ -10,6 +10,7 @@ import java.util.Map;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartFrame;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.CategoryDataset;
 import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DefaultPieDataset;
@@ -40,20 +41,13 @@ public class frmStatistique extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        nbRegion = new javax.swing.JButton();
         btn2 = new javax.swing.JButton();
+        stat3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addWindowListener(new java.awt.event.WindowAdapter() {
             public void windowOpened(java.awt.event.WindowEvent evt) {
                 formWindowOpened(evt);
-            }
-        });
-
-        nbRegion.setText("NB DE REGION");
-        nbRegion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nbRegionActionPerformed(evt);
             }
         });
 
@@ -64,6 +58,13 @@ public class frmStatistique extends javax.swing.JFrame {
             }
         });
 
+        stat3.setText("Nb visiteur par labo");
+        stat3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stat3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -71,41 +72,22 @@ public class frmStatistique extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(174, 174, 174)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(nbRegion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(stat3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(367, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(61, 61, 61)
-                .addComponent(nbRegion)
-                .addGap(44, 44, 44)
+                .addGap(128, 128, 128)
                 .addComponent(btn2)
-                .addContainerGap(305, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addComponent(stat3)
+                .addContainerGap(246, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void nbRegionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nbRegionActionPerformed
-        // TODO add your handling code here:
-        DefaultCategoryDataset donnees = new DefaultCategoryDataset();
-        // Permet de remplir un jeu de séries dans notre objet donnees
-        // DatasSet
-        
-        for(Map.Entry valeur : fm.GetDatasGraph1().entrySet())
-        {
-            donnees.setValue(Double.parseDouble(valeur.getValue().toString()), "Nombre de Région", valeur.getKey().toString());
-        }
-        
-        fm.GetDatasGraph1();
-        JFreeChart graph = ChartFactory.createLineChart("Nombre de regions ", "Secteur", "Region", (CategoryDataset) donnees);
-        ChartFrame fra = new ChartFrame("Graphique n°1", graph);
-        fra.pack();
-        fra.setVisible(true);
-        
-    }//GEN-LAST:event_nbRegionActionPerformed
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
@@ -130,6 +112,24 @@ public class frmStatistique extends javax.swing.JFrame {
         fra.pack();
         fra.setVisible(true);
     }//GEN-LAST:event_btn2ActionPerformed
+
+    private void stat3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stat3ActionPerformed
+        // TODO add your handling code here:
+        DefaultCategoryDataset donnees = new DefaultCategoryDataset();
+        // Permet de remplir un jeu de séries dans notre objet donnees
+        // DatasSet
+        
+        for(Map.Entry valeur : fm.GetDatasGraph3().entrySet())
+        {
+            donnees.setValue(Double.parseDouble(valeur.getValue().toString()), "Nombre de Visiteur pour le Laboratoire", valeur.getKey().toString());
+        }
+        
+        fm.GetDatasGraph1();
+        JFreeChart graph = ChartFactory.createLineChart("Nombre de Visiteur par Laboratoire", "Labo", "Visiteur", (CategoryDataset) donnees);
+        ChartFrame fra = new ChartFrame("Graphique n°3", graph);
+        fra.pack();
+        fra.setVisible(true);
+    }//GEN-LAST:event_stat3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -168,6 +168,6 @@ public class frmStatistique extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn2;
-    private javax.swing.JButton nbRegion;
+    private javax.swing.JButton stat3;
     // End of variables declaration//GEN-END:variables
 }
