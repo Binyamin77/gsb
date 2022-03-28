@@ -4,15 +4,27 @@
  */
 package vues;
 
+import Entity.ConnexionBdd;
+import Entity.FonctionsMetier;
+import java.util.Map;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartFrame;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.data.general.PieDataset;
+
 /**
  *
  * @author pret
  */
+
 public class frmDashbord extends javax.swing.JFrame {
 
     /**
      * Creates new form frmDashbord
-     */
+     */FonctionsMetier fm;
     public frmDashbord() {
         initComponents(); 
     }
@@ -40,6 +52,10 @@ public class frmDashbord extends javax.swing.JFrame {
         laboLab = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         secteurLab1 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        btn2 = new javax.swing.JButton();
+        stat3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -215,8 +231,50 @@ public class frmDashbord extends javax.swing.JFrame {
                 .addComponent(secteurLab1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(travaillerLab, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(322, Short.MAX_VALUE))
             .addComponent(border, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        jLabel1.setText("Voir vos statistiques");
+
+        btn2.setText("NB DE REGION CAMENBERT");
+        btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2ActionPerformed(evt);
+            }
+        });
+
+        stat3.setText("Nb visiteur par labo");
+        stat3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                stat3ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(200, 200, 200)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addComponent(btn2, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(135, 135, 135)
+                .addComponent(stat3, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btn2)
+                    .addComponent(stat3))
+                .addGap(0, 32, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout fondLayout = new javax.swing.GroupLayout(fond);
@@ -230,8 +288,11 @@ public class frmDashbord extends javax.swing.JFrame {
                         .addGap(145, 145, 145)
                         .addComponent(fondTitre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(fondLayout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(photoMedoc, javax.swing.GroupLayout.PREFERRED_SIZE, 891, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(200, 200, 200)
+                        .addComponent(photoMedoc, javax.swing.GroupLayout.PREFERRED_SIZE, 632, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(fondLayout.createSequentialGroup()
+                        .addGap(318, 318, 318)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(12224, Short.MAX_VALUE))
         );
         fondLayout.setVerticalGroup(
@@ -239,9 +300,11 @@ public class frmDashbord extends javax.swing.JFrame {
             .addGroup(fondLayout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addComponent(fondTitre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 304, Short.MAX_VALUE)
-                .addComponent(photoMedoc, javax.swing.GroupLayout.PREFERRED_SIZE, 447, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(85, 85, 85)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(photoMedoc, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(93, 93, 93))
             .addComponent(menuDashbord, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
@@ -285,7 +348,7 @@ public class frmDashbord extends javax.swing.JFrame {
 
         // TODO add your handling code here:
     }//GEN-LAST:event_regionLabMouseClicked
-
+          
     private void travaillerLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_travaillerLabMouseClicked
         this.setVisible(false);
         frmTravailler frmAjout = new frmTravailler();
@@ -308,6 +371,47 @@ public class frmDashbord extends javax.swing.JFrame {
         
         // TODO add your handling code here:
     }//GEN-LAST:event_secteurLab1MouseClicked
+
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+        // TODO add your handling code here:
+        
+        ConnexionBdd cnx = new ConnexionBdd();
+        fm = new FonctionsMetier();
+        
+        DefaultPieDataset donnees = new DefaultPieDataset();
+
+        for(Map.Entry valeur : fm.GetDatasGraph2().entrySet())
+        {
+            donnees.setValue(valeur.getKey().toString(), Double.parseDouble(valeur.getValue().toString()));
+        }
+
+        fm.GetDatasGraph2();
+        JFreeChart graph = ChartFactory.createPieChart("Nombre de region par Secteur",(PieDataset) donnees,true,true,true);
+        ChartFrame fra = new ChartFrame("Graphique n°2", graph);
+        fra.pack();
+        fra.setVisible(true);
+    }//GEN-LAST:event_btn2ActionPerformed
+
+    private void stat3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stat3ActionPerformed
+        // TODO add your handling code here:
+        ConnexionBdd cnx = new ConnexionBdd();
+        fm = new FonctionsMetier();
+        
+        DefaultCategoryDataset donnees = new DefaultCategoryDataset();
+        // Permet de remplir un jeu de séries dans notre objet donnees
+        // DatasSet
+
+        for(Map.Entry valeur : fm.GetDatasGraph3().entrySet())
+        {
+            donnees.setValue(Double.parseDouble(valeur.getValue().toString()), "Nombre de Visiteur pour le Laboratoire", valeur.getKey().toString());
+        }
+
+        fm.GetDatasGraph1();
+        JFreeChart graph = ChartFactory.createLineChart("Nombre de Visiteur par Laboratoire", "Labo", "Visiteur", (CategoryDataset) donnees);
+        ChartFrame fra = new ChartFrame("Graphique n°3", graph);
+        fra.pack();
+        fra.setVisible(true);
+    }//GEN-LAST:event_stat3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -346,9 +450,12 @@ public class frmDashbord extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel border;
+    private javax.swing.JButton btn2;
     private javax.swing.JLabel dashboardLab;
     private javax.swing.JPanel fond;
     private javax.swing.JPanel fondTitre;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel laboLab;
     private javax.swing.JLabel logoLbl;
@@ -356,6 +463,7 @@ public class frmDashbord extends javax.swing.JFrame {
     private javax.swing.JLabel photoMedoc;
     private javax.swing.JLabel regionLab;
     private javax.swing.JLabel secteurLab1;
+    private javax.swing.JButton stat3;
     private javax.swing.JLabel titleHome;
     private javax.swing.JLabel travaillerLab;
     private javax.swing.JLabel visiteurLab;
