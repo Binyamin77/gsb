@@ -371,7 +371,7 @@ public class frmDashbord extends javax.swing.JFrame {
 
         fm.GetDatasGraph2();
         JFreeChart graph = ChartFactory.createPieChart("Nombre de region par Secteur",(PieDataset) donnees,true,true,true);
-        ChartFrame fra = new ChartFrame("Graphique n°2", graph);
+        ChartFrame fra = new ChartFrame("Graphique n°1", graph);
         fra.pack();
         fra.setVisible(true);
     }//GEN-LAST:event_btn2ActionPerformed

@@ -503,4 +503,23 @@ public class FonctionsMetier implements IMetier
         return lesDatas;
     } 
 
+    public HashMap<String,Double> GetDatasGraph3()
+    {
+        HashMap<String,Double> lesDatas = new HashMap<>();
+        try {
+            
+            maCnx = ConnexionBdd.getCnx();
+            ps = maCnx.prepareStatement("SELECT `nom_labo`,COUNT(visiteur.id_visiteur) AS 'Nombre Visiteur' FROM `labo`,visiteur WHERE labo.id_labo=visiteur.id_labo GROUP BY nom_labo");
+            rs = ps.executeQuery();
+            while(rs.next())
+            {
+                lesDatas.put(rs.getString(1),rs.getDouble(2));
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(FonctionsMetier.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return lesDatas;
+    } 
+
 }

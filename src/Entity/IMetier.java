@@ -47,6 +47,8 @@ public interface IMetier
     public HashMap<String,Double> GetDatasGraph1();
     
     public HashMap<String,Double> GetDatasGraph2();
+     
+    public HashMap<String,Double> GetDatasGraph3();
 
 
 
