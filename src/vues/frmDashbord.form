@@ -372,10 +372,8 @@
                       <Component id="jLabel1" min="-2" pref="27" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="stat3" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
-                              <Component id="btn2" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="stat3" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="btn2" alignment="1" min="-2" pref="55" max="-2" attributes="0"/>
                           <Component id="logoLbl1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="40" max="32767" attributes="0"/>
