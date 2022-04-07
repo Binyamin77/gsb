@@ -341,13 +341,14 @@ public class frmModifierLabo extends javax.swing.JFrame {
 
     private void modifierLaboMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifierLaboMouseClicked
         // TODO add your handling code here:
-        ConnexionBdd cnx = new ConnexionBdd();
+        ConnexionBdd cnx = new ConnexionBdd(); 
         fm = new FonctionsMetier();
-        int IdLabo = Integer.parseInt(tblLabo.getValueAt(tblLabo.getSelectedRow(), 0).toString());;
+        int IdLabo = Integer.parseInt(tblLabo.getValueAt(tblLabo.getSelectedRow(), 0).toString());
+        //Appel de la méthode ModifLabo dans le fonctionMetier avec les parametres 
         fm.ModifLabo(IdLabo,nomChefM.getText(), nomLaboM.getText());
-        Actualisation();
+        Actualisation();  //On appelle la fonction actualisation
         
-        JOptionPane.showMessageDialog(this,"Votre modification a été rélisée avec succès");
+        JOptionPane.showMessageDialog(this,"Votre modification a été rélisée avec succès"); //Message après l'ajout
 
 
     }//GEN-LAST:event_modifierLaboMouseClicked
@@ -357,9 +358,9 @@ public class frmModifierLabo extends javax.swing.JFrame {
         
         ConnexionBdd cnx = new ConnexionBdd();
         fm = new FonctionsMetier();
-        ModelLabo reg = new ModelLabo();
+        ModelLabo reg = new ModelLabo();  //Appel de la méthode ModelLabo
         
-        reg.LoadDatasLabo(fm.getAllLabo());
+        reg.LoadDatasLabo(fm.getAllLabo()); //affiche le tableau de tous les laboratoires
         tblLabo.setModel(reg);
         
     
@@ -367,7 +368,9 @@ public class frmModifierLabo extends javax.swing.JFrame {
     private void tblLaboMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLaboMouseClicked
         // TODO add your handling code here:
         
-        String nomChef = tblLabo.getValueAt(tblLabo.getSelectedRow(), 2).toString();
+        //Lorsque l'on appuie sur le bouton alors:
+        
+        String nomChef = tblLabo.getValueAt(tblLabo.getSelectedRow(), 2).toString(); //Modification des champs
         nomChefM.setText(nomChef);
         
         String nomLabo = tblLabo.getValueAt(tblLabo.getSelectedRow(), 1).toString();
@@ -392,9 +395,9 @@ public class frmModifierLabo extends javax.swing.JFrame {
 
     private void ReturnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ReturnActionPerformed
         // TODO add your handling code here:
-            this.setVisible(false);
+            this.setVisible(false); 
             frmLabo frmAjout = new frmLabo();
-            frmAjout.setVisible(true);
+            frmAjout.setVisible(true); 
     }//GEN-LAST:event_ReturnActionPerformed
 
     private void nomChefMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nomChefMActionPerformed

@@ -20,7 +20,7 @@ import static javax.swing.UIManager.getString;
 
 public class FonctionsMetier implements IMetier
 {
-    //ces 3 objets sont obligatoires pour faire les requetes 
+    //Ces 3 objets sont obligatoires pour faire les requetes 
     private ResultSet rs;
     private PreparedStatement ps;
     private Connection maCnx;
@@ -37,7 +37,7 @@ public class FonctionsMetier implements IMetier
       ArrayList<region>mesRegions = new ArrayList <region>();
         try {
             maCnx=ConnexionBdd.getCnx();
-            //on ecrit dans le ps la requete
+            //On ecrit dans le ps la requete
             ps= maCnx.prepareStatement("SELECT id_region,nom_secteur,nom_region FROM region, secteur WHERE region.id_secteur = secteur.id_secteur ORDER BY nom_secteur ASC");
             
             rs=ps.executeQuery();
@@ -122,11 +122,11 @@ public class FonctionsMetier implements IMetier
             //on ecrit dans le ps la requete
             ps= maCnx.prepareStatement("select chefvente_labo,id_labo,nom_labo from labo ORDER BY `chefvente_labo` ASC");
             
-            rs=ps.executeQuery();
+            rs=ps.executeQuery(); //execute la requete
             while(rs.next())
             {
                 labo l = new labo(rs.getString(1),rs.getInt(2),rs.getString(3));
-                mesLabos.add(l);
+                mesLabos.add(l); //On ajoute  l'objet définit (l)
             }
            
         } catch (SQLException ex) {
@@ -147,7 +147,7 @@ public class FonctionsMetier implements IMetier
             //on ecrit dans le ps la requete
             ps= maCnx.prepareStatement("UPDATE `labo` SET `chefvente_labo` = '"+nomChef+"',`nom_labo` = '"+nomLabo+"' WHERE `labo`.`id_labo` = '"+idLabo+"';");
             
-            //on met pr le add et le modifier
+            //on met pour le add et le modifier
             ps.executeUpdate();
             
         } catch (SQLException ex) {
@@ -167,7 +167,7 @@ public class FonctionsMetier implements IMetier
             //on ecrit dans le ps la requete
             ps= maCnx.prepareStatement("INSERT INTO labo (chefvente_labo, id_labo, nom_labo) VALUES ('"+nomChef+"', NULL, '"+nomLabo+"')");
             
-            //on met pr le add et le modifier
+            //on met pour le add et le modifier
             ps.executeUpdate();
             
         } catch (SQLException ex) {
