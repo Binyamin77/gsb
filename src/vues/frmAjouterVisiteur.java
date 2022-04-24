@@ -413,20 +413,26 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
     private void enregistrerVisiteurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enregistrerVisiteurActionPerformed
         // TODO add your handling code here:
         
-        if(adresseVisiteur.getText().isEmpty() || cpVisiteur.getText().isEmpty() || nomVisiteur.getText().isEmpty() || prenomVisiteur.getText().isEmpty() || villeVisiteur.getText().isEmpty() ){
-            JOptionPane.showMessageDialog(this,"Veuiller saisir une donnée ");}
+        if(adresseVisiteur.getText().isEmpty() || cpVisiteur.getText().isEmpty() || nomVisiteur.getText().isEmpty() || prenomVisiteur.getText().isEmpty() || villeVisiteur.getText().isEmpty() )
+        //Si l'adresse ou le code postal ou le nom ou le prénom ou la ville sont vides alors :  
+        {
+            JOptionPane.showMessageDialog(this,"Veuiller saisir une donnée "); //Afficher une boîte de dialogue
+        } 
         
-        else{
-        ConnexionBdd cnx = new ConnexionBdd();
-        fm = new FonctionsMetier();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String date = sdf.format(dateEmbauche.getDate());
+        else //Sinon
+        {
+        ConnexionBdd cnx = new ConnexionBdd(); //Connexion avec la bdd
+        fm = new FonctionsMetier(); //On appelle la fonction Metier
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); //On crée le format de la date 
+        String date = sdf.format(dateEmbauche.getDate()); //On convertit la date en string pour qu'elle s'affiche
         
         fm.AddVisiteur(adresseVisiteur.getText(),cpVisiteur.getText(),date,cbLabo.getSelectedItem().toString(),cbSecteur.getSelectedItem().toString(),nomVisiteur.getText(),prenomVisiteur.getText(),villeVisiteur.getText());
-
+        //On appelle la fonction addVisiteur dans le fonctionMetier et on convertit l'adresse, le code postal en texte, le labo ainsi que le secteur sera chosi parmis la liste déroulante, le nom, prénom et ville seront convertis en texte.
+ 
         this.setVisible(false);
         frmVisiteur frmAjout = new frmVisiteur();
-        frmAjout.setVisible(true);}
+        frmAjout.setVisible(true);
+        }
     }//GEN-LAST:event_enregistrerVisiteurActionPerformed
 
     private void adresseVisiteurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adresseVisiteurActionPerformed
@@ -435,19 +441,20 @@ public class frmAjouterVisiteur extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        ConnexionBdd cnx = new ConnexionBdd();
-        fm = new FonctionsMetier();
         
-        for (secteur s : fm.getAllSecteur())
+        //Après avoir cliqué sur le enregistrer 
+        
+        ConnexionBdd cnx = new ConnexionBdd(); //Connexion avec la bdd
+        fm = new FonctionsMetier(); //Appel du Fonction Métier
+        
+        for (secteur s : fm.getAllSecteur()) //Pour secteur, on appelle la liste
         {
-        
-            cbSecteur.addItem(s.getNomSecteur());
+            cbSecteur.addItem(s.getNomSecteur()); //On ajoute le nom du secteur dans la liste
         }
         
-        for (labo l : fm.getAllLabo())
+        for (labo l : fm.getAllLabo()) //Pour les labos, on appelle la liste 
         {
-        
-            cbLabo.addItem(l.getNomLabo());
+            cbLabo.addItem(l.getNomLabo()); //On ajoute le nom du labo dans la liste
         }
         
         

@@ -345,7 +345,7 @@ public class frmAjouterRegion extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
          ConnexionBdd cnx = new ConnexionBdd();  //On se connecte a la bdd
-        fm = new FonctionsMetier(); //On appelle fm 
+        fm = new FonctionsMetier(); //On appelle fonction metier 
         
         for (secteur s : fm.getAllSecteur()) //Pour secteur, on va chercher dans la fm la connexion a la bdd + la requete sql
         {

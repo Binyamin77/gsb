@@ -342,19 +342,19 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
     private void enregistrerTavaillerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enregistrerTavaillerActionPerformed
         // TODO add your handling code here:
         
-        
             
-            if(roleTravailler.getText().isEmpty()){
-            JOptionPane.showMessageDialog(this,"Veuillez saisir un Rôle ");}
+            if(roleTravailler.getText().isEmpty()){ //Si le champ du rôle du travailleur est vide alors : 
+            JOptionPane.showMessageDialog(this,"Veuillez saisir un Rôle ");} //afficher une boîte de dialogue 
         
-        else{
-        ConnexionBdd cnx = new ConnexionBdd();
-        fm = new FonctionsMetier();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String date = sdf.format(dateTravailler.getDate());
+        else{ // Sinon (si il est rempli) alors: 
+        ConnexionBdd cnx = new ConnexionBdd(); //Connexion à la Base de Données
+        fm = new FonctionsMetier(); //On appelle le fonction métier
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); //On choisi un format de date qui sera séléctionné
+        String date = sdf.format(dateTravailler.getDate()); //On converti la date en string 
 
         fm.AddTravailler(cbVisiteur.getSelectedItem().toString(),cbRegion.getSelectedItem().toString(),date,roleTravailler.getText());
-
+        // On appelle la fonction addTravailler et on convertit le cbVsiiteur en string, pareil avec le cbRegion et la date en format texte pour qu'elle puisse être affichée
+        
         this.setVisible(false);
         frmTravailler frmAjout = new frmTravailler();
         frmAjout.setVisible(true);}
@@ -372,20 +372,19 @@ public class frmAjouterTravailler extends javax.swing.JFrame {
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
         
-             ConnexionBdd cnx = new ConnexionBdd();
-        fm = new FonctionsMetier();
+        ConnexionBdd cnx = new ConnexionBdd(); //Connexion a la bdd
+        fm = new FonctionsMetier(); //On appelle le fonction Metier
         
-        for (region r : fm.getAllRegion())
+        for (region r : fm.getAllRegion()) //Pour le champ region on appelle à la fonction getAllRegion
         {
         
-            cbRegion.addItem(r.getNomRegion());
+            cbRegion.addItem(r.getNomRegion()); //On ajoute à cette liste le nom de la région
         }
         
-        
-        for (visiteur v : fm.getAllVisiteur())
+        for (visiteur v : fm.getAllVisiteur()) //Pour le champ visiteurs, appel de la fonction getAllVisiteur qui va afficher la liste
         {
         
-            cbVisiteur.addItem(v.getNomVisiteur());
+            cbVisiteur.addItem(v.getNomVisiteur()); //On ajoute le nom du visiteur
         }
         
     }//GEN-LAST:event_formWindowOpened

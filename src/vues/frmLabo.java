@@ -320,7 +320,7 @@ public class frmLabo extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
 // TODO add your handling code here:
-        ConnexionBdd cnx = new ConnexionBdd();
+        ConnexionBdd cnx = new ConnexionBdd(); 
         fm = new FonctionsMetier();
         mdlLabo = new ModelLabo();
         

@@ -305,17 +305,17 @@ public class frmAjouterSecteur extends javax.swing.JFrame {
         
        
             
-            if(nomSecteur.getText().isEmpty()){
+            if(nomSecteur.getText().isEmpty()){  //Si le champ du nom du secteur est vide alors afficher dans une boîte de dialogue : 
             JOptionPane.showMessageDialog(this,"Veuillez saisir un nom ");}
         
-        else{
-        ConnexionBdd cnx = new ConnexionBdd();
-        fm = new FonctionsMetier();
-        fm.AddSecteur(nomSecteur.getText());
+        else{ //sinon
+        ConnexionBdd cnx = new ConnexionBdd(); //connexion bdd
+        fm = new FonctionsMetier(); //Appeler le fonctionMetier
+        fm.AddSecteur(nomSecteur.getText()); //Appeller la fonction addSecteur dans le fonction metier qui va ajouter en bdd
 
-        this.setVisible(false);
-        frmSecteur frmAjout = new frmSecteur();
-        frmAjout.setVisible(true);
+        this.setVisible(false); 
+        frmSecteur frmAjout = new frmSecteur(); //Creation d'une nouvelle ligne de secteur
+        frmAjout.setVisible(true); //Affichage de la page d'ajout
             
         }
     }//GEN-LAST:event_enregistrerSecteurMouseClicked
@@ -336,7 +336,7 @@ public class frmAjouterSecteur extends javax.swing.JFrame {
     private void dashboardLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardLabMouseClicked
         this.setVisible(false);
         frmDashbord frmAjout = new frmDashbord();
-        frmAjout.setVisible(true);
+        frmAjout.setVisible(true); //ouvre une nouvelle page
 
         // TODO add your handling code here:
     }//GEN-LAST:event_dashboardLabMouseClicked
@@ -344,7 +344,7 @@ public class frmAjouterSecteur extends javax.swing.JFrame {
     private void visiteurLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_visiteurLabMouseClicked
         this.setVisible(false);
         frmVisiteur frmAjout = new frmVisiteur();
-        frmAjout.setVisible(true);
+        frmAjout.setVisible(true); //ouvre une nouvelle page
 
         // TODO add your handling code here:
     }//GEN-LAST:event_visiteurLabMouseClicked
@@ -352,8 +352,8 @@ public class frmAjouterSecteur extends javax.swing.JFrame {
     private void regionLabMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_regionLabMouseClicked
 
         this.setVisible(false);
-        frmRegion frmAjout = new frmRegion();
-        frmAjout.setVisible(true);
+        frmRegion frmAjout = new frmRegion(); //affichage de la page 
+        frmAjout.setVisible(true); //ouvre une nouvelle page 
 
         // TODO add your handling code here:
     }//GEN-LAST:event_regionLabMouseClicked
@@ -370,13 +370,13 @@ public class frmAjouterSecteur extends javax.swing.JFrame {
         // TODO add your handling code here:
         this.setVisible(false);
         frmLabo frmAjout = new frmLabo();
-        frmAjout.setVisible(true);
+        frmAjout.setVisible(true); //ouvre une nouvelle page 
     }//GEN-LAST:event_laboLabMouseClicked
 
     private void secteurLab1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_secteurLab1MouseClicked
-        this.setVisible(false);
+        this.setVisible(false); //ferme l'ancienne 
         frmSecteur frmAjout = new frmSecteur();
-        frmAjout.setVisible(true);
+        frmAjout.setVisible(true); //ouvre une nouvelle page 
 
         // TODO add your handling code here:
     }//GEN-LAST:event_secteurLab1MouseClicked

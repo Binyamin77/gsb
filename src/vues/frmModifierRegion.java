@@ -339,33 +339,34 @@ public class frmModifierRegion extends javax.swing.JFrame {
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        ConnexionBdd cnx = new ConnexionBdd();
-        fm = new FonctionsMetier();
-        mdlRegion = new ModelRegion();
+        ConnexionBdd cnx = new ConnexionBdd(); //Connexion à la bdd
+        fm = new FonctionsMetier(); //Appel du fonctionMetier
+        mdlRegion = new ModelRegion(); 
         
-        mdlRegion.LoadDatasRegion(fm.getAllRegion());
+        mdlRegion.LoadDatasRegion(fm.getAllRegion()); //On charge le tableau des régions
         
         tblRegionM.setModel(mdlRegion);
         
-        for (secteur s : fm.getAllSecteur())
+        for (secteur s : fm.getAllSecteur()) //Pour la partie secteur
         {
-        
-            cbSecteur.addItem(s.getNomSecteur());
+            cbSecteur.addItem(s.getNomSecteur()); //On ajoute le nom
         }
     }//GEN-LAST:event_formWindowOpened
 
     private void modifierRegionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifierRegionMouseClicked
         // TODO add your handling code here:
-        ConnexionBdd cnx = new ConnexionBdd();
-        fm = new FonctionsMetier();
+        //Si on a cliqué 
+        ConnexionBdd cnx = new ConnexionBdd(); //Connexion a la bdd
+        fm = new FonctionsMetier(); //On appelle le fonction métier
         
-        int IdRegion = Integer.parseInt(tblRegionM.getValueAt(tblRegionM.getSelectedRow(), 0).toString());;
-
+        int IdRegion = Integer.parseInt(tblRegionM.getValueAt(tblRegionM.getSelectedRow(), 0).toString());
+        //On convertit le id region en string ET si on en séléctionne un alotrsil s'affichera dans le champ nomRegion
         fm.ModifRegion(IdRegion,cbSecteur.getSelectedItem().toString(), nomRegionM.getText());
+        //On appelle la foncion modifRegion avec les paramètres ( pour idRegion on selectionnera dans le menu déroulant et pour le nom on le rentrera)
 
-        Actualisation();
+        Actualisation(); //On actualise le tableau grâce à la fonction 
         
-        JOptionPane.showMessageDialog(this,"Votre modification a été rélisée avec succès");
+        JOptionPane.showMessageDialog(this,"Votre modification a été rélisée avec succès"); //Message de réussite
 
 
     }//GEN-LAST:event_modifierRegionMouseClicked
@@ -374,11 +375,11 @@ public class frmModifierRegion extends javax.swing.JFrame {
         private void Actualisation()
     {
         
-        ConnexionBdd cnx = new ConnexionBdd();
-        fm = new FonctionsMetier();
-        ModelRegion reg = new ModelRegion();
+        ConnexionBdd cnx = new ConnexionBdd(); //Connexion à la bdd
+        fm = new FonctionsMetier(); //On appelle le fonctionMetier
+        ModelRegion reg = new ModelRegion(); 
         
-        reg.LoadDatasRegion(fm.getAllRegion());
+        reg.LoadDatasRegion(fm.getAllRegion()); //On recharge les données de région : le tableau
         tblRegionM.setModel(reg);
         
     
@@ -401,10 +402,12 @@ public class frmModifierRegion extends javax.swing.JFrame {
         
         String nomRegion = tblRegionM.getValueAt(tblRegionM.getSelectedRow(), 2).toString();
         nomRegionM.setText(nomRegion);
+        //Si on séléctionne nomRegion alors le nom s'affichera dans le champ 2 qui est tblRegion
         
         String secteur = tblRegionM.getValueAt(tblRegionM.getSelectedRow(), 1).toString();
         cbSecteur.setSelectedItem(secteur);
-        
+        //Si on séléctionne secteur alors le secteur s'affichera dans le champ 1 qui est tblSecteur
+                
     }//GEN-LAST:event_tblRegionMMouseClicked
 
     private void dashboardLab2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_dashboardLab2MouseClicked

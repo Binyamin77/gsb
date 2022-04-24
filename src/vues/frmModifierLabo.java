@@ -341,12 +341,13 @@ public class frmModifierLabo extends javax.swing.JFrame {
 
     private void modifierLaboMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_modifierLaboMouseClicked
         // TODO add your handling code here:
-        ConnexionBdd cnx = new ConnexionBdd(); 
-        fm = new FonctionsMetier();
+        ConnexionBdd cnx = new ConnexionBdd(); //Connexion a la bdd
+        fm = new FonctionsMetier(); //On appelle le fonctionMetier
         int IdLabo = Integer.parseInt(tblLabo.getValueAt(tblLabo.getSelectedRow(), 0).toString());
+        //On convertit le id labo: on convertit en string le tout
         //Appel de la méthode ModifLabo dans le fonctionMetier avec les parametres 
         fm.ModifLabo(IdLabo,nomChefM.getText(), nomLaboM.getText());
-        Actualisation();  //On appelle la fonction actualisation
+        Actualisation();  //On appelle la fonction actualisation qui va raffraichir la liste
         
         JOptionPane.showMessageDialog(this,"Votre modification a été rélisée avec succès"); //Message après l'ajout
 
@@ -355,9 +356,8 @@ public class frmModifierLabo extends javax.swing.JFrame {
     
     private void Actualisation()
     {
-        
-        ConnexionBdd cnx = new ConnexionBdd();
-        fm = new FonctionsMetier();
+        ConnexionBdd cnx = new ConnexionBdd(); //Connexion a la bdd
+        fm = new FonctionsMetier(); //On appelle le fonctionMetier
         ModelLabo reg = new ModelLabo();  //Appel de la méthode ModelLabo
         
         reg.LoadDatasLabo(fm.getAllLabo()); //affiche le tableau de tous les laboratoires
@@ -368,23 +368,24 @@ public class frmModifierLabo extends javax.swing.JFrame {
     private void tblLaboMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblLaboMouseClicked
         // TODO add your handling code here:
         
-        //Lorsque l'on appuie sur le bouton alors:
-        
+        //Lorsque l'on appuie sur le bouton alors
         String nomChef = tblLabo.getValueAt(tblLabo.getSelectedRow(), 2).toString(); //Modification des champs
+        //Si on séléctionne la ligne alors le nomLabo s'affichera dans la case vide
         nomChefM.setText(nomChef);
         
         String nomLabo = tblLabo.getValueAt(tblLabo.getSelectedRow(), 1).toString();
+        //Si on séléctionne la ligne alors le nomLabo s'affichera dans la case vide
         nomLaboM.setText(nomLabo);
 
     }//GEN-LAST:event_tblLaboMouseClicked
 
     private void formWindowOpened(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowOpened
         // TODO add your handling code here:
-        ConnexionBdd cnx = new ConnexionBdd();
-        fm = new FonctionsMetier();
+        ConnexionBdd cnx = new ConnexionBdd(); //Connexion a la bdd
+        fm = new FonctionsMetier(); //On appelle le fonctionMetier
         mdlLabo = new ModelLabo();
         
-        mdlLabo.LoadDatasLabo(fm.getAllLabo());
+        mdlLabo.LoadDatasLabo(fm.getAllLabo());  //On affiche le tableau des labos
         
         tblLabo.setModel(mdlLabo);
     }//GEN-LAST:event_formWindowOpened

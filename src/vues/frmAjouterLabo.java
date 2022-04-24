@@ -316,7 +316,7 @@ public class frmAjouterLabo extends javax.swing.JFrame {
          * Si nomChef est vide ou nomLabo vide. Le input se met en rouge et unmessage s'affiche pour prévenir l'uitlisateur
          */
         
-        if(nomChef.getText().isEmpty() || nomLabo.getText().isEmpty()){
+        if(nomChef.getText().isEmpty() || nomLabo.getText().isEmpty()){ //si le nom du chef du labo est vide alors afficher : 
             
             if(nomChef.getText().isEmpty()) //Si nomChef est vide 
             {

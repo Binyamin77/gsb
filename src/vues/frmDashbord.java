@@ -24,7 +24,7 @@ public class frmDashbord extends javax.swing.JFrame {
 
     /**
      * Creates new form frmDashbord
-     */FonctionsMetier fm;
+     */FonctionsMetier fm; 
     public frmDashbord() {
         initComponents(); 
     }
@@ -337,8 +337,8 @@ public class frmDashbord extends javax.swing.JFrame {
 
     private void stat3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_stat3ActionPerformed
         // TODO add your handling code here:
-        ConnexionBdd cnx = new ConnexionBdd();
-        fm = new FonctionsMetier();
+        ConnexionBdd cnx = new ConnexionBdd(); //Connexion avec la bdd
+        fm = new FonctionsMetier(); //On appelle le fonction metier
 
         DefaultCategoryDataset donnees = new DefaultCategoryDataset();
         // Permet de remplir un jeu de séries dans notre objet donnees
@@ -361,10 +361,10 @@ public class frmDashbord extends javax.swing.JFrame {
 
         ConnexionBdd cnx = new ConnexionBdd();
         fm = new FonctionsMetier();
+ 
+        DefaultPieDataset donnees = new DefaultPieDataset(); //Création d'un nouveau graphique
 
-        DefaultPieDataset donnees = new DefaultPieDataset();
-
-        for(Map.Entry valeur : fm.GetDatasGraph2().entrySet())
+        for(Map.Entry valeur : fm.GetDatasGraph2().entrySet()) //On appelle la fonction getDataGraph dans le fonction metier
         {
             donnees.setValue(valeur.getKey().toString(), Double.parseDouble(valeur.getValue().toString()));
         }

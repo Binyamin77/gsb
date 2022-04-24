@@ -246,7 +246,7 @@
                               <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace min="0" pref="11" max="32767" attributes="0"/>
+                              <EmptySpace min="0" pref="12" max="32767" attributes="0"/>
                               <Component id="jPanel3" min="-2" pref="123" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
@@ -281,7 +281,7 @@
                       <Component id="secteurLab2" min="-2" pref="62" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="travaillerLab" min="-2" pref="62" max="-2" attributes="0"/>
-                      <EmptySpace pref="97" max="32767" attributes="0"/>
+                      <EmptySpace pref="100" max="32767" attributes="0"/>
                   </Group>
                   <Component id="border" alignment="0" max="32767" attributes="0"/>
               </Group>
